@@ -1,0 +1,30 @@
+{
+  "name": "restaurants",
+  "fields": [
+    { "name": "slug", "type": "string" },
+    { "name": "name", "type": "string", "facet": true },
+    { "name": "description", "type": "string" },
+    { "name": "cuisine", "type": "string[]", "facet": true },
+    { "name": "dietary", "type": "string[]", "facet": true },
+    { "name": "corkage_fee", "type": "bool", "facet": true },
+    { "name": "dogs_ok", "type": "bool", "facet": true },
+    { "name": "accepts_reservations", "type": "bool", "facet": true },
+    { "name": "accepts_events", "type": "bool", "facet": true },
+    { "name": "price_range", "type": "string", "facet": true },
+    { "name": "price_range_max", "type": "int32", "facet": true },
+    { "name": "price_range_min", "type": "int32", "facet": true },
+    {
+      "name": "location",
+      "type": "geopoint"
+    },
+    { "name": "city", "type": "string", "facet": true },
+    { "name": "state", "type": "string", "facet": true },
+    { "name": "country", "type": "string", "facet": true },
+    { "name": "address", "type": "string" },
+    { "name": "phone", "type": "string" },
+    { "name": "website", "type": "string" },
+    { "name": "email", "type": "string" },
+    { "name": "image_url", "type": "string" },
+    { "name": "image_url_alt", "type": "string" }
+  ]
+}

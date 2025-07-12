@@ -1,0 +1,26 @@
+{
+  // Adding "Dietary" to the menu object that includes the name of the dietary type and the count of items that are that dietary type
+  "menus": [
+    {
+      "id": 12,
+      "name": "Breakfast",
+      "isPrimary": true,
+      "dietary": [
+        {
+          "name": "vegan",
+          "count": 5
+        }
+      ]
+    }
+  ],
+  // menu_items is an array of menu items (with the id, name, description, and public_ingredients so we can do text search on them)
+  "dishes": [
+    {
+      "id": 1,
+      "name": "Steak and Eggs",
+      "description": "A delicious steak and eggs breakfast",
+      "ingredients": ["Steak", "Eggs", "Toast"],
+      "tags": ["breakfast", "steak", "eggs", "toast"]
+    }
+  ]
+}

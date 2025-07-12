@@ -1,0 +1,25 @@
+export type Restaurant = {
+  id: string;
+  slug: string;
+  name: string;
+  description: string;
+  cuisine: string[];
+  dietary: string[];
+  corkage_fee: boolean;
+  dogs_ok: boolean;
+  accepts_reservations: boolean;
+  accepts_events: boolean;
+  price_range: string;
+  price_range_max: number;
+  price_range_min: number;
+  location: [number, number];
+  city: string;
+  state: string;
+  country: string;
+  address: string;
+  phone: string;
+  website: string;
+  email: string;
+  image_url: string;
+  image_url_alt: string;
+};
