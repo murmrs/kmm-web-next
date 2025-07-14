@@ -8,14 +8,10 @@ import { Footer } from "@/components/footer";
 export default function Home() {
   return (
     <>
-      <Header />
-      {/* <Hero /> */}
-      <RestaurantList />
-      {/* <RestaurantList /> */}
-      {/* <RestaurantList /> */}
-
+      <Header searchIntroText="Ready to know your menu?" className="dark" />
+      <RestaurantList className="mt-12" />
       <MarqueeBanner />
-      <TagCloud />
+      {/* <TagCloud /> */}
       <Footer />
     </>
   );

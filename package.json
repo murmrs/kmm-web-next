@@ -21,6 +21,7 @@
     "framer-motion": "^12.17.3",
     "instantsearch.js": "^4.78.3",
     "lucide-react": "^0.514.0",
+    "mapbox-gl": "^3.13.0",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

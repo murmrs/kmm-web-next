@@ -2,82 +2,114 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, Search, User } from "lucide-react";
+import { Filter, Menu, Search, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SearchBar } from "./search-bar";
+import Image from "next/image";
 
 interface HeaderProps {
-  showSearch?: boolean;
+  searchIntroText?: string;
+  condensed?: boolean;
+  className?: string;
 }
 
-export function Header({ showSearch = false }: HeaderProps) {
+export function Header({
+  searchIntroText,
+  condensed = false,
+  className,
+}: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="relative top-0 z-50 w-full bg-muted backdrop-blur supports-[backdrop-filter]:bg-muted/60">
-      <div className="flex items-start justify-between container py-4">
+    <header
+      className={cn(
+        "relative top-0 z-50 w-full",
+        condensed && "mb-12",
+        className
+        // !condensed && "min-h-[500px]"
+      )}
+    >
+      {!condensed && (
+        <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
+          <Image
+            src="/hero.jpg"
+            alt="Logo"
+            fill
+            className="object-cover object-[center_40%]"
+            style={{ clipPath: "url(#header-blob-clip)" }}
+            priority
+          />
+          <svg
+            width="0"
+            height="0"
+            style={{ position: "absolute" }}
+            aria-hidden="true"
+            focusable="false"
+          >
+            <defs>
+              <clipPath id="header-blob-clip" clipPathUnits="objectBoundingBox">
+                <path
+                  d="
+                  M0,0 
+                  H1 
+                  V0.85 
+                  C0.85,0.95 0.7,1 0.5,1 
+                  C0.3,1 0.15,0.95 0,0.85 
+                  Z
+                "
+                />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+      )}
+      <div className="grid grid-cols-[max-content_1fr_max-content] items-start">
         {/* Logo */}
-        <div className="mr-4 flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">KMM</span>
+        <div className={cn("flex", condensed && "my-auto")}>
+          <Link href="/" className="flex items-center">
+            <Image
+              src={
+                // condensed
+                // ? "/kmm-tagline-orange.svg"
+                // :
+                "/kmm-logo-tagline-orange.svg"
+              }
+              // className={cn(condensed && "h-14")}
+              alt="Know My Menu Logo"
+              width={300}
+              height={80}
+            />
+            <span className="sr-only">Know My Menu - For People Who Eat</span>
           </Link>
         </div>
 
         {/* Search Bar */}
 
-        <SearchBar showIntro={true} />
-
+        <div className="w-full px-8 py-4 flex gap-4">
+          <SearchBar
+            className={cn("", !condensed && "mx-auto")}
+            condensed={condensed}
+            introText={searchIntroText}
+          />
+        </div>
         {/* Navigation */}
-        <div className="flex items-center justify-end space-x-2">
-          <Button
+        <div
+          className={cn("flex items-center justify-end space-x-2 pr-10 pt-5")}
+        >
+          {/* <Button
             variant="ghost"
             size="icon"
             className="h-9 w-9"
             aria-label="User menu"
           >
-            <User className="h-5 w-5" />
+            <User className="h-5 w-5 text-white" />
+          </Button> */}
+          <Button variant="ghost" className="dark text-foreground">
+            List your Restaurant
           </Button>
-
-          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-            <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-9 w-9"
-                aria-label="Main menu"
-              >
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <nav className="flex flex-col space-y-4">
-                <Link
-                  href="/"
-                  className="text-sm font-medium transition-colors hover:text-primary"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/restaurants"
-                  className="text-sm font-medium transition-colors hover:text-primary"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Restaurants
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-sm font-medium transition-colors hover:text-primary"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About
-                </Link>
-              </nav>
-            </SheetContent>
-          </Sheet>
         </div>
       </div>
     </header>

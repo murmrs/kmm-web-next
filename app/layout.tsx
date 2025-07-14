@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { MarqueeBanner } from "@/components/marquee-banner";
+import { Footer } from "@/components/footer";
+import { InstantSearchProvider } from "@/providers/instant-search-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen gap-y-12`}
       >
-        {children}
+        <InstantSearchProvider>{children}</InstantSearchProvider>
       </body>
     </html>
   );

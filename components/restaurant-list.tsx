@@ -11,6 +11,12 @@ import {
   CarouselPrevious,
 } from "@/components/carousel";
 import { Button, ButtonProps } from "./ui/button";
+import { Hits, InstantSearch, useHits } from "react-instantsearch";
+import Link from "next/link";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+import { RestaurantCard } from "./restaurants/restaurant-card";
+import { Restaurant } from "@/config/typesense";
 
 type ImageProps = {
   src: string;
@@ -31,13 +37,14 @@ type Props = {
   description: string;
   button: ButtonProps;
   products: ProductCardProps[];
+  className?: string;
 };
 
 export type RestaurantListProps = React.ComponentPropsWithoutRef<"section"> &
   Partial<Props>;
 
 export const RestaurantList = (props: RestaurantListProps) => {
-  const { tagline, heading, description, button, products } = {
+  const { tagline, heading, description, button, products, className } = {
     ...RestaurantListDefaults,
     ...props,
   };
@@ -55,12 +62,17 @@ export const RestaurantList = (props: RestaurantListProps) => {
     });
   }, [api]);
 
+  const { items } = useHits<Restaurant>();
+
   return (
-    <section id="relume" className="overflow-hidden px-[5%]">
+    <section id="relume" className={cn("overflow-hidden px-[5%]", className)}>
       <div className="container">
         <div className="mb-12 grid grid-cols-1 items-end gap-12 md:mb-18 md:grid-cols-[1fr_max-content] lg:mb-20 lg:gap-20">
           <div className="max-w-xl">
-            <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
+            <p className="mb-3 font-semibold md:mb-4 flex items-center">
+              <span className="h-1 w-4 bg-primary block mr-2" />
+              {tagline}
+            </p>
             <h1 className="mb-3 text-5xl font-bold md:mb-4 ">{heading}</h1>
             <p className="md:text-md">{description}</p>
           </div>
@@ -74,13 +86,21 @@ export const RestaurantList = (props: RestaurantListProps) => {
           }}
         >
           <div className="relative pb-24">
+            {/* {JSON.stringify(items, null, 2)} */}
             <CarouselContent className="ml-0">
-              {products.map((product, index) => (
+              {/* <Hits
+                hitComponent={ProductCard}
+                classNames={{
+                  root: "",
+                  list: "grid grid-cols-1 gap-6",
+                }}
+              /> */}
+              {items.map((location, index) => (
                 <CarouselItem
                   key={index}
                   className="basis-[95%] pl-0 pr-6 sm:basis-4/5 md:basis-1/2 md:pr-8 lg:basis-1/4"
                 >
-                  <ProductCard key={index} {...product} />
+                  <RestaurantCard key={index} location={location} />
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -109,31 +129,6 @@ export const RestaurantList = (props: RestaurantListProps) => {
   );
 };
 
-const ProductCard: React.FC<ProductCardProps> = ({
-  url,
-  image,
-  title,
-  price,
-  variant,
-}) => {
-  return (
-    <a href={url} className="font-semibold md:text-md">
-      <div className="mb-3 block aspect-[5/6] md:mb-4">
-        <img
-          src={image.src}
-          alt={image.alt}
-          className="size-full object-cover"
-        />
-      </div>
-      <div className="mb-2">
-        <h3>{title}</h3>
-        <div className="text-sm font-normal">{variant}</div>
-      </div>
-      <div className="text-md md:text-lg">{price}</div>
-    </a>
-  );
-};
-
 const productData = {
   url: "#",
   image: {
@@ -146,12 +141,13 @@ const productData = {
 };
 
 export const RestaurantListDefaults: Props = {
-  tagline: "Tagline",
-  heading: "Restaurants in your area",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  tagline: "Explore",
+  heading: "Popular restaurants",
+  description:
+    "Discover the best restaurants commited to providing the best experience for you and your family.",
   button: {
     variant: "secondary",
-    size: "primary",
+    size: "lg",
     title: "View all",
   },
   products: [

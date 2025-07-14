@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState, useRef, useEffect } from "react";
-import { Search } from "lucide-react";
+import { Filter, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -29,15 +29,60 @@ const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
   server: typesenseConfig,
   additionalSearchParameters: {
     query_by: "name,cuisine,dietary,city,state,address",
-
-    // disjunctiveFacets: ["accepts_events"],
-    // disjunctiveFacetsRefinements: {
-    //   accepts_events: ["true"],
-    // },
   },
 });
 
 const searchClient = typesenseInstantsearchAdapter.searchClient;
+
+const PopularLocations = [
+  {
+    name: "Utah",
+    key: "UT",
+    image: "/locations/utah.jpg",
+  },
+  {
+    name: "California",
+    key: "CA",
+    image: "/locations/california.jpg",
+  },
+];
+
+const sections: {
+  name: string;
+  label?: string;
+  key: string;
+  type: "single" | "multi";
+  items: { name: string; key: string; image: string }[];
+  height: number;
+  width: number | "full";
+}[] = [
+  {
+    name: "location",
+    label: "Popular Locations",
+    key: "state",
+    type: "single",
+    items: PopularLocations,
+    height: 240,
+    width: 300,
+  },
+  {
+    name: "cuisine",
+    label: "Popular Cuisines",
+    key: "cuisine",
+    items: [],
+    type: "multi",
+    height: 300,
+    width: "full",
+  },
+  {
+    name: "dietary",
+    key: "dietary",
+    items: [],
+    type: "multi",
+    height: 300,
+    width: "full",
+  },
+];
 
 const SearchButton = ({
   tab,
@@ -46,6 +91,7 @@ const SearchButton = ({
   className,
   children,
   active,
+  text,
 }: {
   tab: string;
   label: string;
@@ -53,13 +99,15 @@ const SearchButton = ({
   className?: string;
   children?: React.ReactNode;
   active?: boolean;
+  text?: string;
 }) => {
   return (
     <div className="relative w-full">
       <button
         className={cn(
-          "bg-transparent border-none py-3 text-left  inline-flex items-center px-5 hover:rounded-md w-full hover:bg-primary/20 transition-colors",
+          "bg-transparent dark:bg-accent-foreground border-none py-3 text-left  inline-flex items-center px-5 hover:rounded-md w-full hover:bg-primary/20  transition-colors text-muted-foreground",
           active && "bg-primary/20 rounded-md group-hover:bg-transparent",
+          text && "text-foreground dark:text-black",
           className
         )}
         data-search-button="true"
@@ -69,22 +117,37 @@ const SearchButton = ({
         }}
       >
         <Search className="mr-2 h-4 w-4" />
-        {label}
+        {text || label}
       </button>
       {children}
     </div>
   );
 };
 
-export function SearchBar({ showIntro = false }: { showIntro?: boolean }) {
+export function SearchBar({
+  introText,
+  condensed,
+  className,
+}: {
+  introText?: string;
+  condensed?: boolean;
+  className?: string;
+}) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
   const [tab, setTab] = useState("");
+  const [popoverOffset, setPopoverOffset] = useState(0);
+
+  const [width, setWidth] = useState<number | "full">("full");
+  const [height, setHeight] = useState<number>(0);
 
   const [location, setLocation] = useState("");
+  const [locationText, setLocationText] = useState("");
   const [cuisine, setCuisine] = useState("");
   const [dietary, setDietary] = useState("");
+
+  const anchorRef = useRef<HTMLDivElement>(null);
 
   // Add state to track heights of each refinement list
   const [heights, setHeights] = useState({
@@ -100,7 +163,14 @@ export function SearchBar({ showIntro = false }: { showIntro?: boolean }) {
   };
 
   const handleClick = useCallback(
-    (newTab: string) => {
+    (e: React.MouseEvent, newTab: string) => {
+      const section = sections.find((section) => section.name === newTab);
+      if (section) {
+        setWidth(section.width);
+        setHeight(section.height);
+        console.log("Section", { section, width, height });
+      }
+
       if (newTab !== tab) {
         setTab(newTab);
         !isOpen && setIsOpen(true);
@@ -186,125 +256,135 @@ export function SearchBar({ showIntro = false }: { showIntro?: boolean }) {
         },
       }}
     >
-      <div className="w-full max-w-3xl pb-12">
-        {showIntro && (
-          <h1 className="text-center text-5xl font-bold text-foreground mb-8 max-w-2xl mx-auto mt-24">
-            Search for a location, cuisine, or dietary preference
-          </h1>
-        )}
-        <Popover open={isOpen}>
-          <PopoverAnchor asChild>
-            <div className="relative w-full max-w-3xl mx-auto bg-muted rounded-md flex my-8 overflow-hidden group">
-              <SearchButton
-                tab="location"
-                label="Location"
-                // onClick={() => console.log("clicked")}
-                onClick={() => handleClick("location")}
-                className="flex-2"
-                active={tab === "location"}
-              />
-              <SearchButton
-                tab="cuisine"
-                label="Cuisine"
-                onClick={() => handleClick("cuisine")}
-                className="flex-1"
-                active={tab === "cuisine"}
-              />
-              <SearchButton
-                tab="dietary"
-                label="Dietary"
-                onClick={() => handleClick("dietary")}
-                className="pr-28"
-                active={tab === "dietary"}
-              >
-                <Button className="ml-auto absolute right-4 top-1/2 -translate-y-1/2">
-                  Search
-                </Button>
-              </SearchButton>
-            </div>
-          </PopoverAnchor>
-          <PopoverContent
-            align="start"
-            style={{ width: "var(--radix-popover-trigger-width)" }}
-            className="w-full max-w-3xl mx-auto"
-            onPointerDownOutside={handleClickOutside}
-          >
-            <div className="overflow-hidden">
+      <div className="flex gap-4">
+        <div
+          className={cn("w-full", !condensed && "max-w-3xl pb-12", className)}
+        >
+          {introText && (
+            <h1
+              className={cn(
+                "text-center text-5xl font-bold text-foreground mb-8 max-w-2xl mx-auto mt-[15vh] dark"
+              )}
+            >
+              {introText}
+            </h1>
+          )}
+          <Popover open={isOpen}>
+            <PopoverAnchor asChild ref={anchorRef}>
               <div
-                className="grid grid-cols-[repeat(3,100%)]  transition-transform duration-300 grid-rows-[0fr]"
-                style={{
-                  transform:
-                    tab === "location"
-                      ? "translateX(0%)"
-                      : tab === "cuisine"
-                      ? "translateX(-100%)"
-                      : tab === "dietary"
-                      ? "translateX(-200%)"
-                      : "translateX(0%)",
-                }}
+                className={cn(
+                  "relative w-full  mx-auto bg-muted rounded-md flex overflow-hidden group",
+                  !condensed && " max-w-3xl my-8"
+                )}
               >
-                <div className="col-span-1 min-h-0">
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-sm font-medium">Popular Locations</h3>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3 mt-2">
-                    <div className="flex items-center gap-3 p-2 rounded-md hover:bg-primary/10 cursor-pointer transition">
-                      <span className="font-medium">California</span>
+                <SearchButton
+                  tab="location"
+                  label="Location"
+                  text={locationText}
+                  // onClick={() => console.log("clicked")}
+                  onClick={(e) => handleClick(e, "location")}
+                  className="flex-2"
+                  active={tab === "location"}
+                />
+                <SearchButton
+                  tab="cuisine"
+                  label="Cuisine"
+                  text={cuisine}
+                  onClick={(e) => handleClick(e, "cuisine")}
+                  className="flex-1"
+                  active={tab === "cuisine"}
+                />
+                <SearchButton
+                  tab="dietary"
+                  label="Dietary"
+                  text={dietary}
+                  onClick={(e) => handleClick(e, "dietary")}
+                  className="pr-28"
+                  active={tab === "dietary"}
+                >
+                  <Button className="ml-auto absolute right-4 top-1/2 -translate-y-1/2">
+                    Search
+                  </Button>
+                </SearchButton>
+              </div>
+            </PopoverAnchor>
+            <PopoverContent
+              align="start"
+              alignOffset={popoverOffset}
+              style={{
+                width:
+                  width === "full"
+                    ? "var(--radix-popover-trigger-width)"
+                    : `${width}px`,
+                height: `${height}px`,
+              }}
+              className="w-full mx-auto transition-all duration-300"
+              onPointerDownOutside={handleClickOutside}
+            >
+              <div className="overflow-hidden">
+                <div
+                  className="grid grid-cols-[repeat(3,100%)]  transition-transform duration-300"
+                  style={{
+                    transform:
+                      tab === "location"
+                        ? "translateX(0%)"
+                        : tab === "cuisine"
+                        ? "translateX(-100%)"
+                        : tab === "dietary"
+                        ? "translateX(-200%)"
+                        : "translateX(0%)",
+                  }}
+                >
+                  {sections.map((section) => (
+                    <div
+                      key={section.key}
+                      className="col-span-1 min-h-0 h-max"
+                      id={section.key}
+                    >
+                      <div className="flex flex-col gap-2 mb-3">
+                        <h3 className="text-md font-medium">{section.label}</h3>
+                      </div>
+                      {section.type === "single" && (
+                        <div className="grid grid-cols-1 gap-3">
+                          {section.items.map((item) => (
+                            <div
+                              key={item.name}
+                              className="flex items-center gap-3 p-2 rounded-md hover:bg-primary/10 cursor-pointer transition"
+                              onClick={() => {
+                                setLocation(item.key);
+                                setLocationText(item.name);
+                                // setIsOpen(false);
+                              }}
+                            >
+                              <img
+                                src={item.image}
+                                alt={item.name}
+                                className="size-16 rounded-md object-cover"
+                              />
+                              <span className="font-medium">{item.name}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {section.type === "multi" && (
+                        <div className="grid grid-cols-2 gap-3">
+                          {section.items.map((item) => (
+                            <div key={item.name}>{item.name}</div>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                    <div className="flex items-center gap-3 p-2 rounded-md hover:bg-primary/10 cursor-pointer transition">
-                      <span className="font-medium">Utah</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-span-1 min-h-0">
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-sm font-medium">Popular Cuisines</h3>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3 mt-2">
-                    <div className="flex items-center gap-3 p-2 rounded-md hover:bg-primary/10 cursor-pointer transition">
-                      <span className="font-medium">Italian</span>
-                    </div>
-                    <div className="flex items-center gap-3 p-2 rounded-md hover:bg-primary/10 cursor-pointer transition">
-                      <span className="font-medium">Italian</span>
-                    </div>
-                    <div className="flex items-center gap-3 p-2 rounded-md hover:bg-primary/10 cursor-pointer transition">
-                      <span className="font-medium">Italian</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-span-1 min-h-0">
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-sm font-medium">
-                      Popular Dietary Restrictions
-                    </h3>
-                  </div>
+                  ))}
                 </div>
               </div>
-            </div>
-          </PopoverContent>
-        </Popover>
-
-        {/* <SearchBox /> */}
-        {/* <Hits /> */}
-
-        {/* <ToggleRefinement attribute="address.city" label="City" on={true} /> */}
-        {/* <ToggleRefinement
-          attribute="corkage_fee"
-          label="Corkage Fee"
-          on={true}
-        />
-        <ToggleRefinement attribute="dogs_ok" label="Dogs OK" on={true} />
-        <ToggleRefinement
-          attribute="accepts_reservations"
-          label="Accepts Reservations"
-          on={true}
-        />
-
-        <ToggleRefinement
-          attribute="accepts_events"
-          label="Accepts Events"
-          on={true}
-        /> */}
+            </PopoverContent>
+          </Popover>
+        </div>
+        {condensed && (
+          <Button variant="outline" className="h-auto border-none">
+            <Filter className="h-5 w-5" /> Filter
+          </Button>
+        )}
       </div>
     </InstantSearch>
   );
