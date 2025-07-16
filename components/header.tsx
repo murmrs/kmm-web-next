@@ -1,38 +1,58 @@
 "use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import { Filter, Menu, Search, User } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { SearchBar } from "./search-bar";
 import Image from "next/image";
+import { SearchBar } from "./search-bar";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/button";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { Menu } from "lucide-react";
+import { Button } from "./ui/button";
+import { useState } from "react";
 
-interface HeaderProps {
-  searchIntroText?: string;
-  condensed?: boolean;
-  className?: string;
-}
-
-export function Header({
-  searchIntroText,
-  condensed = false,
+const Header = ({
+  showSearchBar = true,
+  expanded = false,
+  centerComponent,
   className,
-}: HeaderProps) {
+  backgroundImage,
+}: {
+  showSearchBar?: boolean;
+  expanded?: boolean;
+  centerComponent?: React.ReactNode;
+  className?: string;
+  backgroundImage?: string;
+}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const Center = () => {
+    if (centerComponent) {
+      return centerComponent;
+    }
+
+    if (!showSearchBar) return null;
+
+    return (
+      <div className="flex-1">
+        <div className="max-w-3xl mx-auto">
+          <SearchBar condensed={true} />
+        </div>
+      </div>
+    );
+  };
 
   return (
     <header
       className={cn(
-        "relative top-0 z-50 w-full",
-        condensed && "mb-12",
+        "px-12 bg-muted/30 flex items-center justify-between py-4 border-b border-border gap-12 relative z-20",
+        centerComponent && "items-start",
+        backgroundImage &&
+          "border-b-0 dark bg-transparent grid grid-cols-[200px_1fr_200px]",
         className
-        // !condensed && "min-h-[500px]"
+        // "bg-transparent border-b-0"
+        // "[&]:supports-[backdrop-filter]:backdrop-blur-md"
       )}
     >
-      {!condensed && (
+      {backgroundImage && (
         <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
           <Image
             src="/hero.jpg"
@@ -66,52 +86,89 @@ export function Header({
           </svg>
         </div>
       )}
-      <div className="grid grid-cols-[max-content_1fr_max-content] items-start">
-        {/* Logo */}
-        <div className={cn("flex", condensed && "my-auto")}>
-          <Link href="/" className="flex items-center">
-            <Image
-              src={
-                // condensed
-                // ? "/kmm-tagline-orange.svg"
-                // :
-                "/kmm-logo-tagline-orange.svg"
-              }
-              // className={cn(condensed && "h-14")}
-              alt="Know My Menu Logo"
-              width={300}
-              height={80}
-            />
-            <span className="sr-only">Know My Menu - For People Who Eat</span>
-          </Link>
-        </div>
 
-        {/* Search Bar */}
-
-        <div className="w-full px-8 py-4 flex gap-4">
-          <SearchBar
-            className={cn("", !condensed && "mx-auto")}
-            condensed={condensed}
-            introText={searchIntroText}
+      <div className="flex items-center justify-between">
+        <Link href="/">
+          <Image
+            src={
+              backgroundImage ? "/kmm-logo-tagline-orange.svg" : "/kmm-logo.svg"
+            }
+            className={cn(backgroundImage && "absolute top-0 left-12 w-84")}
+            alt="Know My Menu"
+            width={100}
+            height={100}
           />
-        </div>
-        {/* Navigation */}
-        <div
-          className={cn("flex items-center justify-end space-x-2 pr-10 pt-5")}
+        </Link>
+      </div>
+      <Center />
+      <div>
+        <Link
+          href="/restaurants"
+          className={cn(buttonVariants({ variant: "ghost" }))}
         >
-          {/* <Button
-            variant="ghost"
-            size="icon"
-            className="h-9 w-9"
-            aria-label="User menu"
-          >
-            <User className="h-5 w-5 text-white" />
-          </Button> */}
-          <Button variant="ghost" className="dark text-foreground">
-            List your Restaurant
-          </Button>
-        </div>
+          List your restaurant
+        </Link>
+        <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+          <SheetTrigger asChild>
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-9 w-9 rounded-full"
+              aria-label="Main menu"
+            >
+              <Menu className="h-5 w-5 " />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right">
+            <SheetTitle className="sr-only">Main menu</SheetTitle>
+            <nav className="flex flex-col gap-2 pb-4 px-4 w-full min-h-screen pt-10">
+              {[
+                { href: "/", label: "Home" },
+                { href: "/restaurants", label: "Restaurants" },
+                { href: "/about", label: "About" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`
+                      text-base font-normal rounded-md px-4 py-3
+                      transition-colors
+                      text-muted-foreground
+                       hover:bg-muted
+                      focus:outline-none focus:ring-2 focus:ring-primary/40
+                      data-[active=true]:tex-black data-[active=true]:bg-muted
+                    `}
+                  data-active={
+                    typeof window !== "undefined" &&
+                    window.location.pathname === item.href
+                  }
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div className="pt-6 mt-auto">
+                <Link
+                  href="/login"
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`
+                      inline-flex items-center justify-center w-full
+                      px-4 py-3 rounded-md
+                      bg-primary text-white font-semibold
+                      transition-colors
+                      hover:bg-primary/90
+                      focus:outline-none focus:ring-2 focus:ring-primary/40
+                    `}
+                >
+                  Log In
+                </Link>
+              </div>
+            </nav>
+          </SheetContent>
+        </Sheet>{" "}
       </div>
     </header>
   );
-}
+};
+
+export default Header;

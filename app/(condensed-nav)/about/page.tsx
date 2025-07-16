@@ -99,7 +99,13 @@ export default function PricingPage() {
           {/* </div> */}
         </div>
       </div>
-      <CtaBlock className="-mb-12" />
+      <CtaBlock
+        className="-mb-12"
+        heading="Ready to get started?"
+        text="Get started with Know My Menu"
+        buttonText="Get Started"
+        buttonLink="/"
+      />
     </>
   );
 }

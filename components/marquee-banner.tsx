@@ -20,7 +20,7 @@ export const MarqueeBanner = (props: MarqueeBannerProps) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end start"],
+    offset: ["start end", "end start"],
   });
 
   const xPartOne = useTransform(scrollYProgress, [0, 1], ["-10%", "0%"]);

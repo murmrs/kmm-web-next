@@ -4,6 +4,7 @@
     { "name": "slug", "type": "string" },
     { "name": "name", "type": "string", "facet": true },
     { "name": "description", "type": "string" },
+    { "name": "category", "type": "string[]", "facet": true },
     { "name": "cuisine", "type": "string[]", "facet": true },
     { "name": "dietary", "type": "string[]", "facet": true },
     { "name": "corkage_fee", "type": "bool", "facet": true },

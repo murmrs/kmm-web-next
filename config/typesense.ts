@@ -3,6 +3,7 @@ export type Restaurant = {
   slug: string;
   name: string;
   description: string;
+  category: string[];
   cuisine: string[];
   dietary: string[];
   corkage_fee: boolean;

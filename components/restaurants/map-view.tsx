@@ -25,6 +25,7 @@ const MapView = () => {
       style: "mapbox://styles/mapbox/streets-v12",
       center: [-122.4194, 37.7749], // San Francisco default
       zoom: 10,
+      scrollZoom: false, // Disable scroll input
     });
 
     map.current.on("load", () => {

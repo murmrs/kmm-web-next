@@ -1,6 +1,7 @@
 "use client";
 
 import { InstantSearch } from "react-instantsearch";
+import { InstantSearchNext } from "react-instantsearch-nextjs";
 
 import TypesenseInstantSearchAdapter from "typesense-instantsearch-adapter";
 import { typesenseConfig } from "@/lib/typesense";
@@ -20,7 +21,7 @@ export const InstantSearchProvider = ({
   children: React.ReactNode;
 }) => {
   return (
-    <InstantSearch
+    <InstantSearchNext
       indexName="restaurants"
       searchClient={searchClient}
       initialUiState={{
@@ -32,6 +33,6 @@ export const InstantSearchProvider = ({
       }}
     >
       {children}
-    </InstantSearch>
+    </InstantSearchNext>
   );
 };

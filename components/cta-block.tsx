@@ -38,12 +38,7 @@ export function CtaBlock(props?: CtaBlockProps) {
         </div>
         {/* Right Section */}
         <div className="flex-1 flex items-center justify-center w-full">
-          {/* You can place an image, illustration, or any visual here */}
-          <img
-            src="/restaurant-illustration.svg"
-            alt="Discover restaurants"
-            className="max-w-xs md:max-w-md w-full h-auto rounded-lg shadow-lg"
-          />
+          {/* Get Started Form */}
         </div>
       </div>
     </section>

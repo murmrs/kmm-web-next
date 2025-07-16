@@ -2,16 +2,15 @@ import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
 
-const headingVariants = cva("font-bold", {
+const headingVariants = cva("font-bold text-foreground", {
   variants: {
     size: {
-      h1: "text-4xl leading-[1.2] font-semibold",
+      h1: "text-4xl leading-[1.2] font-semibold ",
       h2: "text-2xl",
       h3: "text-xl md:text-2xl",
       h4: "text-xl font-semibold tracking-wide",
       normal: "text-base font-normal",
-      pageTitle:
-        "text-4xl sm:text-7xl [&>span]:underline [&>span]:decoration-brandSecondary [&>span]:underline-offset-8",
+      pageTitle: "text-4xl sm:text-7xl",
       pageTitleNoUnderline: "text-4xl sm:text-7xl lg:text-8xl",
     },
     variant: {
@@ -110,5 +109,11 @@ Heading.tagline = React.forwardRef<HTMLHeadingElement, HeadingProps>(
     </Heading>
   )
 );
+
+Heading.displayName = "Heading";
+Heading.h2.displayName = "Heading.h2";
+Heading.h3.displayName = "Heading.h3";
+Heading.h4.displayName = "Heading.h4";
+Heading.tagline.displayName = "Heading.tagline";
 
 export default Heading;

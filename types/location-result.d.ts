@@ -1,4 +1,4 @@
-type LocationSearchResult = {
+export type LocationSearchResult = {
   action: "getAll";
   entityType: "LocationFullResponse";
   message: "Entities retrieved";
@@ -9,7 +9,7 @@ type LocationSearchResult = {
   entities: LocationResult[];
 };
 
-type Image = {
+export type Image = {
   id: number;
   uuid: string;
   status: string;
@@ -25,7 +25,7 @@ type Image = {
   description: string;
 };
 
-type LocationResult = {
+export type LocationResult = {
   id: number;
   uuid: string;
   status: "active";
@@ -77,23 +77,46 @@ type LocationResult = {
   safetyMeasures: string[];
   events: string[];
   services: string[];
-  hoursOfOperation: [
-    {
-      day: "sun" | "mon" | "tue" | "wed" | "thu" | "fri" | "sat";
-      hour: number;
-      mintute: number;
-    }
-  ];
+  hoursOfOperation: {
+    day: "sun" | "mon" | "tue" | "wed" | "thu" | "fri" | "sat";
+    open: { hour: number; minute: number };
+    closed: { hour: number; minute: number };
+  }[];
   paymentOptions: string[];
   kitchenAttributes: string[];
   categories: string[];
-  menus: [
-    {
-      id: number;
-      name: string;
-      isPrimary: boolean;
-    }
-  ];
+  menus: {
+    id: number;
+    name: string;
+    isPrimary: boolean;
+  }[];
   image?: Image;
   distance: number;
 };
+
+export type SummaryResult = {
+  action: "getSummary";
+  entityType: "LocationSummaryResponse";
+  message: "Entity retrieved";
+  entity: LocationSummary;
+};
+
+export type LocationSummary = {
+  menus: MenuSummary[];
+  dishes: DishSummary[];
+};
+
+export type MenuSummary = {
+  id: number;
+  name: string;
+  isPrimary: boolean;
+  daps: DapSummary[];
+};
+
+export type DapSummary = {
+  name: string;
+  nonOptionalCount: number;
+  optionalCount: number;
+};
+
+export type DishSummary = {};

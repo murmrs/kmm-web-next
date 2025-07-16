@@ -85,7 +85,10 @@ export default function PricingPage() {
             </div>
           </section>
           {FAQ_SECTIONS.map((section) => (
-            <section className="grid grid-cols-[400px_1fr] gap-24 items-start pb-24">
+            <section
+              key={section.title}
+              className="grid grid-cols-[400px_1fr] gap-24 items-start pb-24"
+            >
               <Heading className="text-5xl sticky top-24">
                 {section.title}
               </Heading>
@@ -99,7 +102,13 @@ export default function PricingPage() {
           {/* </div> */}
         </div>
       </div>
-      <CtaBlock className="-mb-12" />
+      <CtaBlock
+        className="-mb-12"
+        heading="Ready to get started?"
+        text="Get started with Know My Menu"
+        buttonText="Get Started"
+        buttonLink="/"
+      />
     </>
   );
 }

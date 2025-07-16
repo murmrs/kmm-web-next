@@ -10,13 +10,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/carousel";
-import { Button, ButtonProps } from "./ui/button";
+import { Button, ButtonProps, buttonVariants } from "./ui/button";
 import { Hits, InstantSearch, useHits } from "react-instantsearch";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { RestaurantCard } from "./restaurants/restaurant-card";
 import { Restaurant } from "@/config/typesense";
+import { MoveRight } from "lucide-react";
 
 type ImageProps = {
   src: string;
@@ -76,7 +77,29 @@ export const RestaurantList = (props: RestaurantListProps) => {
             <h1 className="mb-3 text-5xl font-bold md:mb-4 ">{heading}</h1>
             <p className="md:text-md">{description}</p>
           </div>
-          <Button className="hidden md:flex">{button.title}</Button>
+          {/* <Link
+            href="/restaurants"
+            className={cn(
+              "hidden md:flex",
+              buttonVariants({ variant: "default" })
+            )}
+          >
+            {button.title}
+          </Link> */}
+          <Link
+            href="/restaurants"
+            className={
+              cn(
+                "group relative flex pr-12 py-4 pl-4 overflow-hidden rounded-md hover:text-white transition-all duration-300"
+              )
+              // "hidden md:flex",
+              // buttonVariants({ variant: "default" })
+            }
+          >
+            {button.title}
+            <MoveRight className="-mr-[2.2rem] ml-6 text-white" />
+            <span className="size-12 bg-primary block absolute right-0 top-1/2 -translate-y-1/2 z-[-1] rounded-full transition-all duration-300 group-hover:w-full group-hover:size-48" />
+          </Link>
         </div>
         <Carousel
           setApi={setApi}

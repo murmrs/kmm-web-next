@@ -12,7 +12,7 @@ export const RestaurantCard: React.FC<{ location: Restaurant }> = ({
   return (
     <>
       <Link
-        href={`/restaurants/`}
+        href={`/restaurants/${location.id}`}
         className="font-semibold md:text-md  max-w-[800px]"
       >
         <div className="mb-3 block aspect-square md:mb-4 rounded-md overflow-hidden">

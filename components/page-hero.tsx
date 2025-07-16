@@ -20,7 +20,7 @@ export const PageHero = (props: PageHeroProps) => {
     ...props,
   };
   return (
-    <section className="-mt-56">
+    <section className="-mt-12">
       <div className="relative w-full h-[420px] lg:h-[500px] overflow-hidden">
         <svg width="0" height="0" style={{ position: "absolute" }}>
           <defs>
