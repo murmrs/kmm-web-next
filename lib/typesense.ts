@@ -1,10 +1,10 @@
 export const typesenseConfig = {
   nodes: [
     {
-      host: "tuvblha8j13ziedxp-1.a1.typesense.net",
+      host: process.env.NEXT_PUBLIC_TYPESENSE_HOST,
       port: 443,
       protocol: "https",
     },
   ],
-  apiKey: "rUCVrJgR378JWuIOw9Y0n0OvkEsNPYxJ",
+  apiKey: process.env.NEXT_PUBLIC_TYPESENSE_API_KEY,
 };
