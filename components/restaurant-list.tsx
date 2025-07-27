@@ -68,7 +68,7 @@ export const RestaurantList = (props: RestaurantListProps) => {
   return (
     <section id="relume" className={cn("overflow-hidden px-[5%]", className)}>
       <div className="container">
-        <div className="mb-12 grid grid-cols-1 items-end gap-12 md:mb-18 md:grid-cols-[1fr_max-content] lg:mb-20 lg:gap-20">
+        <div className="mb-8 grid grid-cols-1 items-end gap-8 md:mb-18 md:grid-cols-[1fr_max-content] lg:mb-20 lg:gap-20">
           <div className="max-w-xl">
             <p className="mb-3 font-semibold md:mb-4 flex items-center">
               <span className="h-1 w-4 bg-primary block mr-2" />
@@ -90,15 +90,15 @@ export const RestaurantList = (props: RestaurantListProps) => {
             href="/restaurants"
             className={
               cn(
-                "group relative flex pr-12 py-4 pl-4 overflow-hidden rounded-md hover:text-white transition-all duration-300"
+                "group relative flex pr-16 py-4 pl-4 overflow-hidden rounded-md hover:text-white transition-all duration-300 text-white sm:text-foreground"
               )
               // "hidden md:flex",
               // buttonVariants({ variant: "default" })
             }
           >
             {button.title}
-            <MoveRight className="-mr-[2.2rem] ml-6 text-white" />
-            <span className="size-12 bg-primary block absolute right-0 top-1/2 -translate-y-1/2 z-[-1] rounded-full transition-all duration-300 group-hover:w-full group-hover:size-48" />
+            <MoveRight className="absolute right-3 text-white z-10" />
+            <span className="bg-primary block absolute right-0 top-1/2 -translate-y-1/2 z-[-1] rounded-full transition-all duration-300 group-hover:w-[110%] group-hover:size-52 group-hover:translate-x-[5%] w-[110%] sm:w-12 h-full sm:h-12 translate-x-[5%] sm:translate-x-[0] " />
           </Link>
         </div>
         <Carousel

@@ -65,6 +65,7 @@ export type LocationResult = {
   parking: string[];
   accessibility: string[];
   dressCode: string[];
+  cuisine: string[];
   brand: {
     id: number;
     name: string;

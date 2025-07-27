@@ -10,10 +10,12 @@
     "cli": "tsx cli/index.ts"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.48.3",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-popover": "^1.1.14",
     "@radix-ui/react-slot": "^1.2.3",
+    "@t3-oss/env-nextjs": "^0.13.8",
     "algoliasearch": "^5.27.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -32,7 +34,8 @@
     "react-instantsearch-nextjs": "^1.0.0",
     "tailwind-merge": "^3.3.1",
     "typesense": "^2.0.3",
-    "typesense-instantsearch-adapter": "^2.9.0"
+    "typesense-instantsearch-adapter": "^2.9.0",
+    "zod": "^4.0.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

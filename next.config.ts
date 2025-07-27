@@ -24,6 +24,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "images.unsplash.com",
       },
+      {
+        hostname: "kmm-test-images.s3.us-west-1.amazonaws.com",
+      },
     ],
   },
 };

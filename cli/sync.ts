@@ -1,15 +1,17 @@
 import { Restaurant } from "@/config/typesense";
+import { LocationSearchResult, SummaryResult } from "@/types/location-result";
+import "@dotenvx/dotenvx/config";
+import { writeFileSync } from "fs";
+
 // import { typesenseConfig } from "@/lib/typesense";
 // import Typesense from "typesense";
 
 // const client = new Typesense.Client(typesenseConfig);
 
 export const syncRestaurants = async () => {
-  console.log("Syncing restaurants");
+  console.log("Syncing restaurants", process.env.NEXT_PUBLIC_API_URL);
   // Fetch all restaurants from the database (https://api.knowmymenu.com/v1/public/locations/)
-  const response = await fetch(
-    "https://api.knowmymenu.com/v1/public/locations"
-  );
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/locations`);
   const data: {
     payload: LocationSearchResult;
   } = await response.json();
@@ -23,7 +25,7 @@ export const syncRestaurants = async () => {
       console.log("Fetching summary for restaurant: ", restaurant.id);
       try {
         const summaryRes = await fetch(
-          `https://api.knowmymenu.com/v1/public/locations/${restaurant.id}/summary`
+          `${process.env.NEXT_PUBLIC_API_URL}/locations/${restaurant.id}/summary`
         );
         if (summaryRes.ok) {
           const data = (await summaryRes.json()) as {
@@ -37,9 +39,29 @@ export const syncRestaurants = async () => {
         summary = null;
       }
 
-      const menuDaps = summary?.entity.menus.flatMap((menu) =>
-        menu.daps.map((dap) => dap.name)
-      );
+      // Collect all daps from all menus
+      const allDaps = summary?.entity.menus.flatMap((menu) => menu.daps) || [];
+      // Aggregate by dap name: if name is unique, keep as is; if duplicate, sum counts
+      const dapMap = new Map<
+        string,
+        { name: string; nonOptionalCount: number; optionalCount: number }
+      >();
+      for (const dap of allDaps) {
+        if (dapMap.has(dap.name)) {
+          const existing = dapMap.get(dap.name)!;
+          existing.nonOptionalCount += dap.nonOptionalCount;
+          existing.optionalCount += dap.optionalCount;
+        } else {
+          dapMap.set(dap.name, {
+            name: dap.name,
+            nonOptionalCount: dap.nonOptionalCount,
+            optionalCount: dap.optionalCount,
+          });
+        }
+      }
+      const menuDaps = Array.from(dapMap.values());
+
+      // console.log("Menu Daps: ", { menuDaps, id: restaurant.id });
 
       return {
         id: restaurant.id.toString(),
@@ -47,12 +69,13 @@ export const syncRestaurants = async () => {
         name: restaurant.name,
         description: restaurant.description,
         cuisine: restaurant.categories,
+        category: restaurant.categories,
         dietary: [],
         corkage_fee: restaurant.corkageFee,
         dogs_ok: restaurant.dogsOk,
         accepts_reservations: restaurant.reservations === "yes",
         accepts_events: restaurant.displayEvents,
-        price_range: restaurant.priceRangeResponse.min.toString(),
+        price_range: restaurant.priceRangeResponse.min,
         price_range_max: restaurant.priceRangeResponse.max,
         price_range_min: restaurant.priceRangeResponse.min,
         location: [restaurant.latitude, restaurant.longitude],
@@ -65,14 +88,17 @@ export const syncRestaurants = async () => {
         image_url: restaurant.image?.url || "",
         image_url_alt: restaurant.image?.description || "",
         email: "",
-        menuDaps,
+        // menuDaps,
         // Optionally, you can add summary fields here if needed, e.g.:
-        // summary: summary,
+        summary: summary,
       };
     })
   );
 
-  console.log(restaurants[0]);
+  writeFileSync(
+    "restaurant_sample.json",
+    JSON.stringify(restaurants[0], null, 2)
+  );
 
   //   Create item in collection
 

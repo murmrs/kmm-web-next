@@ -1,0 +1,3517 @@
+{
+  "id": "1",
+  "slug": "1",
+  "name": "Flor De Maiz",
+  "description": "Classic Mexican dishes in a laid-back restaurant offering cocktails & alfresco dining.",
+  "cuisine": [
+    "Good for Birthdays",
+    "Good for Dates",
+    "Good for Families",
+    "Good for Groups",
+    "Good for Kids",
+    "Good for Networking",
+    "Good for Parties",
+    "Great Views",
+    "Happy Hour",
+    "Live Music",
+    "Outdoor Seating",
+    "Romantic"
+  ],
+  "category": [
+    "Good for Birthdays",
+    "Good for Dates",
+    "Good for Families",
+    "Good for Groups",
+    "Good for Kids",
+    "Good for Networking",
+    "Good for Parties",
+    "Great Views",
+    "Happy Hour",
+    "Live Music",
+    "Outdoor Seating",
+    "Romantic"
+  ],
+  "dietary": [],
+  "corkage_fee": false,
+  "dogs_ok": true,
+  "accepts_reservations": false,
+  "accepts_events": true,
+  "price_range": 10,
+  "price_range_max": 50,
+  "price_range_min": 10,
+  "location": [
+    34.4129515,
+    -119.6886303
+  ],
+  "city": "Santa Barbara",
+  "state": "CA",
+  "country": "US",
+  "address": "29 E Cabrillo Blvd",
+  "phone": "(805) 770-2963",
+  "website": "",
+  "image_url": "https://kmm-test-images.s3.us-west-1.amazonaws.com/2/Prime Tomahawk.png",
+  "image_url_alt": "",
+  "email": "",
+  "summary": {
+    "action": "getSummary",
+    "message": "Entity retrieved",
+    "entityType": "LocationSummary",
+    "entity": {
+      "menus": [
+        {
+          "id": 2,
+          "name": "All Day Menu",
+          "isPrimary": true,
+          "daps": [
+            {
+              "name": "Vegan",
+              "nonOptionalNoncomplianceCount": 34,
+              "optionalNoncomplianceCount": 4,
+              "nonOptionalComplianceCount": 29,
+              "optionalComplianceCount": 59
+            },
+            {
+              "name": "Vegetarian",
+              "nonOptionalNoncomplianceCount": 28,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 35,
+              "optionalComplianceCount": 62
+            },
+            {
+              "name": "Pescatarian",
+              "nonOptionalNoncomplianceCount": 15,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 48,
+              "optionalComplianceCount": 63
+            },
+            {
+              "name": "Milk",
+              "nonOptionalNoncomplianceCount": 21,
+              "optionalNoncomplianceCount": 9,
+              "nonOptionalComplianceCount": 42,
+              "optionalComplianceCount": 54
+            },
+            {
+              "name": "Gluten Free",
+              "nonOptionalNoncomplianceCount": 6,
+              "optionalNoncomplianceCount": 2,
+              "nonOptionalComplianceCount": 57,
+              "optionalComplianceCount": 61
+            },
+            {
+              "name": "Soy Free",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 62,
+              "optionalComplianceCount": 63
+            },
+            {
+              "name": "Nut Free",
+              "nonOptionalNoncomplianceCount": 5,
+              "optionalNoncomplianceCount": 2,
+              "nonOptionalComplianceCount": 58,
+              "optionalComplianceCount": 61
+            },
+            {
+              "name": "Shellfish Free",
+              "nonOptionalNoncomplianceCount": 9,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 54,
+              "optionalComplianceCount": 62
+            },
+            {
+              "name": "Seafood Food",
+              "nonOptionalNoncomplianceCount": 14,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 49,
+              "optionalComplianceCount": 62
+            },
+            {
+              "name": "Sesame Free",
+              "nonOptionalNoncomplianceCount": 6,
+              "optionalNoncomplianceCount": 2,
+              "nonOptionalComplianceCount": 57,
+              "optionalComplianceCount": 61
+            },
+            {
+              "name": "Keto",
+              "nonOptionalNoncomplianceCount": 58,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 5,
+              "optionalComplianceCount": 62
+            },
+            {
+              "name": "Wheat",
+              "nonOptionalNoncomplianceCount": 5,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 58,
+              "optionalComplianceCount": 63
+            },
+            {
+              "name": "Dairy Free",
+              "nonOptionalNoncomplianceCount": 21,
+              "optionalNoncomplianceCount": 9,
+              "nonOptionalComplianceCount": 42,
+              "optionalComplianceCount": 54
+            },
+            {
+              "name": "Corn Allergy",
+              "nonOptionalNoncomplianceCount": 20,
+              "optionalNoncomplianceCount": 5,
+              "nonOptionalComplianceCount": 43,
+              "optionalComplianceCount": 58
+            },
+            {
+              "name": "Allium Free",
+              "nonOptionalNoncomplianceCount": 33,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 30,
+              "optionalComplianceCount": 62
+            },
+            {
+              "name": "Seed Oil Free",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 2,
+              "nonOptionalComplianceCount": 62,
+              "optionalComplianceCount": 61
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Brunch Menu",
+          "isPrimary": false,
+          "daps": [
+            {
+              "name": "Vegan",
+              "nonOptionalNoncomplianceCount": 7,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 21,
+              "optionalComplianceCount": 27
+            },
+            {
+              "name": "Vegetarian",
+              "nonOptionalNoncomplianceCount": 5,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 23,
+              "optionalComplianceCount": 27
+            },
+            {
+              "name": "Pescatarian",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 25,
+              "optionalComplianceCount": 28
+            },
+            {
+              "name": "Milk",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 2,
+              "nonOptionalComplianceCount": 25,
+              "optionalComplianceCount": 26
+            },
+            {
+              "name": "Gluten Free",
+              "nonOptionalNoncomplianceCount": 4,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 24,
+              "optionalComplianceCount": 27
+            },
+            {
+              "name": "Peanut Free",
+              "nonOptionalNoncomplianceCount": 19,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 9,
+              "optionalComplianceCount": 27
+            },
+            {
+              "name": "Egg Free",
+              "nonOptionalNoncomplianceCount": 2,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 26,
+              "optionalComplianceCount": 28
+            },
+            {
+              "name": "Soy Free",
+              "nonOptionalNoncomplianceCount": 2,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 26,
+              "optionalComplianceCount": 28
+            },
+            {
+              "name": "Nut Free",
+              "nonOptionalNoncomplianceCount": 2,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 26,
+              "optionalComplianceCount": 28
+            },
+            {
+              "name": "Shellfish Free",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 27,
+              "optionalComplianceCount": 27
+            },
+            {
+              "name": "Seafood Food",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 25,
+              "optionalComplianceCount": 27
+            },
+            {
+              "name": "Sesame Free",
+              "nonOptionalNoncomplianceCount": 2,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 26,
+              "optionalComplianceCount": 28
+            },
+            {
+              "name": "Keto",
+              "nonOptionalNoncomplianceCount": 22,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 6,
+              "optionalComplianceCount": 27
+            },
+            {
+              "name": "Wheat",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 25,
+              "optionalComplianceCount": 28
+            },
+            {
+              "name": "Dairy Free",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 2,
+              "nonOptionalComplianceCount": 25,
+              "optionalComplianceCount": 26
+            },
+            {
+              "name": "Corn Allergy",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 27,
+              "optionalComplianceCount": 28
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Food Menu",
+          "isPrimary": true,
+          "daps": []
+        },
+        {
+          "id": 73,
+          "name": "Zane Test Menu",
+          "isPrimary": false,
+          "daps": [
+            {
+              "name": "Vegan",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 0,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Vegetarian",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 0,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Pescatarian",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 2,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Milk",
+              "nonOptionalNoncomplianceCount": 0,
+              "optionalNoncomplianceCount": 2,
+              "nonOptionalComplianceCount": 3,
+              "optionalComplianceCount": 1
+            },
+            {
+              "name": "Gluten Free",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 2,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Shellfish Free",
+              "nonOptionalNoncomplianceCount": 2,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 1,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Seafood Food",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 0,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Keto",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 0,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Wheat",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 2,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Dairy Free",
+              "nonOptionalNoncomplianceCount": 0,
+              "optionalNoncomplianceCount": 2,
+              "nonOptionalComplianceCount": 3,
+              "optionalComplianceCount": 1
+            }
+          ]
+        },
+        {
+          "id": 74,
+          "name": "Happy hour",
+          "isPrimary": false,
+          "daps": [
+            {
+              "name": "Vegan",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 0,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Vegetarian",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 0,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Corn Allergy",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 2,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Milk",
+              "nonOptionalNoncomplianceCount": 0,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 3,
+              "optionalComplianceCount": 2
+            },
+            {
+              "name": "Alliums",
+              "nonOptionalNoncomplianceCount": 2,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 1,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Gluten Free",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 2,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Shellfish Free",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 2,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Seafood Food",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 0,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Keto",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 0,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Wheat",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 2,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Dairy Free",
+              "nonOptionalNoncomplianceCount": 0,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 3,
+              "optionalComplianceCount": 2
+            }
+          ]
+        },
+        {
+          "id": 46,
+          "name": "Lunch Menu",
+          "isPrimary": false,
+          "daps": [
+            {
+              "name": "Vegan",
+              "nonOptionalNoncomplianceCount": 5,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 1,
+              "optionalComplianceCount": 6
+            },
+            {
+              "name": "Vegetarian",
+              "nonOptionalNoncomplianceCount": 5,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 1,
+              "optionalComplianceCount": 6
+            },
+            {
+              "name": "Pescatarian",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 3,
+              "optionalComplianceCount": 6
+            },
+            {
+              "name": "Milk",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 3,
+              "nonOptionalComplianceCount": 5,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Gluten Free",
+              "nonOptionalNoncomplianceCount": 2,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 4,
+              "optionalComplianceCount": 6
+            },
+            {
+              "name": "Nut Free",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 5,
+              "optionalComplianceCount": 6
+            },
+            {
+              "name": "Shellfish Free",
+              "nonOptionalNoncomplianceCount": 2,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 4,
+              "optionalComplianceCount": 6
+            },
+            {
+              "name": "Seafood Food",
+              "nonOptionalNoncomplianceCount": 3,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 3,
+              "optionalComplianceCount": 6
+            },
+            {
+              "name": "Sesame Free",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 5,
+              "optionalComplianceCount": 6
+            },
+            {
+              "name": "Keto",
+              "nonOptionalNoncomplianceCount": 6,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 0,
+              "optionalComplianceCount": 6
+            },
+            {
+              "name": "Wheat",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 0,
+              "nonOptionalComplianceCount": 5,
+              "optionalComplianceCount": 6
+            },
+            {
+              "name": "Dairy Free",
+              "nonOptionalNoncomplianceCount": 1,
+              "optionalNoncomplianceCount": 3,
+              "nonOptionalComplianceCount": 5,
+              "optionalComplianceCount": 3
+            },
+            {
+              "name": "Corn Allergy",
+              "nonOptionalNoncomplianceCount": 0,
+              "optionalNoncomplianceCount": 1,
+              "nonOptionalComplianceCount": 6,
+              "optionalComplianceCount": 5
+            }
+          ]
+        }
+      ],
+      "dishes": [
+        {
+          "id": 62,
+          "name": "Pollo Rostizado",
+          "description": "Roasted Jidori chicken breast, grilled onions, avocado, and mashed cauliflower.",
+          "menuIds": [
+            46
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "cauliflower",
+            "chicken",
+            "salt",
+            "cream",
+            "manchego cheese",
+            "black pepper",
+            "garlic powder",
+            "paprika",
+            "olive oil",
+            "dried rosemary",
+            "dried oregano",
+            "sea salt"
+          ],
+          "nonOptionalDaps": [
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian",
+            "Milk",
+            "Dairy Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 135,
+          "name": "BEYOND VEGI BURGER",
+          "description": "Beyond Burger, avocado, tomato, mixed greens, vegan sriracha aioli, pickled onion.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "raw peanuts",
+            "peanuts",
+            "extra virgin olive oil",
+            "red wine vinegar"
+          ],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 59,
+          "name": "Tacos de Coliflor",
+          "description": "Sautéed cauliflower with onions and corn, served with green rice, parmesan cheese and tomato emulsion. (V)",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "cauliflower",
+            "salt",
+            "onion",
+            "corn",
+            "huitlacoche",
+            "tomato",
+            "kosher salt",
+            "white onion",
+            "parsley leaves",
+            "vegetable broth",
+            "olive oil",
+            "long grain white rice",
+            "parmesan cheese"
+          ],
+          "nonOptionalDaps": [
+            "Corn Allergy",
+            "Allium Free",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Vegan",
+            "Dairy Free",
+            "Milk"
+          ]
+        },
+        {
+          "id": 142,
+          "name": "GRILLED CHEESE WITH FRIES",
+          "description": "Delicious grilled cheese.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 130,
+          "name": "ROASTED CORN CHOWDER WITH SMOKED SALMON",
+          "description": "Delicious Chowder with roasted corn and smoked salmon. ",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 39,
+          "name": "Clase Azul Mezcal",
+          "description": "This Mezcal is full of smoke, slat, and roasted agave, it is a nice soft delicate Mezcal Tequila from Calse Azul.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [],
+          "optionalDaps": []
+        },
+        {
+          "id": 2,
+          "name": "Margarita Sayulita",
+          "description": "mango-pineapple syrup, fresh squeezed lime juice, hawaiian black lava salt, and mint sprig",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "blue agave tequila",
+            "mint sprig",
+            "hawaiian black lava salt",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 54,
+          "name": "Ensalada de Betabel",
+          "description": "Spring mix, beets, strawberries, goat cheese, pumpkin seeds and beet vinaigrette. (V)",
+          "menuIds": [
+            46
+          ],
+          "ingredients": [
+            "green romaine",
+            "arugula",
+            "butter leaf",
+            "green chard",
+            "mizuna",
+            "pumpkin seeds",
+            "goat cheese",
+            "Sexton Anchovies Test 1",
+            "green oak leaf",
+            "baby spinach",
+            "red beet",
+            "radicchio",
+            "lollo rosa",
+            "red leaf",
+            "tango",
+            "strawberries"
+          ],
+          "nonOptionalDaps": [
+            "Gluten Free",
+            "Wheat",
+            "Vegetarian",
+            "Vegan",
+            "Seafood Food",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Milk",
+            "Dairy Free"
+          ]
+        },
+        {
+          "id": 67,
+          "name": "Mole Negro con Pollo",
+          "description": "Black Mole sauce served with Jidori chicken breast, green rice, sesame seeds, pickled onions and fried plantains.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "dry ginger",
+            "chicken",
+            "corn",
+            "huitlacoche",
+            "onion",
+            "white bread",
+            "red onion",
+            "garlic powder",
+            "tomatoes",
+            "plantain",
+            "cinnamon sticks",
+            "tomatillos",
+            "distilled white vinegar",
+            "walnuts",
+            "olive oil",
+            "dried oregano",
+            "parmesan cheese",
+            "mulato chile peppers",
+            "chilhuacle chile peppers",
+            "mexican chocolate",
+            "garlic",
+            "salt",
+            "chicken stock",
+            "dry thyme",
+            "cloves",
+            "almonds",
+            "bay leaves",
+            "dry oregano",
+            "kosher salt",
+            "water",
+            "allspice berries",
+            "white onion",
+            "parsley leaves",
+            "sesame seeds",
+            "paprika",
+            "vegetable broth",
+            "long grain white rice",
+            "dried rosemary",
+            "tumeric",
+            "avocado oil",
+            "sea salt",
+            "raisins",
+            "guajillo chiles",
+            "sugar",
+            "nutmeg",
+            "avocado leaves"
+          ],
+          "nonOptionalDaps": [
+            "Sesame Free",
+            "Wheat",
+            "Pescatarian",
+            "Vegan",
+            "Allium Free",
+            "Dairy Free",
+            "Gluten Free",
+            "Vegetarian",
+            "Milk",
+            "Keto",
+            "Nut Free"
+          ],
+          "optionalDaps": [
+            "Corn Allergy"
+          ]
+        },
+        {
+          "id": 132,
+          "name": "FRIED CHICKEN SANDWICH",
+          "description": "Blue Bus cortido, chipotle aioli on a sesameseed bun.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 67,
+          "name": "Mole Negro con Pollo",
+          "description": "Black Mole sauce served with Jidori chicken breast, green rice, sesame seeds, pickled onions and fried plantains.",
+          "menuIds": [
+            46
+          ],
+          "ingredients": [
+            "pepper",
+            "dry ginger",
+            "chicken",
+            "corn",
+            "huitlacoche",
+            "onion",
+            "white bread",
+            "red onion",
+            "garlic powder",
+            "tomatoes",
+            "plantain",
+            "cinnamon sticks",
+            "tomatillos",
+            "distilled white vinegar",
+            "walnuts",
+            "olive oil",
+            "dried oregano",
+            "parmesan cheese",
+            "mulato chile peppers",
+            "chilhuacle chile peppers",
+            "mexican chocolate",
+            "garlic",
+            "salt",
+            "chicken stock",
+            "dry thyme",
+            "cloves",
+            "almonds",
+            "bay leaves",
+            "dry oregano",
+            "kosher salt",
+            "water",
+            "allspice berries",
+            "white onion",
+            "parsley leaves",
+            "sesame seeds",
+            "paprika",
+            "vegetable broth",
+            "long grain white rice",
+            "dried rosemary",
+            "tumeric",
+            "avocado oil",
+            "sea salt",
+            "raisins",
+            "guajillo chiles",
+            "sugar",
+            "nutmeg",
+            "avocado leaves"
+          ],
+          "nonOptionalDaps": [
+            "Gluten Free",
+            "Nut Free",
+            "Sesame Free",
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Corn Allergy",
+            "Milk",
+            "Dairy Free"
+          ]
+        },
+        {
+          "id": 55,
+          "name": "Tacos de Camarón",
+          "description": "U12 shrimp fused with melted cheese and topped with tomato emulsion and sautéed kale.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "salt",
+            "vegetable stock",
+            "corn",
+            "huitlacoche",
+            "tomato",
+            "kosher salt",
+            "white onion",
+            "red wine vinegar",
+            "cheese",
+            "parsley leaves",
+            "vegetable broth",
+            "U12 Shrimp",
+            "olive oil",
+            "long grain white rice",
+            "parmesan cheese",
+            "kale"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Seafood Food",
+            "Shellfish Free",
+            "Allium Free",
+            "Dairy Free",
+            "Vegetarian",
+            "Milk",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Corn Allergy"
+          ]
+        },
+        {
+          "id": 16,
+          "name": "Sonorense",
+          "description": "Ron, sweet vermouth, Jamaica Infusion, Fresh Squeezed lime juice",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "ron",
+            "sweet vermouth",
+            "water",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 8,
+          "name": "El Tio Tono",
+          "description": "Tequila Blanco, Averna Amaro, Organic Grapefruit syrup, Pineapple juice, Paychard bitters. (Perfumed)",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "paychard bitters",
+            "pineapple juice",
+            "tequila blanco",
+            "averna amaro"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 140,
+          "name": "NACHOS",
+          "description": "Pulled pork $16 / Brisket $16 / Vegan $15 (Grilled cactus and mushrooms, peppers).",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "raw peanuts",
+            "peanuts",
+            "extra virgin olive oil",
+            "red wine vinegar"
+          ],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 3,
+          "name": "Margarita Vallarta",
+          "description": "house green apple cucumber basil juice, Fresh squeezed lime juice, organic agave syrup, cucumber wheel, and black lava salt rim",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "organic agave syrup",
+            "blue agave tequila",
+            "cucumber",
+            "hawaiian black lava salt",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 50,
+          "name": "Memelitas de Costilla de Cerdo",
+          "description": "Three Handmade corn tortillas with pork ribs in green sauce, black beans, sautéed kale, and onions.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "yellow onion",
+            "salt",
+            "green chilles",
+            "onion",
+            "cilantro",
+            "cumin",
+            "tamatillo",
+            "jalapeno",
+            "tomatillos",
+            "black beans",
+            "pork ribs",
+            "olive oil",
+            "kale",
+            "sugar",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Vegan",
+            "Allium Free",
+            "Dairy Free",
+            "Vegetarian",
+            "Keto",
+            "Milk"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 124,
+          "name": "CRISPY HONEY BALSAMIC BRUSSEl SPROUTS (VEGAN)",
+          "description": "Roasted brussel sprouts glazed with a chili honey balsamic reduction.\n",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [],
+          "optionalDaps": []
+        },
+        {
+          "id": 45,
+          "name": "Ceviche de Pulpo",
+          "description": "Sliced octopus, red onions, grilled pineapple, cilantro, serrano pepper, fresh coconut, served in a coconut Thai with yums potato chips. ",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "red onion",
+            "salt",
+            "pineapple",
+            "corn oil",
+            "octopus",
+            "potato",
+            "cilantro",
+            "serrano pepper"
+          ],
+          "nonOptionalDaps": [
+            "Seed Oil Free",
+            "Vegan",
+            "Seafood Food",
+            "Shellfish Free",
+            "Corn Allergy",
+            "Allium Free",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 4,
+          "name": "Margarita Guadalahara",
+          "description": "watermelon-cucumber juice, fresh squeezed lime juice, organic agave syrup, mint sprig and hawaiian black lava salt",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "organic agave syrup",
+            "blue agave tequila",
+            "cucumber",
+            "mint sprig",
+            "watermelon",
+            "hawaiian black lava salt",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [],
+          "optionalDaps": [
+            "Keto"
+          ]
+        },
+        {
+          "id": 125,
+          "name": "KOREAN CAULIFLOWER BITES",
+          "description": "Roasted cauliflower with kraut-chi, scallions, gochisousama garlic sauce",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "chicken breast",
+            "bacon",
+            "sesame seeds",
+            "salt",
+            "olive oil",
+            "soy sauce",
+            "wheat",
+            "water",
+            "anchovies"
+          ],
+          "nonOptionalDaps": [
+            "Sesame Free",
+            "Vegan",
+            "Seafood Food",
+            "Vegetarian",
+            "Pescatarian",
+            "Soy Free",
+            "Gluten Free"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 69,
+          "name": "Taquitos de Pato en Mole Coloradito",
+          "description": "Duck taquitos rolls served with coloradito red mole, black beans, red onions, cheese and Mexican sour cream.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "ancho chilles",
+            "cilantro",
+            "onion",
+            "mexican sour cream",
+            "piloncillo",
+            "cumin",
+            "ceylon cinnamon",
+            "panela cheese",
+            "red onion",
+            "tomatillos",
+            "duck confit",
+            "black beans",
+            "olive oil",
+            "whole cloves",
+            "garlic",
+            "yellow potatoes",
+            "avocado",
+            "bittersweet chocolate",
+            "salt",
+            "allspice berries",
+            "white onion",
+            "cumin seeds",
+            "plum tomato",
+            "baby spinach",
+            "sesame seeds",
+            "chicken broth",
+            "guajillo chiles",
+            "raisins",
+            "corn tortillas",
+            "breadcrumbs"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Sesame Free",
+            "Vegan",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Gluten Free",
+            "Vegetarian",
+            "Milk",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 54,
+          "name": "Ensalada de Betabel",
+          "description": "Spring mix, beets, strawberries, goat cheese, pumpkin seeds and beet vinaigrette. (V)",
+          "menuIds": [
+            73
+          ],
+          "ingredients": [
+            "green romaine",
+            "arugula",
+            "butter leaf",
+            "green chard",
+            "mizuna",
+            "pumpkin seeds",
+            "goat cheese",
+            "Sexton Anchovies Test 1",
+            "green oak leaf",
+            "baby spinach",
+            "red beet",
+            "radicchio",
+            "lollo rosa",
+            "red leaf",
+            "tango",
+            "strawberries"
+          ],
+          "nonOptionalDaps": [
+            "Gluten Free",
+            "Keto",
+            "Wheat",
+            "Vegetarian",
+            "Vegan",
+            "Seafood Food"
+          ],
+          "optionalDaps": [
+            "Dairy Free",
+            "Milk"
+          ]
+        },
+        {
+          "id": 145,
+          "name": "CHICKEN TENDERS WITH FRIES",
+          "description": "Lightly breaded chicken with fries. ",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 137,
+          "name": "CAJUN SHRIMP & GRITS",
+          "description": "Cajun-sautéed shrimp and andouille sausage over Yellowstone ground grits, topped with cajun sauce and scallions.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 53,
+          "name": "Ensalada de Temporada",
+          "description": "Spring mix, cherry tomatoes, milpero, guava dressing, parmesan cheese, quince paste, sunflower seed, and popped amaranth. (V)",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "green romaine",
+            "arugula",
+            "butter leaf",
+            "sunflower seed",
+            "green chard",
+            "mizuna",
+            "amaranth",
+            "green oak leaf",
+            "baby spinach",
+            "lemon",
+            "radicchio",
+            "vanilla pod",
+            "lollo rosa",
+            "red leaf",
+            "tango",
+            "cherry tomatoes",
+            "parmesan cheese",
+            "sugar",
+            "quince"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Vegan",
+            "Dairy Free",
+            "Milk"
+          ]
+        },
+        {
+          "id": 126,
+          "name": "GOOD OL' STEAK BITES",
+          "description": "Grilled to perfection with house demi-glaze.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Vegetarian",
+            "Pescatarian",
+            "Gluten Free",
+            "Wheat",
+            "Nut Free"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 47,
+          "name": "Ceviche de Kampachi con Maracuyá",
+          "description": "Kampachi fish marinated in citrus juice, red onions, jicama, dried corn, grilled pineapple and maracuyá sauce.",
+          "menuIds": [
+            74
+          ],
+          "ingredients": [
+            "pepper",
+            "kampachi fish",
+            "salt",
+            "peruvian aji amarillo peppers",
+            "cilantro",
+            "lime",
+            "passion fruit juice",
+            "jimaca",
+            "red onion",
+            "pineapple",
+            "avocado oil",
+            "citrus juice",
+            "dried corn"
+          ],
+          "nonOptionalDaps": [
+            "Seafood Food",
+            "Alliums",
+            "Vegetarian",
+            "Keto",
+            "Vegan"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 72,
+          "name": "Enchiladas en Salsa Verde",
+          "description": "Two chicken enchiladas with melted cheese, green sauce, onions, Mexican sour cream and cotija cheese, served with green rice.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "garlic",
+            "yellow onion",
+            "salt",
+            "green chilles",
+            "onion",
+            "corn",
+            "cilantro",
+            "cojita cheese",
+            "mexican sour cream",
+            "pablano chile",
+            "tamatillo",
+            "kosher salt",
+            "jalapeno",
+            "white onion",
+            "parsley leaves",
+            "tomatillos",
+            "vegetable broth",
+            "olive oil",
+            "long grain white rice",
+            "corn tortillas",
+            "sugar",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Keto",
+            "Milk"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 77,
+          "name": "Corn Chips",
+          "description": "house made corn chips",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "corn",
+            "sea salt"
+          ],
+          "nonOptionalDaps": [
+            "Corn Allergy",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 122,
+          "name": "BOURBON BACON DATES",
+          "description": "Dates soaked in bourbon, stuffed with smoked blue cheese, and wrapped in bacon. Served with balsamic glaze.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "blue cheese",
+            "peanuts",
+            "extra virgin olive oil"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Dairy Free",
+            "Milk"
+          ],
+          "optionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ]
+        },
+        {
+          "id": 46,
+          "name": "Tostada de Mariscos",
+          "description": "Base of shrimp and fish paste topped with sliced octopus, red onion, cherry tomatoes, cilantro, avocado, sesame seeds, citrus juice and peppers oil.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "red onion",
+            "avocado",
+            "sesame seeds",
+            "shrimp",
+            "salt",
+            "octopus",
+            "cilantro",
+            "olive oil",
+            "cherry tomatoes",
+            "citrus juice",
+            "fish paste",
+            "peppers oil"
+          ],
+          "nonOptionalDaps": [
+            "Sesame Free",
+            "Vegan",
+            "Seafood Food",
+            "Shellfish Free",
+            "Allium Free",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 44,
+          "name": "Aguachile Rojo de Camarón",
+          "description": "Fresh shrimp marinated in citrus juice, tossed with red onions, cucumber, cherry tomatoes, jicama, pumpkin seeds and sweet and sour red sauce.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "red onion",
+            "shrimp",
+            "cherry tomatoes",
+            "citrus juice",
+            "pumpkin seeds",
+            "sugar",
+            "jimaca"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Seafood Food",
+            "Shellfish Free",
+            "Allium Free",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 56,
+          "name": "Tacos de Pescado",
+          "description": "Mahi Mahi fish, grilled onions aioli, avocado, cilantro, mixed cabbage, and grilled pineapple.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "brown sugar",
+            "garlic",
+            "avocado",
+            "cabbage",
+            "salt",
+            "corn",
+            "huitlacoche",
+            "cilantro",
+            "onion",
+            "red cabbage",
+            "kosher salt",
+            "white onion",
+            "parsley leaves",
+            "unsalted butter",
+            "pineapple",
+            "vegetable broth",
+            "olive oil",
+            "long grain white rice",
+            "mahi-mahi",
+            "parmesan cheese",
+            "sea salt"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Seafood Food",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Milk"
+          ]
+        },
+        {
+          "id": 131,
+          "name": "GRILLED CHICKEN BURGER",
+          "description": "Grilled chicken with avocado, arugula, jalapeño, cilantro—lime aioli, provolone cheese, pickled onion, tomato. Served with fries or house salad.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 52,
+          "name": "Quesadillas del Huerto",
+          "description": "Three Farmers Market corn quesadillas (farm mushrooms, zuchinni blossoms & rajitas poblanas) Served with sauteed Kale, pickled onions, Oaxacan cheese & tomato sauce. (V)",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "salt",
+            "vegetable stock",
+            "cilantro",
+            "tomato",
+            "water",
+            "red wine vinegar",
+            "zuchinni blossoms",
+            "mushrooms",
+            "red onion",
+            "oaxacan cheese",
+            "distilled white vinegar",
+            "olive oil",
+            "sea salt",
+            "kale",
+            "sugar",
+            "rajitas poblanas"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Allium Free",
+            "Dairy Free",
+            "Keto",
+            "Milk"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 51,
+          "name": "Panuchos de Cochinita Pibil",
+          "description": "Three Crispy corn tortillas with pork marinated in achiote adobo, black beans, avocado aioli and pickled red onions.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "annatto seeds",
+            "garlic",
+            "avocado",
+            "salt",
+            "cilantro",
+            "onion",
+            "red kuri squash",
+            "cumin",
+            "aquafaba",
+            "pork",
+            "black pepper",
+            "water",
+            "red onion",
+            "corriander",
+            "lemon",
+            "dijon mustard",
+            "black beans",
+            "distilled white vinegar",
+            "olive oil",
+            "sea salt",
+            "sugar"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Vegan",
+            "Allium Free",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 121,
+          "name": "LOADED + STUFFED JALAPEÑOS",
+          "description": "Jalapeños stuffed with goat cheese, wrapped in bacon, and grilled to perfection.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "bacon",
+            "black pepper",
+            "sea salt",
+            "extra virgin olive oil",
+            "jalepeno",
+            "goat cheese"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Dairy Free",
+            "Vegetarian",
+            "Milk",
+            "Pescatarian",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 120,
+          "name": "ROASTED HARVEST BEET SALAD",
+          "description": "Roasted beets, asian pears, avocado, and crushed hazelnuts over mixed greens with crumbled feta or goat cheese. \n\nTopped off with house vinaigrette.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "avocado",
+            "red beet",
+            "olive oil",
+            "spring mix",
+            "peanuts",
+            "extra virgin olive oil"
+          ],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 49,
+          "name": "Empanadas De Langosta",
+          "description": "Homemade corn empanadas stuffed with lobster and jack cheese, topped with avocado, cilantro, and grilled onion aioli.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "brown sugar",
+            "garlic",
+            "avocado",
+            "jack cheese",
+            "yellow onion",
+            "salt",
+            "green chilles",
+            "onion",
+            "corn",
+            "cilantro",
+            "lobster",
+            "tamatillo",
+            "water",
+            "jalapeno",
+            "unsalted butter",
+            "tomatillos",
+            "olive oil",
+            "sea salt",
+            "sugar",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Seafood Food",
+            "Shellfish Free",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Vegetarian",
+            "Milk",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 1,
+          "name": "Margarita Picosa",
+          "description": "choice of habanero mezcal or serrano tequila, agave nectar, lime, juice, chile salt rim.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "serrano tequila",
+            "chile salt",
+            "agave nectar",
+            "habanero mezcal",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 38,
+          "name": "Clase Azul Reposado",
+          "description": "100% Blue Agave. Complex aromas of cream soda, spice, caramel and earthy agave. A long sweet finish.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [],
+          "optionalDaps": []
+        },
+        {
+          "id": 57,
+          "name": "Tacos de Pulpo al Guajillo",
+          "description": "Sauteed octopus in garlic, onions corn & guajillo pepper, with cilantro, & melted cheese.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "salt",
+            "octopus",
+            "onion",
+            "corn",
+            "huitlacoche",
+            "cilantro",
+            "guajillo pepper",
+            "kosher salt",
+            "white onion",
+            "cheese",
+            "parsley leaves",
+            "vegetable broth",
+            "olive oil",
+            "long grain white rice",
+            "parmesan cheese"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Seafood Food",
+            "Shellfish Free",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Vegetarian",
+            "Keto",
+            "Milk"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 73,
+          "name": "Salmon a la Pina",
+          "description": "Norwegian salmon in pineapple sauce served with creamy rice and asparagus ",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "brown sugar",
+            "pepper",
+            "garlic",
+            "cornstach",
+            "salt",
+            "pineapple juice",
+            "corn",
+            "huitlacoche",
+            "soy sauce",
+            "kosher salt",
+            "water",
+            "white onion",
+            "parsley leaves",
+            "norwegian salmon",
+            "cayenne pepper",
+            "pineapple",
+            "vegetable broth",
+            "ginger",
+            "olive oil",
+            "long grain white rice",
+            "parmesan cheese"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Seafood Food",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Vegetarian",
+            "Keto",
+            "Soy Free",
+            "Milk"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 54,
+          "name": "Ensalada de Betabel",
+          "description": "Spring mix, beets, strawberries, goat cheese, pumpkin seeds and beet vinaigrette. (V)",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "green romaine",
+            "arugula",
+            "butter leaf",
+            "green chard",
+            "mizuna",
+            "pumpkin seeds",
+            "goat cheese",
+            "green oak leaf",
+            "baby spinach",
+            "red beet",
+            "radicchio",
+            "Rykoff Food Brands Sexton Anchovies Test 1",
+            "lollo rosa",
+            "red leaf",
+            "tango",
+            "strawberries"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Seafood Food",
+            "Vegetarian",
+            "Gluten Free",
+            "Wheat",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Dairy Free",
+            "Milk"
+          ]
+        },
+        {
+          "id": 45,
+          "name": "Ceviche de Pulpo",
+          "description": "Sliced octopus, red onions, grilled pineapple, cilantro, serrano pepper, fresh coconut, served in a coconut Thai with yums potato chips. ",
+          "menuIds": [
+            74
+          ],
+          "ingredients": [
+            "pepper",
+            "red onion",
+            "salt",
+            "pineapple",
+            "corn oil",
+            "octopus",
+            "potato",
+            "cilantro",
+            "serrano pepper"
+          ],
+          "nonOptionalDaps": [
+            "Shellfish Free",
+            "Corn Allergy",
+            "Seafood Food",
+            "Alliums",
+            "Vegetarian",
+            "Keto",
+            "Vegan"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 63,
+          "name": "Pulpo al Pesto de Hoja Santa",
+          "description": "Grilled Octopus marinated in santa leaf pesto served with creamy huitlacoche rice.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "garlic",
+            "salt",
+            "octopus",
+            "sproket",
+            "corn",
+            "huitlacoche",
+            "kosher salt",
+            "white onion",
+            "parsley leaves",
+            "hoja santa",
+            "vegetable broth",
+            "olive oil",
+            "long grain white rice",
+            "parmesan cheese"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Seafood Food",
+            "Shellfish Free",
+            "Allium Free",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Corn Allergy",
+            "Dairy Free",
+            "Milk"
+          ]
+        },
+        {
+          "id": 79,
+          "name": "La Fresa",
+          "description": null,
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "tequila",
+            "mezcal",
+            "augie's tequila",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 129,
+          "name": "GARDEN SALAD",
+          "description": "Mixed greens, tomatoes, cucumber, carrot, house vinaigrette.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "Allergen - Dairy",
+            "Allergen - Shellfish",
+            "Allergen - Nuts",
+            "Allergen - Soy",
+            "Allergen - Sesame ",
+            "Allergen - Peanuts",
+            "Allergen - Seafood",
+            "Harvest Value Vinaigrette",
+            "Allergen - Egg",
+            "Allergen - Gluten"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Seafood Food",
+            "Vegetarian",
+            "Milk",
+            "Peanut Free",
+            "Wheat",
+            "Keto",
+            "Egg Free",
+            "Nut Free",
+            "Sesame Free",
+            "Dairy Free",
+            "Shellfish Free",
+            "Soy Free",
+            "Gluten Free"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 76,
+          "name": "Avocado Salsa",
+          "description": "Avocado, cilantro, garlic",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "cherry tomatoes",
+            "sea salt",
+            "cilantro leaves"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 54,
+          "name": "Ensalada de Betabel",
+          "description": "Spring mix, beets, strawberries, goat cheese, pumpkin seeds and beet vinaigrette. (V)",
+          "menuIds": [
+            74
+          ],
+          "ingredients": [
+            "green romaine",
+            "arugula",
+            "butter leaf",
+            "green chard",
+            "mizuna",
+            "pumpkin seeds",
+            "goat cheese",
+            "green oak leaf",
+            "baby spinach",
+            "red beet",
+            "radicchio",
+            "Rykoff Food Brands Sexton Anchovies Test 1",
+            "lollo rosa",
+            "red leaf",
+            "tango",
+            "strawberries"
+          ],
+          "nonOptionalDaps": [
+            "Seafood Food",
+            "Vegetarian",
+            "Wheat",
+            "Keto",
+            "Gluten Free",
+            "Vegan"
+          ],
+          "optionalDaps": [
+            "Milk",
+            "Dairy Free"
+          ]
+        },
+        {
+          "id": 74,
+          "name": "Camarones Gratinados",
+          "description": "Sautéed shrimps with garlic & farm mushrooms, creamy sauce & melted cheese, served with green rice.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "butter",
+            "shrimp",
+            "salt",
+            "corn",
+            "cilantro",
+            "pablano chile",
+            "panela cheese",
+            "kosher salt",
+            "serrano chile",
+            "water",
+            "white onion",
+            "mushrooms",
+            "parsley leaves",
+            "vegetable broth",
+            "olive oil",
+            "heavy cream",
+            "long grain white rice",
+            "sea salt",
+            "corn flour"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Seafood Food",
+            "Shellfish Free",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Vegetarian",
+            "Milk",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 71,
+          "name": "Enchiladas Oaxaca",
+          "description": "Two chicken enchiladas with melted cheese, mole negro, sesame seeds, onions, Mexican sour cream and cotija cheese, served with green rice",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "dry ginger",
+            "chicken",
+            "corn",
+            "cilantro",
+            "onion",
+            "mexican sour cream",
+            "white bread",
+            "serrano chile",
+            "red onion",
+            "tomatoes",
+            "cinnamon sticks",
+            "tomatillos",
+            "walnuts",
+            "olive oil",
+            "mulato chile peppers",
+            "chilhuacle chile peppers",
+            "mexican chocolate",
+            "garlic",
+            "salt",
+            "chicken stock",
+            "cojita cheese",
+            "pablano chile",
+            "dry thyme",
+            "cloves",
+            "almonds",
+            "bay leaves",
+            "dry oregano",
+            "kosher salt",
+            "water",
+            "allspice berries",
+            "white onion",
+            "parsley leaves",
+            "sesame seeds",
+            "chicken broth",
+            "vegetable broth",
+            "long grain white rice",
+            "sea salt",
+            "raisins",
+            "guajillo chiles",
+            "sugar",
+            "nutmeg",
+            "avocado leaves",
+            "corn flour"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Wheat",
+            "Sesame Free",
+            "Vegan",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Gluten Free",
+            "Vegetarian",
+            "Keto",
+            "Milk",
+            "Nut Free"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 78,
+          "name": "Mitla",
+          "description": null,
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "orange",
+            "mezcal",
+            "sea salt",
+            "chipotle",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 10,
+          "name": "Oaxaca",
+          "description": "El Silencio mezcal, house-made mole mix, freshly squeezed lime juice, orange juice, orange bitters.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "el silencio mezcal",
+            "orange juice",
+            "water",
+            "orange bitters",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 5,
+          "name": "Flor de Maiz Margarita",
+          "description": "Fresh squeezed lime juice, organic agave syrup, lime wheel",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "organic agave syrup",
+            "blue agave tequila",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 64,
+          "name": "Prime Ribeye",
+          "description": "8oz Prime Ribeye steak aged for 28 days, served with guacamole, sauteed potatoes in garlic and kale, grilled onions & serrano pepper",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "salt",
+            "onion",
+            "butter potatoe",
+            "olive oil",
+            "serrano pepper",
+            "sea salt",
+            "prime ribeye steak",
+            "water",
+            "kale",
+            "corn flour"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Vegan",
+            "Corn Allergy",
+            "Allium Free",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 43,
+          "name": "Panela Asada con Salsa Verde",
+          "description": "Grilled Panela cheese in green sauce with corn & pasilla pepper, served with flour tortillas. (V)",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "yellow onion",
+            "salt",
+            "green chilles",
+            "onion",
+            "corn",
+            "cilantro",
+            "panela cheese",
+            "tamatillo",
+            "water",
+            "jalapeno",
+            "tomatillos",
+            "pasilla pepper",
+            "olive oil",
+            "sea salt",
+            "sugar",
+            "lime juice",
+            "corn flour"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Milk",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 9,
+          "name": "Xalisco",
+          "description": "Tequila Blanco, House-made Cucumber and Green Apple Mix, Organic Citrus Syrup, Fresh squeezed lime juice and basil leaves.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "orange juice",
+            "basil leaves",
+            "cucumber",
+            "tequila blanco",
+            "lemon juice",
+            "sugar",
+            "green apple",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 68,
+          "name": "Mole Verde con Halibut",
+          "description": "Green mole sauce served with Halibut fish, mashed cauliflower, and baby carrots.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "cauliflower",
+            "ground cumin",
+            "salt",
+            "onion",
+            "baby carrots",
+            "cream",
+            "manchego cheese",
+            "black pepper",
+            "cane syrup",
+            "parsley leaves",
+            "poblano pepper",
+            "chicken broth",
+            "chili powder",
+            "olive oil",
+            "heavy cream",
+            "halibut",
+            "pistachio nuts",
+            "sea salt",
+            "cilantro leaves",
+            "pine nuts"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Vegan",
+            "Seafood Food",
+            "Allium Free",
+            "Dairy Free",
+            "Vegetarian",
+            "Keto",
+            "Milk",
+            "Nut Free"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 127,
+          "name": "CHEESE & CHARCUTERIE BOARD with SMOKED SALMON",
+          "description": "A selection of fine cheeses, cured meats, house made crackers, nuts, fruits, and dips.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "Allergen - Corn"
+          ],
+          "nonOptionalDaps": [
+            "Corn Allergy",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 14,
+          "name": "Paloma",
+          "description": "Mezcal or tequila, grapefruit juice, a pinch of salt, grapefruit syrup, lime juice, and jarritos.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "grapefruit juice",
+            "tequila",
+            "salt",
+            "mezcal",
+            "lime juice",
+            "jarritos"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 48,
+          "name": "Ceviche de Coliflor",
+          "description": "Cauliflower, red and yellow beets, mandarin emulsion, red onions, citrus juice, quinoa. (V)",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "red onion",
+            "mandarin",
+            "red beet",
+            "cauliflower",
+            "butter",
+            "salt",
+            "vegetable broth",
+            "yellow beet",
+            "citrus juice",
+            "grapeseed oil",
+            "quinoa"
+          ],
+          "nonOptionalDaps": [
+            "Allium Free",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Seed Oil Free",
+            "Vegan",
+            "Dairy Free",
+            "Milk"
+          ]
+        },
+        {
+          "id": 40,
+          "name": "Casamigos Mezcal Joven",
+          "description": "Made with agave Espadin in Santiago Matatlan, Oaxaca. Brought to them by a family that has made it for five generations. It's extremely smooth, small-batch, with the perfect smokiness & easy to drink.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "dry ginger",
+            "ancho chilles",
+            "onion",
+            "white bread",
+            "piloncillo",
+            "ceylon cinnamon",
+            "tomatoes",
+            "tomatillos",
+            "cinnamon sticks",
+            "walnuts",
+            "olive oil",
+            "mulato chile peppers",
+            "chilhuacle chile peppers",
+            "mexican chocolate",
+            "whole cloves",
+            "garlic",
+            "bittersweet chocolate",
+            "salt",
+            "chicken stock",
+            "dry thyme",
+            "almonds",
+            "cloves",
+            "bay leaves",
+            "dry oregano",
+            "allspice berries",
+            "white onion",
+            "cumin seeds",
+            "plum tomato",
+            "sesame seeds",
+            "chicken broth",
+            "guajillo chiles",
+            "raisins",
+            "sugar",
+            "breadcrumbs",
+            "nutmeg",
+            "avocado leaves"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Sesame Free",
+            "Wheat",
+            "Vegan",
+            "Allium Free",
+            "Dairy Free",
+            "Gluten Free",
+            "Vegetarian",
+            "Keto",
+            "Milk",
+            "Nut Free"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 12,
+          "name": "La Fresca",
+          "description": "augie’s tequila or mezcal el silencio strawberry puree, lime juice, and tequila",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [],
+          "optionalDaps": []
+        },
+        {
+          "id": 66,
+          "name": "Prime Tomahawk",
+          "description": "36oz Prime Ribeye steak aged for 28 days, served with sauteed potatoes in garlic and kale, grilled onions & serrano pepper",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "salt",
+            "onion",
+            "corn",
+            "huitlacoche",
+            "butter potatoe",
+            "kosher salt",
+            "water",
+            "white onion",
+            "parsley leaves",
+            "vegetable broth",
+            "olive oil",
+            "long grain white rice",
+            "serrano pepper",
+            "sea salt",
+            "parmesan cheese",
+            "prime ribeye steak",
+            "kale",
+            "corn flour"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Vegan",
+            "Corn Allergy",
+            "Allium Free",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Dairy Free",
+            "Milk"
+          ]
+        },
+        {
+          "id": 47,
+          "name": "Ceviche de Kampachi con Maracuyá",
+          "description": "Kampachi fish marinated in citrus juice, red onions, jicama, dried corn, grilled pineapple and maracuyá sauce.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "kampachi fish",
+            "salt",
+            "peruvian aji amarillo peppers",
+            "cilantro",
+            "lime",
+            "passion fruit juice",
+            "jimaca",
+            "red onion",
+            "pineapple",
+            "avocado oil",
+            "citrus juice",
+            "dried corn"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Seafood Food",
+            "Allium Free",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 65,
+          "name": "Porterhouse Steak",
+          "description": "16oz T- Bone with Filet and Ribeye aged for 28 days, served with sauteed potatoes in garlic and kale, grilled onions & serrano pepper",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "salt",
+            "onion",
+            "butter potatoe",
+            "t-bone filet",
+            "water",
+            "red wine vinegar",
+            "rosemary",
+            "olive oil",
+            "serrano pepper",
+            "sea salt",
+            "kale",
+            "corn flour"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Vegan",
+            "Corn Allergy",
+            "Allium Free",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 70,
+          "name": "Enchiladas Criollo",
+          "description": "Two chicken enchiladas with melted cheese, green sauce, coloradito red mole, onions, Mexican sour cream and cotija cheese, served with green rice",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "ancho chilles",
+            "chicken",
+            "corn",
+            "cilantro",
+            "onion",
+            "mexican sour cream",
+            "piloncillo",
+            "ceylon cinnamon",
+            "serrano chile",
+            "cane syrup",
+            "tomatillos",
+            "heavy cream",
+            "olive oil",
+            "pistachio nuts",
+            "whole cloves",
+            "garlic",
+            "ground cumin",
+            "bittersweet chocolate",
+            "salt",
+            "cojita cheese",
+            "pablano chile",
+            "kosher salt",
+            "water",
+            "allspice berries",
+            "white onion",
+            "cumin seeds",
+            "plum tomato",
+            "parsley leaves",
+            "sesame seeds",
+            "poblano pepper",
+            "vegetable broth",
+            "chicken broth",
+            "chili powder",
+            "long grain white rice",
+            "guajillo chiles",
+            "sea salt",
+            "raisins",
+            "cilantro leaves",
+            "breadcrumbs",
+            "corn flour",
+            "pine nuts"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Vegan",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Vegetarian",
+            "Milk",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Sesame Free",
+            "Gluten Free",
+            "Nut Free"
+          ]
+        },
+        {
+          "id": 291,
+          "name": "Zane Test Shrimp",
+          "description": "Please remove me. Zane must have forgotten to remove me.",
+          "menuIds": [
+            46
+          ],
+          "ingredients": [
+            "pepper",
+            "shrimp",
+            "salt"
+          ],
+          "nonOptionalDaps": [
+            "Vegetarian",
+            "Vegan",
+            "Seafood Food",
+            "Shellfish Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 6,
+          "name": "Tributo",
+          "description": "El Silencio mezcal, liquor 43, organic citrus syrup, egg white, fresh squeezed lime juice, raspberry bitters.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "el silencio mezcal",
+            "orange juice",
+            "liquor 43",
+            "lemon juice",
+            "raspberry bitters",
+            "sugar",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 54,
+          "name": "Ensalada de Betabel",
+          "description": "Spring mix, beets, strawberries, goat cheese, pumpkin seeds and beet vinaigrette. (V)",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "green romaine",
+            "arugula",
+            "butter leaf",
+            "green chard",
+            "mizuna",
+            "pumpkin seeds",
+            "goat cheese",
+            "green oak leaf",
+            "baby spinach",
+            "red beet",
+            "radicchio",
+            "Rykoff Food Brands Sexton Anchovies Test 1",
+            "lollo rosa",
+            "red leaf",
+            "tango",
+            "strawberries"
+          ],
+          "nonOptionalDaps": [
+            "Wheat",
+            "Vegan",
+            "Seafood Food",
+            "Gluten Free",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Dairy Free",
+            "Milk"
+          ]
+        },
+        {
+          "id": 291,
+          "name": "Zane Test Shrimp",
+          "description": "Please remove me. Zane must have forgotten to remove me.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "shrimp",
+            "salt"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Seafood Food",
+            "Shellfish Free",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 175,
+          "name": "Test",
+          "description": "Delicious test recipe with everything but the kitchen sink",
+          "menuIds": [
+            46
+          ],
+          "ingredients": [
+            "garlic chives",
+            "cerignola olives",
+            "ecuadorian red aji pepper"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 136,
+          "name": "SLIDERS",
+          "description": "Your choice of - Brisket, Pulled Pork or Fried Chicken.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [],
+          "optionalDaps": []
+        },
+        {
+          "id": 42,
+          "name": "Esquites Mexicanos",
+          "description": "sauteed corn with serrano pepper, and epazote topped with sour cream and cojita cheese",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "salt",
+            "corn",
+            "mexican sour cream",
+            "cojita cheese",
+            "epazote",
+            "olive oil",
+            "serrano pepper"
+          ],
+          "nonOptionalDaps": [
+            "Corn Allergy",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Vegan",
+            "Dairy Free",
+            "Milk"
+          ]
+        },
+        {
+          "id": 15,
+          "name": "Jamaica",
+          "description": "augie’s tequila or mezcal el silencio housemade jamaica syrup, lime juice, tequila or mezcal",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "augie's tequila",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 138,
+          "name": "MAC & CHEESE FULL PRICE",
+          "description": "Made with a delectable blend of three cheeses and beer, giving it a creamy and flavorful taste. You can also add Cajun seasoning to give it a spicy kick, or add tender and juicy brisket for a meaty and satisfying meal.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "jack cheese",
+            "breadcrumbs",
+            "cheddar"
+          ],
+          "nonOptionalDaps": [],
+          "optionalDaps": [
+            "Vegan",
+            "Dairy Free",
+            "Seafood Food",
+            "Vegetarian",
+            "Milk",
+            "Shellfish Free",
+            "Gluten Free"
+          ]
+        },
+        {
+          "id": 128,
+          "name": "SIRLOIN STEAK SALAD",
+          "description": "Mixed greens topped with candied pecans, crispy fried onion, smoked blue cheese dressing, and grilled sirloin.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 61,
+          "name": "Tacos Langosta",
+          "description": "Lobster claw meat, panela cheese, cilantro, black beans, avocado, aioli",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "garlic",
+            "lobster claw meat",
+            "corn",
+            "huitlacoche",
+            "cilantro",
+            "panela cheese",
+            "kosher salt",
+            "white onion",
+            "parsley leaves",
+            "vegetable broth",
+            "olive oil",
+            "long grain white rice",
+            "parmesan cheese",
+            "corn tortillas"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Milk",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Seafood Food",
+            "Shellfish Free",
+            "Vegetarian"
+          ]
+        },
+        {
+          "id": 71,
+          "name": "Enchiladas Oaxaca",
+          "description": "Two chicken enchiladas with melted cheese, mole negro, sesame seeds, onions, Mexican sour cream and cotija cheese, served with green rice",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "dry ginger",
+            "chicken",
+            "corn",
+            "cilantro",
+            "onion",
+            "mexican sour cream",
+            "white bread",
+            "serrano chile",
+            "red onion",
+            "tomatoes",
+            "cinnamon sticks",
+            "tomatillos",
+            "walnuts",
+            "olive oil",
+            "mulato chile peppers",
+            "chilhuacle chile peppers",
+            "mexican chocolate",
+            "garlic",
+            "salt",
+            "chicken stock",
+            "cojita cheese",
+            "pablano chile",
+            "dry thyme",
+            "cloves",
+            "almonds",
+            "bay leaves",
+            "dry oregano",
+            "kosher salt",
+            "water",
+            "allspice berries",
+            "white onion",
+            "parsley leaves",
+            "sesame seeds",
+            "chicken broth",
+            "vegetable broth",
+            "long grain white rice",
+            "sea salt",
+            "raisins",
+            "guajillo chiles",
+            "sugar",
+            "nutmeg",
+            "avocado leaves",
+            "corn flour"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Wheat",
+            "Sesame Free",
+            "Vegan",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Gluten Free",
+            "Vegetarian",
+            "Keto",
+            "Milk",
+            "Nut Free"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 134,
+          "name": "O'DEAR BURGER",
+          "description": "1/2 lb local (elk, bison, wagyu beef, wild boar) patty, romesco aioli, cheddar cheese, tomato, pickled onions.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 1,
+          "name": "Margarita Picosa",
+          "description": "choice of habanero mezcal or serrano tequila, agave nectar, lime, juice, chile salt rim.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "serrano tequila",
+            "chile salt",
+            "agave nectar",
+            "habanero mezcal",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 13,
+          "name": "Yagul Cooler",
+          "description": "El Silencio Mezcal, Freshly squeezed lime juice, Coconut Shrubs, Citrus Syrup, mint leaves.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "el silencio mezcal",
+            "mint",
+            "orange juice",
+            "lemon juice",
+            "sugar",
+            "lime juice",
+            "coconut"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 178,
+          "name": "Tester Extroadinaire",
+          "description": "This is a test of the Dish Feature",
+          "menuIds": [
+            46
+          ],
+          "ingredients": [
+            "pepper",
+            "green romaine",
+            "hanger steak",
+            "arugula",
+            "ahi tuna steaks",
+            "shrimp",
+            "salt",
+            "butter leaf",
+            "baby carrots",
+            "green chard",
+            "mizuna",
+            "panela cheese",
+            "green oak leaf",
+            "baby spinach",
+            "radicchio",
+            "lollo rosa",
+            "red leaf",
+            "tango"
+          ],
+          "nonOptionalDaps": [
+            "Vegetarian",
+            "Vegan",
+            "Pescatarian",
+            "Seafood Food",
+            "Keto",
+            "Shellfish Free"
+          ],
+          "optionalDaps": [
+            "Milk",
+            "Dairy Free"
+          ]
+        },
+        {
+          "id": 58,
+          "name": "Tacos de Filete",
+          "description": "Angus fillet strips, sautéed onions, yellow pepper, avocado aioli, cilantro, cheese, and radish.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "avocado",
+            "salt",
+            "corn",
+            "huitlacoche",
+            "cilantro",
+            "onion",
+            "radish",
+            "aquafaba",
+            "black pepper",
+            "kosher salt",
+            "Angus fillet strips",
+            "white onion",
+            "cheese",
+            "parsley leaves",
+            "lemon",
+            "yellow pepper",
+            "dijon mustard",
+            "vegetable broth",
+            "olive oil",
+            "long grain white rice",
+            "parmesan cheese",
+            "sea salt"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Vegan",
+            "Allium Free",
+            "Vegetarian",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Corn Allergy",
+            "Dairy Free",
+            "Milk"
+          ]
+        },
+        {
+          "id": 146,
+          "name": "SIDE OF FRIES",
+          "description": "Fries",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "raw peanuts",
+            "peanuts",
+            "extra virgin olive oil",
+            "red wine vinegar"
+          ],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 139,
+          "name": "CAULIFLOWER STEAK",
+          "description": "Seasoned cauliflower steak with mushrooms, peppers, microgreens, arugula, and green tahini sauce.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 291,
+          "name": "Zane Test Shrimp",
+          "description": "Please remove me. Zane must have forgotten to remove me.",
+          "menuIds": [
+            73
+          ],
+          "ingredients": [
+            "pepper",
+            "shrimp",
+            "salt"
+          ],
+          "nonOptionalDaps": [
+            "Keto",
+            "Vegetarian",
+            "Vegan",
+            "Seafood Food",
+            "Shellfish Free"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 37,
+          "name": "Don Julio 1492",
+          "description": "Don Julio 1942 is one of the best tequilas produced. Aged in oak barrels for over one year, the tequila has a natural golden brown color and an exceptionally smooth taste.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [],
+          "optionalDaps": []
+        },
+        {
+          "id": 60,
+          "name": "Tacos Costeños",
+          "description": "Grilled tacos with black beans paste, panela cheese, avocado & pickled onions. (V)",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "garlic",
+            "avocado",
+            "red pepper",
+            "salt",
+            "corn",
+            "huitlacoche",
+            "cilantro",
+            "onion",
+            "lime",
+            "cumin",
+            "panela cheese",
+            "kosher salt",
+            "water",
+            "white onion",
+            "red onion",
+            "parsley leaves",
+            "vegetable broth",
+            "black beans",
+            "distilled white vinegar",
+            "olive oil",
+            "long grain white rice",
+            "parmesan cheese",
+            "sea salt",
+            "sugar"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Milk",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 143,
+          "name": "BURGER SLIDER (1) WITH FRIES",
+          "description": "One slider and a side of fries. ",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 123,
+          "name": "MAHOGANY WINGS",
+          "description": "Lacquered in a spicy Korean sauce with scallions, sesame seeds, and asian pear pickles.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 75,
+          "name": "Red Salsa",
+          "description": "Tomatoes, cilantro, garlic, ",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "cherry tomatoes",
+            "cilantro leaves"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 178,
+          "name": "Tester Extroadinaire",
+          "description": "This is a test of the Dish Feature",
+          "menuIds": [
+            73
+          ],
+          "ingredients": [
+            "pepper",
+            "green romaine",
+            "hanger steak",
+            "arugula",
+            "ahi tuna steaks",
+            "shrimp",
+            "salt",
+            "butter leaf",
+            "baby carrots",
+            "green chard",
+            "mizuna",
+            "panela cheese",
+            "green oak leaf",
+            "baby spinach",
+            "radicchio",
+            "lollo rosa",
+            "red leaf",
+            "tango"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Keto",
+            "Vegetarian",
+            "Vegan",
+            "Seafood Food",
+            "Shellfish Free"
+          ],
+          "optionalDaps": [
+            "Dairy Free",
+            "Milk"
+          ]
+        },
+        {
+          "id": 141,
+          "name": "BAHN MI TACOS",
+          "description": "PULLED PORK (Pulled pork, pickled carrots, jalapeños, onions with spicy cilantro aioli.). / VEGAN (Grilled cactus and mushrooms, peppers).",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "raw peanuts",
+            "peanuts",
+            "extra virgin olive oil",
+            "red wine vinegar"
+          ],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 62,
+          "name": "Pollo Rostizado",
+          "description": "Roasted Jidori chicken breast, grilled onions, avocado, and mashed cauliflower.",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "pepper",
+            "garlic",
+            "cauliflower",
+            "chicken",
+            "salt",
+            "cream",
+            "manchego cheese",
+            "black pepper",
+            "garlic powder",
+            "paprika",
+            "olive oil",
+            "dried rosemary",
+            "dried oregano",
+            "sea salt"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Vegan",
+            "Allium Free",
+            "Dairy Free",
+            "Vegetarian",
+            "Keto",
+            "Milk"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 7,
+          "name": "Mitia",
+          "description": "Mezcal, House-made Orange and Chipotle Marmalade, Fresh Squeezed lime juice, Sea salt",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "orange",
+            "mezcal",
+            "sea salt",
+            "chipotle",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 133,
+          "name": "SMOKEY BACON BLUE CHEESE BURGER",
+          "description": "Smoked bacon, smokey blue cheese crumbles, butter lettuce, and tomato on a ground beef patty.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [
+            "raw peanuts",
+            "peanuts",
+            "Allergen - Egg",
+            "extra virgin olive oil",
+            "red wine vinegar"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Peanut Free",
+            "Keto",
+            "Egg Free"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 144,
+          "name": "MAC AND CHEESE",
+          "description": "Three cheese delight.",
+          "menuIds": [
+            3
+          ],
+          "ingredients": [],
+          "nonOptionalDaps": [
+            "Peanut Free",
+            "Keto"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 70,
+          "name": "Enchiladas Criollo",
+          "description": "Two chicken enchiladas with melted cheese, green sauce, coloradito red mole, onions, Mexican sour cream and cotija cheese, served with green rice",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "ancho chilles",
+            "chicken",
+            "corn",
+            "cilantro",
+            "onion",
+            "mexican sour cream",
+            "piloncillo",
+            "ceylon cinnamon",
+            "serrano chile",
+            "cane syrup",
+            "tomatillos",
+            "heavy cream",
+            "olive oil",
+            "pistachio nuts",
+            "whole cloves",
+            "garlic",
+            "ground cumin",
+            "bittersweet chocolate",
+            "salt",
+            "cojita cheese",
+            "pablano chile",
+            "kosher salt",
+            "water",
+            "allspice berries",
+            "white onion",
+            "cumin seeds",
+            "plum tomato",
+            "parsley leaves",
+            "sesame seeds",
+            "poblano pepper",
+            "vegetable broth",
+            "chicken broth",
+            "chili powder",
+            "long grain white rice",
+            "guajillo chiles",
+            "sea salt",
+            "raisins",
+            "cilantro leaves",
+            "breadcrumbs",
+            "corn flour",
+            "pine nuts"
+          ],
+          "nonOptionalDaps": [
+            "Pescatarian",
+            "Vegan",
+            "Corn Allergy",
+            "Allium Free",
+            "Dairy Free",
+            "Vegetarian",
+            "Milk",
+            "Keto"
+          ],
+          "optionalDaps": [
+            "Sesame Free",
+            "Seed Oil Free",
+            "Gluten Free",
+            "Nut Free"
+          ]
+        },
+        {
+          "id": 41,
+          "name": "Guacamole",
+          "description": "Fresh avocado mixed with onions, cilantro, lime juice, serrano pepper and Panela cheese. (V)",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "avocado",
+            "onion",
+            "cilantro",
+            "cojita cheese",
+            "serrano pepper"
+          ],
+          "nonOptionalDaps": [
+            "Vegan",
+            "Allium Free",
+            "Dairy Free",
+            "Keto",
+            "Milk"
+          ],
+          "optionalDaps": []
+        },
+        {
+          "id": 11,
+          "name": "La Toxica",
+          "description": "Spicy tequila or mezcal, la pinta pomegranate liquor, lime juice, pomegranate syrup",
+          "menuIds": [
+            2
+          ],
+          "ingredients": [
+            "la pinta pomegranate liquor",
+            "mezcal",
+            "pomegranate",
+            "spicy tequila",
+            "lime juice"
+          ],
+          "nonOptionalDaps": [
+            "Keto"
+          ],
+          "optionalDaps": []
+        }
+      ]
+    }
+  }
+}

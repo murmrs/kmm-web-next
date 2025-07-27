@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen gap-y-12`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen gap-y-12 sm:gap-y-12`}
       >
         <InstantSearchProvider>
           {sheet}

@@ -46,7 +46,7 @@ const Header = ({
         "px-12 bg-muted/30 flex items-center justify-between py-4 border-b border-border gap-12 relative z-20",
         centerComponent && "items-start",
         backgroundImage &&
-          "border-b-0 dark bg-transparent grid grid-cols-[200px_1fr_200px]",
+          "border-b-0 dark bg-transparent grid grid-cols-1 sm:grid-cols-[200px_1fr_200px]",
         className
         // "bg-transparent border-b-0"
         // "[&]:supports-[backdrop-filter]:backdrop-blur-md"
@@ -93,15 +93,19 @@ const Header = ({
             src={
               backgroundImage ? "/kmm-logo-tagline-orange.svg" : "/kmm-logo.svg"
             }
-            className={cn(backgroundImage && "absolute top-0 left-12 w-84")}
+            className={cn(
+              backgroundImage && "absolute top-0 left-12 w-52 sm:w-84"
+            )}
             alt="Know My Menu"
             width={100}
             height={100}
           />
         </Link>
       </div>
+
       <Center />
-      <div>
+
+      <div className="hidden sm:block">
         <Link
           href="/restaurants"
           className={cn(buttonVariants({ variant: "ghost" }))}
