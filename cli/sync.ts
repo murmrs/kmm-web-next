@@ -39,29 +39,29 @@ export const syncRestaurants = async () => {
         summary = null;
       }
 
-      // Collect all daps from all menus
-      const allDaps = summary?.entity.menus.flatMap((menu) => menu.daps) || [];
-      // Aggregate by dap name: if name is unique, keep as is; if duplicate, sum counts
-      const dapMap = new Map<
-        string,
-        { name: string; nonOptionalCount: number; optionalCount: number }
-      >();
-      for (const dap of allDaps) {
-        if (dapMap.has(dap.name)) {
-          const existing = dapMap.get(dap.name)!;
-          existing.nonOptionalCount += dap.nonOptionalCount;
-          existing.optionalCount += dap.optionalCount;
-        } else {
-          dapMap.set(dap.name, {
-            name: dap.name,
-            nonOptionalCount: dap.nonOptionalCount,
-            optionalCount: dap.optionalCount,
-          });
-        }
+      // Collect all daps from all the menus, add nonOptionalComplianceCount together for each dap. Eg [{name: "Vegan", total: 29}]
+      let menuDaps: string[] = [];
+      if (summary && summary.entity && Array.isArray(summary.entity.menus)) {
+        const dapTotals: Record<string, number> = {};
+        summary.entity.menus.forEach((menu) => {
+          if (Array.isArray(menu.daps)) {
+            menu.daps.forEach((dap) => {
+              if (dap && dap.name) {
+                dapTotals[dap.name] =
+                  (dapTotals[dap.name] || 0) +
+                  (dap.nonOptionalComplianceCount || 0);
+              }
+            });
+          }
+        });
+        menuDaps = Object.entries(dapTotals)
+          .map(([name, total]) => ({
+            name,
+            total,
+          }))
+          .filter((dap) => dap.total > 50)
+          .map((dap) => dap.name);
       }
-      const menuDaps = Array.from(dapMap.values());
-
-      // console.log("Menu Daps: ", { menuDaps, id: restaurant.id });
 
       return {
         id: restaurant.id.toString(),
@@ -70,12 +70,10 @@ export const syncRestaurants = async () => {
         description: restaurant.description,
         cuisine: restaurant.categories,
         category: restaurant.categories,
-        dietary: [],
         corkage_fee: restaurant.corkageFee,
         dogs_ok: restaurant.dogsOk,
         accepts_reservations: restaurant.reservations === "yes",
         accepts_events: restaurant.displayEvents,
-        price_range: restaurant.priceRangeResponse.min,
         price_range_max: restaurant.priceRangeResponse.max,
         price_range_min: restaurant.priceRangeResponse.min,
         location: [restaurant.latitude, restaurant.longitude],
@@ -88,16 +86,9 @@ export const syncRestaurants = async () => {
         image_url: restaurant.image?.url || "",
         image_url_alt: restaurant.image?.description || "",
         email: "",
-        // menuDaps,
-        // Optionally, you can add summary fields here if needed, e.g.:
-        summary: summary,
+        dap_compliance: menuDaps,
       };
     })
-  );
-
-  writeFileSync(
-    "restaurant_sample.json",
-    JSON.stringify(restaurants[0], null, 2)
   );
 
   //   Create item in collection

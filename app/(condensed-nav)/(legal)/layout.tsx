@@ -3,5 +3,5 @@ export default function LegalLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="container flex-1">{children}</div>;
+  return <div className="container flex-1 space-y-4">{children}</div>;
 }

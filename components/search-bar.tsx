@@ -5,20 +5,46 @@ import { Popover, PopoverContent } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { PopoverAnchor } from "@radix-ui/react-popover";
 import { Filter, Search } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { InstantSearch } from "react-instantsearch";
+import {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import {
+  DynamicWidgets,
+  RefinementList,
+  RefinementListProps,
+  SearchBoxProps,
+  ToggleRefinement,
+  ToggleRefinementProps,
+  // SearchBox,
+  useRefinementList,
+  useSearchBox,
+  useToggleRefinement,
+} from "react-instantsearch";
 
-import { typesenseConfig } from "@/lib/typesense";
-import TypesenseInstantSearchAdapter from "typesense-instantsearch-adapter";
-
-const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
-  server: typesenseConfig,
-  additionalSearchParameters: {
-    query_by: "name,cuisine,dietary,city,state,address",
-  },
-});
-
-const searchClient = typesenseInstantsearchAdapter.searchClient;
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
+import { Checkbox } from "./ui/checkbox";
+import { Label } from "./ui/label";
+import {
+  RefinementListItem,
+  RefinementListRenderState,
+} from "instantsearch.js/es/connectors/refinement-list/connectRefinementList";
+import { ToggleRefinementRenderState } from "instantsearch.js/es/connectors/toggle-refinement/connectToggleRefinement";
 
 const PopularLocations = [
   {
@@ -131,6 +157,134 @@ const SearchButton = ({
   );
 };
 
+const SearchInput = (
+  props: RefinementListProps & {
+    setItems: Dispatch<SetStateAction<RefinementListItem[]>>;
+    onClick: (e: React.MouseEvent, newTab: string) => void;
+  }
+) => {
+  const {
+    items,
+    hasExhaustiveItems,
+    createURL,
+    refine,
+    sendEvent,
+    searchForItems,
+    isFromSearch,
+    canRefine,
+    canToggleShowMore,
+    isShowingMore,
+    toggleShowMore,
+  } = useRefinementList(props);
+
+  useEffect(() => {
+    props.setItems(items);
+  }, [items]);
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    props.onClick(e, props.attribute);
+  };
+
+  console.log("Refinement list items", items);
+
+  return (
+    <div className="relative w-full bg-muted dark:bg-white rounded-md overflow-hidden">
+      <input
+        className={cn(
+          "bg-muted dark:bg-accent-foreground border-none py-3 text-left  inline-flex items-center px-5 hover:rounded-md w-full hover:bg-muted-foreground/20 dark:hover:bg-muted/10  transition-colors text-muted-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-0 focus:bg-muted-foreground/20 focus:text-foreground pl-7"
+        )}
+        data-search-button="true"
+        onClick={handleClick}
+        // value={query}
+        placeholder="Location"
+      />
+      <Search className="mr-2 h-4 w-4 absolute top-1/2 -translate-y-1/2 left-2 text-muted-foreground" />
+    </div>
+  );
+};
+
+const SearchBox = (props: SearchBoxProps) => {
+  const {
+    query,
+    refine,
+    clear,
+    // Deprecated
+    // isSearchStalled,
+  } = useSearchBox(props);
+  return (
+    <div className="relative w-full bg-muted dark:bg-white rounded-md overflow-hidden">
+      <input
+        className={cn(
+          "bg-muted dark:bg-accent-foreground border-none py-3 text-left  inline-flex items-center px-5 hover:rounded-md w-full hover:bg-muted-foreground/20 dark:hover:bg-muted/10  transition-colors text-muted-foreground placeholder:text-muted-foreground pr-7 focus:outline-none focus:ring-0 focus:bg-muted-foreground/20 focus:text-foreground"
+          // active && "bg-primary/20 rounded-md group-hover:bg-primary",
+          // text && "text-foreground dark:text-black",
+          // className
+        )}
+        data-search-button="true"
+        value={query}
+        onChange={(e) => {
+          refine(e.target.value);
+        }}
+        onClick={(e) => {
+          e.stopPropagation();
+          // onClick(e);
+        }}
+        placeholder="Search by name, cuisine, or location"
+      />
+      <Search className="mr-2 h-4 w-4 absolute top-1/2 -translate-y-1/2 right-2 text-muted-foreground" />
+      {/* {text || label} */}
+      {/* Search */}
+      {/* </button> */}
+      {/* {children} */}
+    </div>
+  );
+};
+
+function CustomToggleRefinement(
+  props: ToggleRefinementProps & { description?: string }
+) {
+  const { value, canRefine, refine, sendEvent, createURL } =
+    useToggleRefinement(props);
+
+  return (
+    <div className="flex items-start gap-3">
+      <Checkbox
+        id="terms-2"
+        // value={value.isRefined ? "true" : "false"}
+        defaultChecked={value.isRefined}
+        onCheckedChange={(checked) => {
+          console.log("checked", value.isRefined);
+
+          checked ? refine({ isRefined: false }) : refine({ isRefined: true });
+        }}
+        disabled={!canRefine}
+      />
+      <div className="grid gap-1">
+        <Label htmlFor="terms-2">{props.label}</Label>
+        {props.description && (
+          <p className="text-muted-foreground text-sm">{props.description}</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+const VirtualFilters = () => {
+  useToggleRefinement({ attribute: "corkage_fee" });
+  useToggleRefinement({ attribute: "dogs_ok" });
+  useToggleRefinement({ attribute: "accepts_reservations" });
+  useToggleRefinement({ attribute: "accepts_events" });
+  useSearchBox();
+  return null;
+};
+
+const SearchFormSchema = z.object({
+  location: z.array(z.string()).optional(),
+  cuisine: z.array(z.string()).optional(),
+  dietary: z.array(z.string()).optional(),
+});
+
 export function SearchBar({
   introText,
   condensed,
@@ -141,6 +295,17 @@ export function SearchBar({
   className?: string;
 }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const [items, setItems] = useState<RefinementListItem[]>([]);
+
+  const searchForm = useForm<z.infer<typeof SearchFormSchema>>({
+    resolver: zodResolver(SearchFormSchema),
+    defaultValues: {
+      location: [],
+      cuisine: [],
+      dietary: [],
+    },
+  });
 
   const [isOpen, setIsOpen] = useState(false);
   const [tab, setTab] = useState("");
@@ -259,8 +424,11 @@ export function SearchBar({
     [isOpen]
   );
 
+  // const locationsSearch = useRefinementList({ attribute: "state,city" });
+
   return (
     <div className="flex gap-4 w-full">
+      <VirtualFilters />
       <div className={cn("w-full", className)}>
         {introText && (
           <h1
@@ -278,15 +446,18 @@ export function SearchBar({
                 "relative w-full  mx-auto bg-muted rounded-md flex overflow-hidden group"
               )}
             >
-              <SearchButton
-                tab="location"
-                label="Location"
-                text={locationText}
-                // onClick={() => console.log("clicked")}
-                onClick={(e) => handleClick(e, "location")}
-                className="flex-2"
-                active={tab === "location"}
-              />
+              {/* <SearchInput
+                attribute="location"
+                setItems={setItems}
+                onClick={handleClick}
+              /> */}
+
+              {/* <SearchBox
+                attribute="location"
+                // setItems={setItems}
+                // onClick={handleClick}
+              /> */}
+
               <SearchButton
                 tab="cuisine"
                 label="Cuisine"
@@ -365,6 +536,9 @@ export function SearchBar({
                             <span className="font-medium">{item.name}</span>
                           </div>
                         ))}
+                        {items.map((item) => (
+                          <div key={item.value}>{item.label}</div>
+                        ))}
                       </div>
                     )}
                     {section.type === "multi" && (
@@ -382,9 +556,66 @@ export function SearchBar({
         </Popover>
       </div>
       {condensed && (
-        <Button variant="outline" className="h-auto border-none">
-          <Filter className="h-5 w-5" /> Filter
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="outline" className="h-auto border-none">
+              <Filter className="h-5 w-5" /> Filter
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Filter</DialogTitle>
+              <DialogDescription>
+                You can filter your search results further by selecting the
+                following options.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="col-span-2">
+                {/* <h4 className="text-sm font-medium">Location</h4> */}
+                <SearchBox />
+
+                <div className="flex flex-col space-y-5 mt-4">
+                  <DynamicWidgets>
+                    {/* <SearchBox attribute="name" /> */}
+                    <CustomToggleRefinement
+                      label="Corkage Fee"
+                      attribute="corkage_fee"
+                      description="Corkage fee is a fee charged for bringing your own wine to the restaurant."
+                    />
+                    <CustomToggleRefinement
+                      label="Dogs OK"
+                      attribute="dogs_ok"
+                      description="Dogs are allowed at the restaurant."
+                    />
+                    <CustomToggleRefinement
+                      label="Accepts Reservations"
+                      attribute="accepts_reservations"
+                      description="The restaurant accepts reservations."
+                    />
+                    <CustomToggleRefinement
+                      label="Accepts Events"
+                      attribute="accepts_events"
+                      description="The restaurant accepts events."
+                    />
+                    {/* <ToggleRefinement label="Dogs OK" attribute="dogs_ok" /> */}
+                    {/* <ToggleRefinement
+                      label="Accepts Reserversations"
+                      attribute="accepts_reservations"
+                    /> */}
+                    {/* <ToggleRefinement
+                      label="Accepts Events"
+                      attribute="accepts_events"
+                    /> */}
+                  </DynamicWidgets>
+                </div>
+              </div>
+            </div>
+            <DialogFooter>
+              <Button type="submit">Confirm</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       )}
     </div>
   );

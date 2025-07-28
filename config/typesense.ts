@@ -23,4 +23,5 @@ export type Restaurant = {
   email: string;
   image_url: string;
   image_url_alt: string;
+  dap_compliance: string[];
 };

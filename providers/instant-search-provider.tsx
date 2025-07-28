@@ -24,12 +24,16 @@ export const InstantSearchProvider = ({
     <InstantSearchNext
       indexName="restaurants"
       searchClient={searchClient}
+      routing={true}
       initialUiState={{
         restaurants: {
           toggle: {
             accepts_events: true,
           },
         },
+      }}
+      future={{
+        preserveSharedStateOnUnmount: true,
       }}
     >
       {children}

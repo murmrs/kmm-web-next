@@ -51,8 +51,8 @@ export type LocationResult = {
   dogsOk: boolean;
   rating: number;
   priceRangeResponse: {
-    min: number;
-    max: number;
+    min: number | null;
+    max: number | null;
   };
   needToKnow: string;
   reservations: string;
@@ -116,8 +116,7 @@ export type MenuSummary = {
 
 export type DapSummary = {
   name: string;
-  nonOptionalCount: number;
-  optionalCount: number;
+  nonOptionalComplianceCount: number;
 };
 
 export type DishSummary = {};
