@@ -124,7 +124,7 @@ export default async function Page({
         heading="Ready to get started?"
         text="Get started with Know My Menu"
         buttonText="Get Started"
-        buttonLink="/"
+        buttonLink="/list-your-restaurant"
       />
     </main>
   );
