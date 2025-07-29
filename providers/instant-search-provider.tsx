@@ -9,7 +9,7 @@ import { typesenseConfig } from "@/lib/typesense";
 const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
   server: typesenseConfig,
   additionalSearchParameters: {
-    query_by: "name,cuisine,dietary,city,state,address",
+    query_by: "name,cuisine,city,state,address,locale",
   },
 });
 

@@ -43,15 +43,17 @@ const Header = ({
   return (
     <header
       className={cn(
-        "px-12 bg-muted/30 flex items-center justify-between py-4 border-b border-border gap-12 relative z-20",
+        "px-12 bg-muted/30 flex items-center justify-between py-4 border-b border-border gap-12 z-20 relative ",
         centerComponent && "items-start",
         backgroundImage &&
           "border-b-0 dark bg-transparent grid grid-cols-1 sm:grid-cols-[200px_1fr_200px]",
+        !backgroundImage && "sticky top-0",
         className
         // "bg-transparent border-b-0"
         // "[&]:supports-[backdrop-filter]:backdrop-blur-md"
       )}
     >
+      <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none bg-white"></div>
       {backgroundImage && (
         <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
           <Image
@@ -107,7 +109,7 @@ const Header = ({
 
       <div className="hidden sm:block">
         <Link
-          href="/restaurants"
+          href="/list-your-restaurant"
           className={cn(buttonVariants({ variant: "ghost" }))}
         >
           List your restaurant

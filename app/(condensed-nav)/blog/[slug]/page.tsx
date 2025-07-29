@@ -3,6 +3,7 @@ import path from "path";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CtaBlock } from "@/components/cta-block";
 
 type Frontmatter = {
   title: string;
@@ -59,7 +60,7 @@ export default async function Page({
   }
 
   return (
-    <main className="max-w-3xl mx-auto px-4 pb-16">
+    <main>
       {/* Hero Area */}
       <div className="relative rounded-lg overflow-hidden mb-8 shadow-lg bg-white">
         {image && (
@@ -95,13 +96,13 @@ export default async function Page({
       </div>
 
       {/* Blog Content */}
-      <article className="prose prose-lg max-w-none bg-white rounded-lg p-6 shadow space-y-4">
+      <article className="container space-y-4">
         <Post />
       </article>
 
       {/* Related Articles */}
       {relatedLinks.length > 0 && (
-        <section className="mt-12">
+        <section className="container my-12">
           <h2 className="text-xl font-semibold mb-4">Related Articles</h2>
           <ul className="space-y-2">
             {relatedLinks.map((rel) => (
@@ -117,6 +118,14 @@ export default async function Page({
           </ul>
         </section>
       )}
+
+      <CtaBlock
+        className="-mb-12"
+        heading="Ready to get started?"
+        text="Get started with Know My Menu"
+        buttonText="Get Started"
+        buttonLink="/"
+      />
     </main>
   );
 }

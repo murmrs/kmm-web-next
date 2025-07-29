@@ -3,6 +3,8 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+import { MoveRight } from "lucide-react";
+import Link, { LinkProps } from "next/link";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
@@ -46,6 +48,7 @@ function Button({
   variant,
   size,
   asChild = false,
+
   ...props
 }: ButtonProps) {
   const Comp = asChild ? Slot : "button";
@@ -59,4 +62,23 @@ function Button({
   );
 }
 
-export { Button, buttonVariants };
+function DecorativeLink({
+  children,
+  ...props
+}: LinkProps & { children: React.ReactNode }) {
+  return (
+    <Link
+      className={cn(
+        "group relative flex pr-16 py-4 pl-4 overflow-hidden rounded-md hover:text-white transition-all duration-300 text-white sm:text-foreground"
+      )}
+      {...props}
+    >
+      {children}
+
+      <MoveRight className="absolute right-3 text-white z-10" />
+      <span className="bg-primary block absolute right-0 top-1/2 -translate-y-1/2 z-[-1] rounded-full transition-all duration-300 group-hover:w-[110%] group-hover:size-52 group-hover:translate-x-[5%] w-[110%] sm:w-12 h-full sm:h-12 translate-x-[5%] sm:translate-x-[0] " />
+    </Link>
+  );
+}
+
+export { Button, buttonVariants, DecorativeLink };

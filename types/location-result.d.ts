@@ -65,7 +65,7 @@ export type LocationResult = {
   parking: string[];
   accessibility: string[];
   dressCode: string[];
-  cuisine: string[];
+  cuisines: Cuisine[];
   brand: {
     id: number;
     name: string;
@@ -93,6 +93,12 @@ export type LocationResult = {
   }[];
   image?: Image;
   distance: number;
+};
+
+export type Cuisine = {
+  id: number;
+  name: string;
+  primaryCuisine: string;
 };
 
 export type SummaryResult = {

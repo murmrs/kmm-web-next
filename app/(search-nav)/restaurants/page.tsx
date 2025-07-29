@@ -5,12 +5,15 @@ import MapView from "@/components/restaurants/map-view";
 import Heading from "@/components/typography/heading";
 import Paragraph from "@/components/typography/paragraph";
 import { Restaurant } from "@/config/typesense";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useHits } from "react-instantsearch";
 
 export default function Search() {
   const [view, setView] = useState<"list" | "map">("list");
   const { items } = useHits<Restaurant>();
+
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+
   return (
     <div className="px-12 flex-1 mb-8">
       {/* <hr className="mt-0 pb-8" /> */}
@@ -18,7 +21,10 @@ export default function Search() {
         {/* <div className="w-2/3"> */}
         <ListView />
         {/* </div> */}
-        <div className="w-full">
+        <div
+          className="w-full max-h-[calc(100vh-200px)] sticky top-32"
+          ref={mapContainerRef}
+        >
           <Paragraph className="text-left mt-0 text-sm">
             {items.length} restaurants found
           </Paragraph>

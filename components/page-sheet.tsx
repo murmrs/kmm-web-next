@@ -8,8 +8,8 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { useCallback } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
 
 export default function PageSheet({
   children,
@@ -18,7 +18,9 @@ export default function PageSheet({
   children: React.ReactNode;
   hideCloseButton?: boolean;
 }) {
+  const [open, setOpen] = useState(true);
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleOnOpenChange = useCallback(
     (open: boolean) => {
@@ -30,7 +32,7 @@ export default function PageSheet({
   );
 
   return (
-    <Sheet open={true} onOpenChange={handleOnOpenChange}>
+    <Sheet open={open} onOpenChange={handleOnOpenChange}>
       <SheetContent
         side="right"
         className="sm:max-w-3xl"
