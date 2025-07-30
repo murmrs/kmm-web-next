@@ -114,7 +114,7 @@ export function BlogList({ posts }: BlogListProps) {
 
               <CardContent className="pb-3">
                 {/* Excerpt */}
-                <CardDescription className="line-clamp-3 text-sm leading-relaxed">
+                <CardDescription className="text-sm leading-relaxed">
                   {post.frontmatter.excerpt}
                 </CardDescription>
               </CardContent>
