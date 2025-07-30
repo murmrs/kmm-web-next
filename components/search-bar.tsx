@@ -117,6 +117,7 @@ const sections: {
   {
     name: "dietary",
     key: "dietary",
+    label: "Popular Dietary Restrictions",
     items: [],
     type: "multi",
     height: 200,
