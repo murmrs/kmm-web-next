@@ -1,5 +1,6 @@
 "use client";
 
+import { submitToHubspotForm } from "@/lib/hubspot";
 import { cn } from "@/lib/utils";
 import * as React from "react";
 import { useForm, useFieldArray, SubmitHandler } from "react-hook-form";
@@ -35,7 +36,7 @@ export default function ListYourRestaurantForm({
     register,
     control,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<FormValues>({
     defaultValues: {
@@ -52,10 +53,41 @@ export default function ListYourRestaurantForm({
     name: "locations",
   });
 
+  // Success state
+  const [success, setSuccess] = React.useState(false);
+
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    // For now, just log the data. Replace with API call as needed.
-    // await fetch("/api/lead", { method: "POST", body: JSON.stringify(data) });
-    reset();
+    setSuccess(false);
+    // Split the name into first and last name
+    const [firstName, ...lastNameParts] = data.name.trim().split(" ");
+    const lastName = lastNameParts.join(" ");
+
+    const res = await submitToHubspotForm({
+      formId: "27e59028-2f15-4fbb-9f4c-7f749e694626",
+      context: {
+        pageUri: window.location.href,
+      },
+      fields: [
+        { name: "email", value: data.email },
+        { name: "firstname", value: firstName },
+        { name: "lastname", value: lastName },
+        { name: "0-2/name", value: data.businessName },
+        { name: "referral_source", value: data.howDidYouHear },
+        {
+          name: "0-2/locations",
+          value: data.locations
+            .map((l) => [l.name, l.address].filter(Boolean).join(" - "))
+            .join(", "),
+        },
+      ],
+    });
+    console.log(res);
+    if (res && res.status === "success") {
+      setSuccess(true);
+      reset();
+    } else {
+      setSuccess(false);
+    }
   };
 
   return (
@@ -216,7 +248,7 @@ export default function ListYourRestaurantForm({
       >
         {isSubmitting ? "Submitting..." : "Submit"}
       </button>
-      {isSubmitSuccessful && (
+      {success && (
         <div className="text-green-600 text-center font-medium">
           Thank you! We'll be in touch soon.
         </div>

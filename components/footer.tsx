@@ -6,6 +6,7 @@ import type { ButtonProps } from "@/components/ui/button";
 import { useState } from "react";
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import Image from "next/image";
+import { submitToHubspotForm } from "@/lib/hubspot";
 
 type ImageProps = {
   url?: string;
@@ -67,11 +68,30 @@ export const Footer = (props: FooterProps) => {
   };
 
   const [emailInput, setEmailInput] = useState<string>("");
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [success, setSuccess] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log({
-      emailInput,
-    });
+    setLoading(true);
+    setSuccess(false);
+    try {
+      const res = await submitToHubspotForm({
+        formId: "c86bedba-5372-472f-b332-7f3a829084a5",
+        context: {
+          pageUri: window.location.href,
+        },
+        fields: [{ name: "email", value: emailInput }],
+      });
+      // You may want to check res for errors, but for now, assume success if no error thrown
+      setSuccess(true);
+      setEmailInput("");
+    } catch (error) {
+      setSuccess(false);
+      // Optionally handle error state here
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -86,20 +106,30 @@ export const Footer = (props: FooterProps) => {
             <p>{newsletterDescription}</p>
           </div>
           <div className="max-w-md lg:min-w-[25rem]">
-            <form
-              className="mb-3 grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-[1fr_max-content] sm:gap-y-4 md:gap-4"
-              onSubmit={handleSubmit}
-            >
-              <Input
-                id="email"
-                type="email"
-                placeholder={inputPlaceholder}
-                value={emailInput}
-                className="bg-white shadow-none border-white"
-                onChange={(e) => setEmailInput(e.target.value)}
-              />
-              <Button {...button}>{button.title}</Button>
-            </form>
+            {success ? (
+              <div className="mb-3 p-4 rounded bg-green-100 text-green-800 text-sm font-medium">
+                Thank you for subscribing!
+              </div>
+            ) : (
+              <form
+                className="mb-3 grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-[1fr_max-content] sm:gap-y-4 md:gap-4"
+                onSubmit={handleSubmit}
+              >
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder={inputPlaceholder}
+                  value={emailInput}
+                  className="bg-white shadow-none border-white"
+                  onChange={(e) => setEmailInput(e.target.value)}
+                  disabled={loading}
+                  required
+                />
+                <Button {...button} disabled={loading || !emailInput}>
+                  {loading ? "Subscribing..." : button.title}
+                </Button>
+              </form>
+            )}
             <div
               className="text-xs text-muted-foreground"
               dangerouslySetInnerHTML={{ __html: termsAndConditions }}
