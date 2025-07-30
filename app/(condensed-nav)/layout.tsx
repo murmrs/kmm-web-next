@@ -8,7 +8,7 @@ export default function SearchLayout({
 }) {
   return (
     <>
-      <Header showSearchBar={true} />
+      <Header showSearchBar={false} />
       {children}
       <Footer />
     </>
