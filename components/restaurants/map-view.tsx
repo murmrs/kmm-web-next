@@ -75,7 +75,9 @@ const MapView = () => {
         const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
           <div class="p-2">
             <h3 class="font-semibold text-sm">${item.name || "Restaurant"}</h3>
-            <p class="text-xs text-gray-600">${item.cuisine || ""}</p>
+            <p class="text-xs text-gray-600">${
+              item.cuisine.map((c) => c.name).join(", ") || ""
+            }</p>
             <p class="text-xs text-gray-600">${item.address || ""}</p>
           </div>
         `);
