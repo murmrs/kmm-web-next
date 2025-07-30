@@ -318,21 +318,22 @@ export default function PricingPage() {
               amazing restaurants right now.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/signup" passHref>
+              <Link href="/list-your-restaurant" passHref>
                 <Button
                   size="lg"
                   variant="secondary"
                   className="text-lg px-8 py-4"
                 >
                   <Zap className="w-5 h-5 mr-2" />
-                  Get Started
+                  Onboard your restaurant
                 </Button>
               </Link>
               <Link href="/restaurants" passHref>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary"
+                  // className="dark"
+                  // className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary"
                 >
                   <MapPin className="w-5 h-5 mr-2" />
                   Browse Restaurants
