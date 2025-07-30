@@ -176,7 +176,7 @@ export function BlogList({ posts }: BlogListProps) {
       )}
 
       {/* Newsletter Signup */}
-      <div className="hidden sm:block bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg p-8 text-center mt-auto">
+      {/* <div className="hidden sm:block bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg p-8 text-center mt-auto">
         <h3 className="text-2xl font-bold mb-2">Stay Updated</h3>
         <p className="text-muted-foreground mb-4 max-w-md mx-auto">
           Get the latest restaurant insights and tips delivered to your inbox.
@@ -188,7 +188,7 @@ export function BlogList({ posts }: BlogListProps) {
           />
           <Button size="lg">Subscribe to Newsletter</Button>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }
