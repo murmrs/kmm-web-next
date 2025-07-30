@@ -58,7 +58,7 @@ const FAQ_SECTIONS = [
 export default function PricingPage() {
   return (
     <>
-      <PageHero heading="About" />
+      <PageHero heading="About Know My Menu" description="" />
       <div className="flex-1 px-12 container">
         <div className="">
           {/* <Heading size="pageTitle" className="mb-12">

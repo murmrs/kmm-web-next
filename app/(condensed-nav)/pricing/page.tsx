@@ -133,14 +133,8 @@ export default function PricingPage() {
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <Badge variant="secondary" className="mb-6 text-primary bg-white">
-              <Star className="w-4 h-4 mr-2" />
-              Most Popular Choice
-            </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              One Price.
-              <br />
-              <span className="">Everything You Need.</span>
+              Everything You Need.
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-2xl mx-auto">
               Stop paying for features you don't use. Get the complete
@@ -163,17 +157,36 @@ export default function PricingPage() {
             </p>
           </div>
 
-          {/* Comparison Table */}
+          {/* Improved Comparison Table: Features and Checks Aligned in Rows */}
           <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
-              {/* Feature Column */}
-              <div className="bg-gray-50 p-6">
-                <h3 className="font-semibold text-lg mb-6 text-gray-700">
-                  Features
-                </h3>
-                <div className="space-y-4">
-                  {features.map((feature, index) => (
-                    <div key={index} className="min-h-[60px] flex items-center">
+            <div className="grid grid-cols-1">
+              {/* Table Header */}
+              <div className="grid grid-cols-3 bg-gray-50">
+                <div className="p-6 flex items-center">
+                  <h3 className="font-semibold text-lg text-gray-700">
+                    Features
+                  </h3>
+                </div>
+                <div className="p-6 flex flex-col items-center relative bg-primary text-white">
+                  <h3 className="font-bold text-xl text-center">
+                    ✓ Know My Menu
+                  </h3>
+                </div>
+                <div className="p-6 flex flex-col items-center bg-gray-100">
+                  <h3 className="font-semibold text-lg text-gray-700 text-center">
+                    "The Other Guys"
+                  </h3>
+                </div>
+              </div>
+              {/* Table Body */}
+              <div>
+                {features.map((feature, index) => (
+                  <div
+                    key={index}
+                    className="grid grid-cols-3 border-t border-gray-100"
+                  >
+                    {/* Feature Name & Description */}
+                    <div className="p-6 flex items-center min-h-[60px]">
                       <div>
                         <div className="font-medium text-gray-900">
                           {feature.name}
@@ -183,55 +196,24 @@ export default function PricingPage() {
                         </div>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* KMM Column */}
-              <div className="bg-primary text-white p-6 relative">
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-yellow-400 text-primary font-bold px-4 py-2">
-                    KNOW MY MENU
-                  </Badge>
-                </div>
-                <h3 className="font-bold text-xl mb-6 text-center">
-                  ✓ Everything
-                </h3>
-                <div className="space-y-4">
-                  {features.map((feature, index) => (
-                    <div
-                      key={index}
-                      className="min-h-[60px] flex items-center justify-center"
-                    >
+                    {/* KMM Check/X */}
+                    <div className="p-6 flex items-center justify-center min-h-[60px] bg-primary/90">
                       {feature.kmm ? (
                         <Check className="w-6 h-6 text-green-300" />
                       ) : (
                         <X className="w-6 h-6 text-red-300" />
                       )}
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Competitor Column */}
-              <div className="bg-gray-100 p-6">
-                <h3 className="font-semibold text-lg mb-6 text-gray-700 text-center">
-                  "The Other Guys"
-                </h3>
-                <div className="space-y-4">
-                  {features.map((feature, index) => (
-                    <div
-                      key={index}
-                      className="min-h-[60px] flex items-center justify-center"
-                    >
+                    {/* Competitor Check/X */}
+                    <div className="p-6 flex items-center justify-center min-h-[60px] bg-gray-100">
                       {feature.competitor ? (
                         <Check className="w-6 h-6 text-gray-400" />
                       ) : (
                         <X className="w-6 h-6 text-red-400" />
                       )}
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
