@@ -183,24 +183,34 @@ export const FooterDefaults: Props = {
   termsAndConditions: `
   <p class='text-xs'>
     By subscribing you agree to with our 
-    <a href='#' class='underline'>Privacy Policy</a>.
+    <a href='/privacy-policy' class='underline'>Privacy Policy</a>.
   </p>
   `,
   columnLinks: [
     {
       title: "Popular Locations",
       links: [
-        { title: "California", url: "/s/location/california" },
-        { title: "Utah", url: "/s/location/utah" },
+        {
+          title: "California",
+          url: "/restaurants?restaurants%5BrefinementList%5D%5Blocale%5D%5B0%5D=CA",
+        },
+        {
+          title: "Utah",
+          url: "/restaurants?restaurants%5BrefinementList%5D%5Blocale%5D%5B0%5D=UT",
+        },
       ],
     },
     {
       title: "Popular Cuisines",
       links: [
-        { title: "American", url: "/s/cuisine/italian" },
-        { title: "Irish", url: "/s/cuisine/mexican" },
-        { title: "Tiki", url: "/s/cuisine/japanese" },
-        { title: "Mexican", url: "/s/cuisine/italian" },
+        {
+          title: "American",
+          url: "/restaurants?restaurants%5BrefinementList%5D%5Bcuisine.name%5D%5B0%5D=American",
+        },
+        {
+          title: "Mexican",
+          url: "/restaurants?restaurants%5BrefinementList%5D%5Bcuisine.name%5D%5B0%5D=Mexican",
+        },
       ],
     },
     {
@@ -209,7 +219,7 @@ export const FooterDefaults: Props = {
         { title: "About", url: "/about" },
         { title: "Blog", url: "/blog" },
         { title: "Pricing", url: "/pricing" },
-        { title: "Preview Menu", url: "/preview-menu" },
+        { title: "Preview Menu", url: "https://knowmymenu.com/menu/8/54" },
       ],
     },
     // {

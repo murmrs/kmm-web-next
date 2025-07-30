@@ -107,7 +107,7 @@ const Header = ({
 
       <Center />
 
-      <div className="hidden sm:block">
+      <div className="hidden sm:flex gap-4">
         <Link
           href="/list-your-restaurant"
           className={cn(buttonVariants({ variant: "ghost" }))}
@@ -130,8 +130,9 @@ const Header = ({
             <nav className="flex flex-col gap-2 pb-4 px-4 w-full min-h-screen pt-10">
               {[
                 { href: "/", label: "Home" },
-                { href: "/restaurants", label: "Restaurants" },
-                { href: "/about", label: "About" },
+                { href: "/restaurants", label: "Discover Restaurants" },
+                { href: "/blog", label: "Restaurant Insights & Tips" },
+                { href: "/about", label: "About Know My Menu" },
               ].map((item) => (
                 <Link
                   key={item.href}

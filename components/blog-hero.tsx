@@ -1,28 +1,29 @@
+import { Calendar, User } from "lucide-react";
 import { Button, ButtonProps } from "./ui/button";
 
 type ImageProps = {
   src: string;
   alt?: string;
-  position?: string;
 };
 
 type Props = {
   heading: string;
-  description: string;
+  published_by: string;
+  published_date: string;
   image: ImageProps;
 };
 
-export type PageHeroProps = React.ComponentPropsWithoutRef<"section"> &
+export type BlogHeroProps = React.ComponentPropsWithoutRef<"section"> &
   Partial<Props>;
 
-export const PageHero = (props: PageHeroProps) => {
-  const { heading, description, image } = {
-    ...PageHeroDefaults,
+export const BlogHero = (props: BlogHeroProps) => {
+  const { heading, published_by, published_date, image } = {
+    ...BlogHeroDefaults,
     ...props,
   };
   return (
-    <section className="-mt-12">
-      <div className="relative w-full h-[320px] sm:h-[380px] md:h-[420px] lg:h-[500px] overflow-hidden">
+    <section className="-mt-12 relative">
+      <div className="relative w-full aspect-video overflow-hidden">
         <svg width="0" height="0" style={{ position: "absolute" }}>
           <defs>
             <clipPath id="page-hero-clip" clipPathUnits="objectBoundingBox">
@@ -55,7 +56,7 @@ export const PageHero = (props: PageHeroProps) => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              objectPosition: image.position,
+              objectPosition: "center 80%",
               display: "block",
             }}
           />
@@ -71,27 +72,40 @@ export const PageHero = (props: PageHeroProps) => {
           />
         </div>
       </div>
-      <div className="container">
-        <div className="relative z-10 -mt-24 mb-12 grid grid-cols-1 items-start gap-x-6 gap-y-5 md:mb-18 md:grid-cols-2 md:gap-y-8 lg:mb-20 lg:gap-x-20 lg:gap-y-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold -mt-24 text-white flex items-center gap-2">
-            {heading}
-          </h1>
-          <div>
-            <p className="md:text-md text-white -mt-8">{description}</p>
-          </div>
+      <div className="absolute top-0 md:top-12 left-0 w-full flex flex-col justify-end p-8 z-10 pointer-events-none">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white flex items-center gap-2">
+          {heading}
+        </h1>
+        <div className="flex items-center gap-4 text-white/90 text-sm">
+          {published_by && (
+            <span className="flex items-center gap-1">
+              <User className="h-4 w-4" />
+              {published_by}
+            </span>
+          )}
+          {published_by && published_date && <span className="mx-2">·</span>}
+          {published_date && (
+            <span className="flex items-center gap-1">
+              <Calendar className="h-4 w-4" />
+              {new Date(published_date).toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
+          )}
         </div>
       </div>
     </section>
   );
 };
 
-export const PageHeroDefaults: Props = {
+export const BlogHeroDefaults: Props = {
   heading: "Medium length hero heading goes here",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+  published_by: "John Doe",
+  published_date: "2021-01-01",
   image: {
     src: "/heroplate.jpg",
     alt: "Relume placeholder image",
-    position: "center 80%",
   },
 };

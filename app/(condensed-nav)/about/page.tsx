@@ -22,11 +22,6 @@ const FAQ_SECTIONS = [
         answer: "Enjoy 1 month of free access to the platform.",
       },
       {
-        question: "Additional Free Months",
-        answer:
-          "For every 1,000 new restaurants that join, you'll receive an additional free month.",
-      },
-      {
         question: "Referral Bonus",
         answer:
           "You’ll have priority access to our support team, ensuring your questions are answered promptly.",
@@ -84,8 +79,12 @@ export default function PricingPage() {
               </Paragraph>
             </div>
           </section>
+
           {FAQ_SECTIONS.map((section) => (
-            <section className="grid grid-cols-[400px_1fr] gap-24 items-start pb-24">
+            <section
+              className="grid grid-cols-[400px_1fr] gap-24 items-start pb-24"
+              key={section.title}
+            >
               <Heading className="text-5xl sticky top-24">
                 {section.title}
               </Heading>
@@ -97,6 +96,34 @@ export default function PricingPage() {
           {/* <div className="flex flex-col items-center justify-center h-screen"> */}
           {/* <h1 className="text-4xl font-bold">Pricing</h1> */}
           {/* </div> */}
+
+          {/* Video Callout Section */}
+          <section className="w-full flex justify-center ">
+            <div className="flex flex-col md:flex-row items-stretch w-full max-w-5xl rounded-xl bg-primary/10 gap-0 shadow-md overflow-hidden">
+              <div className="w-full md:w-[480px] flex-shrink-0 flex items-stretch">
+                <div className="relative w-full aspect-video flex-1">
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/ECTTxit2_9c?si=17x929jHf_wFuEXa"
+                    title="About Know My Menu"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+              <div className="flex-1 flex flex-col items-start p-8 justify-center">
+                <Heading size="h3" className="mb-2">
+                  Know More About Our Founder on the Restaurant Unstoppable
+                  Podcast!
+                </Heading>
+                <Paragraph className="max-w-xl">
+                  Find out how Susan is helping more people dine out with less
+                  frustration—for kitchens, servers, and patrons.
+                </Paragraph>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
       <CtaBlock
