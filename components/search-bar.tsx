@@ -201,7 +201,7 @@ const SearchInput = ({
   //   props.onClick(e, props.attribute);
   // };
 
-  const handleRefinementClick = (refinement: string) => {
+  const handleRefinementClick = (refinement: any) => {
     console.log("refinement", refinement);
     currentRefinements.refine(refinement);
   };
@@ -383,7 +383,7 @@ export function SearchBar({
 
   const cuisine = useRefinementList({ attribute: "cuisine.name", limit: 8 });
   const dietary = useRefinementList({ attribute: "dap_compliance", limit: 8 });
-  const location = useRefinementList({ attribute: "locale", limit: 8 });
+  const location = useRefinementList({ attribute: "state", limit: 8 });
 
   const anchorRef = useRef<HTMLDivElement>(null);
 
@@ -474,7 +474,7 @@ export function SearchBar({
   }, [updateHeight]);
 
   const handleClickOutside = useCallback(
-    (e) => {
+    (e: any) => {
       // Don't fire if the click intersects with any of the buttons
       const target = e.target as HTMLElement;
       // Check if the click is inside a SearchButton or its children
@@ -546,7 +546,7 @@ export function SearchBar({
             >
               <SearchInput
                 label="Location"
-                attribute="location"
+                attribute="state"
                 items={location.items}
                 onClick={(e) => handleClick(e, "location")}
                 search={location.searchForItems}
@@ -624,28 +624,46 @@ export function SearchBar({
                         className="grid grid-cols-1 gap-2"
                         ref={singleItemsSearchWrapRef}
                       >
-                        {section.items.map((item) => (
-                          <div
-                            key={item.name}
-                            className="flex items-center gap-3 p-2 rounded-md hover:bg-primary/10 cursor-pointer transition"
-                            onClick={() => {
-                              // setIsOpen(false);
-                              // Clear other refinments for this attribute
+                        {section.items.map((item) => {
+                          // Check if this item is currently refined
+                          const isRefined =
+                            tab &&
+                            items[tab]?.items?.some(
+                              (refinementItem) =>
+                                refinementItem.value === item.key &&
+                                refinementItem.isRefined
+                            );
 
-                              if (tab && items[tab]) {
-                                // items[tab]
-                                items[tab].refine(item.key);
-                              }
-                            }}
-                          >
-                            <img
-                              src={item.image}
-                              alt={item.name}
-                              className="size-16 rounded-md object-cover"
-                            />
-                            <span className="font-medium">{item.name}</span>
-                          </div>
-                        ))}
+                          return (
+                            <div
+                              key={item.name}
+                              className={cn(
+                                "flex items-center gap-3 p-2 rounded-md hover:bg-primary/10 cursor-pointer transition",
+                                isRefined &&
+                                  "bg-primary/20 border border-primary"
+                              )}
+                              onClick={() => {
+                                // setIsOpen(false);
+                                // Clear other refinments for this attribute
+
+                                if (tab && items[tab]) {
+                                  // items[tab]
+                                  items[tab].refine(item.key);
+                                }
+                              }}
+                            >
+                              <img
+                                src={item.image}
+                                alt={item.name}
+                                className="size-16 rounded-md object-cover"
+                              />
+                              <span className="font-medium">{item.name}</span>
+                              {isRefined && (
+                                <X className="ml-auto h-4 w-4 text-primary" />
+                              )}
+                            </div>
+                          );
+                        })}
                         {tab &&
                           items[tab].items?.map((item) => (
                             <div
