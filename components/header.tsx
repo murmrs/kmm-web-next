@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "./ui/sheet";
 import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { env } from "@/env";
 
 const Header = ({
   showSearchBar = true,
@@ -156,7 +157,7 @@ const Header = ({
               ))}
               <div className="pt-6 mt-auto">
                 <Link
-                  href="/login"
+                  href={env.NEXT_PUBLIC_APP_URL + "/api/auth/login"}
                   onClick={() => setIsMenuOpen(false)}
                   className={`
                       inline-flex items-center justify-center w-full

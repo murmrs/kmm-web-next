@@ -26,6 +26,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { json } from "stream/consumers";
 import { Button } from "../ui/button";
+import Link from "next/link";
+import { env } from "@/env";
 
 const formatTime = (hour: number, minute: number) => {
   const ampm = hour >= 12 ? "PM" : "AM";
@@ -219,9 +221,12 @@ export default function Details({
                             {menu.name}
                           </h4>
                         </div>
-                        <button className="text-blue-600 hover:text-blue-800 font-medium">
+                        <Link
+                          href={`${env.NEXT_PUBLIC_APP_URL}/menu/${menu.id}`}
+                          className="text-blue-600 hover:text-blue-800 font-medium"
+                        >
                           View Menu →
-                        </button>
+                        </Link>
                       </div>
                     )
                   )}
