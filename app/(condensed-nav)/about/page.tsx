@@ -24,7 +24,7 @@ const FAQ_SECTIONS = [
       {
         question: "Referral Bonus",
         answer:
-          "You’ll have priority access to our support team, ensuring your questions are answered promptly.",
+          "Recommend another restaurant that signs up, and you'll get 1 month free.",
       },
     ],
   },
