@@ -222,7 +222,7 @@ export default function Details({
                           </h4>
                         </div>
                         <Link
-                          href={`${env.NEXT_PUBLIC_APP_URL}/menu/${menu.id}`}
+                          href={`${env.NEXT_PUBLIC_APP_URL}/menu/${restaurant.id}/${menu.id}`}
                           className="text-blue-600 hover:text-blue-800 font-medium"
                         >
                           View Menu →
