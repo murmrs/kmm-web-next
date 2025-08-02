@@ -304,10 +304,10 @@ export default function PricingPage() {
           </div>
 
           {/* Improved Comparison Table: Features and Checks Aligned in Rows */}
-          <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="grid grid-cols-1">
               {/* Table Header */}
-              <div className="grid grid-cols-3 bg-gray-50">
+              <div className="grid grid-cols-2 bg-gray-50">
                 <div className="p-6 flex items-center">
                   <h3 className="font-semibold text-lg text-gray-700">
                     Features
@@ -318,18 +318,13 @@ export default function PricingPage() {
                     ✓ Know My Menu
                   </h3>
                 </div>
-                <div className="p-6 flex flex-col items-center bg-gray-100">
-                  <h3 className="font-semibold text-lg text-gray-700 text-center">
-                    "The Other Guys"
-                  </h3>
-                </div>
               </div>
               {/* Table Body */}
               <div>
                 {features.map((feature, index) => (
                   <div
                     key={index}
-                    className="grid grid-cols-3 border-t border-gray-100"
+                    className="grid grid-cols-2 border-t border-gray-100"
                   >
                     {/* Feature Name & Description */}
                     <div className="p-6 flex items-center min-h-[60px]">
@@ -350,14 +345,6 @@ export default function PricingPage() {
                         <X className="w-6 h-6 text-red-300" />
                       )}
                     </div>
-                    {/* Competitor Check/X */}
-                    <div className="p-6 flex items-center justify-center min-h-[60px] bg-gray-100">
-                      {feature.competitor ? (
-                        <Check className="w-6 h-6 text-gray-400" />
-                      ) : (
-                        <X className="w-6 h-6 text-red-400" />
-                      )}
-                    </div>
                   </div>
                 ))}
               </div>
@@ -374,8 +361,9 @@ export default function PricingPage() {
               What Makes Us Different
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              While others focus on everything but the food, we're laser-focused
-              on helping you discover the perfect meal.
+              We focus on bringing everyone to the table—chefs, owners, servers,
+              and guests—to create a solution that supports what truly matters:
+              creating, serving, and enjoying food.
             </p>
           </div>
 
