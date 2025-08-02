@@ -21,6 +21,25 @@ function getHeadingText(children: any): string {
 }
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
+  // Helper to render a visually hidden anchor for heading id
+  function HiddenAnchor({ id }: { id: string }) {
+    return (
+      <span
+        id={id}
+        style={{
+          position: "absolute",
+          left: 0,
+          top: "-100px",
+          height: 1,
+          width: 1,
+          overflow: "hidden",
+          pointerEvents: "none",
+        }}
+        aria-hidden="true"
+      />
+    );
+  }
+
   return {
     ...components,
     h1: (props) => {
@@ -29,16 +48,23 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       return (
         <Heading
           level={2}
-          className="text-2xl font-bold mb-4"
-          id={id}
+          className="text-2xl font-bold mb-4 relative"
           {...props}
-        />
+        >
+          <HiddenAnchor id={id} />
+          {props.children}
+        </Heading>
       );
     },
     h2: (props) => {
       const text = getHeadingText(props.children);
       const id = props.id || slugify(text);
-      return <Heading className="text-2xl font-bold mb-4" id={id} {...props} />;
+      return (
+        <Heading className="text-2xl font-bold mb-4 relative" {...props}>
+          <HiddenAnchor id={id} />
+          {props.children}
+        </Heading>
+      );
     },
     ul: (props) => <ul className="list-disc pl-4 py-4" {...props} />,
     ol: (props) => <ol className="list-decimal pl-4" {...props} />,

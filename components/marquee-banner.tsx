@@ -37,12 +37,14 @@ export const MarqueeBanner = (props: MarqueeBannerProps) => {
           <motion.h1
             key={index}
             style={index % 2 === 0 ? { x: xPartOne } : { x: xPartTwo }}
-            className={cn("text-7xl font-bold leading-22", {
-              "self-end": index % 2 !== 0,
-            })}
-          >
-            {heading}
-          </motion.h1>
+            className={cn(
+              "text-4xl lg:text-7xl font-bold leading-12 lg:leading-22",
+              {
+                "self-end": index % 2 !== 0,
+              }
+            )}
+            dangerouslySetInnerHTML={{ __html: heading }}
+          />
         ))}
       </div>
     </section>
@@ -51,7 +53,7 @@ export const MarqueeBanner = (props: MarqueeBannerProps) => {
 
 export const MarqueeBannerDefaults: Props = {
   headings: [
-    "Medium length banner heading goes here",
-    "Medium length banner heading goes here",
+    "I'm more than a pretty menu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm more than a pretty menu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm more than a pretty menu",
+    "I'm a tool for living&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm a tool for living&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm a tool for living&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I'm a tool for living",
   ],
 };

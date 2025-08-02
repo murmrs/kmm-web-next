@@ -111,7 +111,9 @@ export default async function Page({
               {title}
             </h1>
             {excerpt && (
-              <p className="text-lg text-muted-foreground mb-2">{excerpt}</p>
+              <p className="text-lg text-muted-foreground mb-2 max-w-prose">
+                {excerpt}
+              </p>
             )}
             <div className="flex items-center gap-4 text-muted-foreground text-sm mb-2">
               {published_by && (
@@ -204,8 +206,8 @@ export default async function Page({
       <div className="w-full mt-16">
         <CtaBlock
           className="-mb-12"
-          heading="Ready to get started?"
-          text="Get started with Know My Menu"
+          heading="Your food, presented just the way you want it."
+          text="Help your customers answer the question, 'What's on the menu?'"
           buttonText="Get Started"
           buttonLink="/list-your-restaurant"
         />

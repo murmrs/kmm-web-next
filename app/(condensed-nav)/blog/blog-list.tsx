@@ -15,6 +15,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, Filter } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { format } from "date-fns";
 
 type Frontmatter = {
   title: string;
@@ -133,13 +134,10 @@ export function BlogList({ posts }: BlogListProps) {
                       <div className="flex items-center gap-1">
                         <Calendar className="h-3 w-3" />
                         <span>
-                          {new Date(
-                            post.frontmatter.published_date
-                          ).toLocaleDateString(undefined, {
-                            year: "numeric",
-                            month: "short",
-                            day: "numeric",
-                          })}
+                          {format(
+                            new Date(post.frontmatter.published_date),
+                            "MMM d, yyyy"
+                          )}
                         </span>
                       </div>
                     )}

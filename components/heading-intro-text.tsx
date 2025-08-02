@@ -86,8 +86,8 @@ export default function HeadingIntroText({
         className
       )}
     >
-      What's for{" "}
-      <span className="text-left">
+      What's for
+      <span className="ml-4 text-left max-w-[180px] overflow-visible inline-block align-bottom">
         {displayedText}
         {showCursor && (isTyping || isBackspacing) && (
           <span className="animate-pulse">|</span>

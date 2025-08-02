@@ -59,7 +59,7 @@ export const syncRestaurants = async () => {
             name,
             total,
           }))
-          .filter((dap) => dap.total > 50)
+          .filter((dap) => dap.total > 3)
           .map((dap) => dap.name);
       }
 
