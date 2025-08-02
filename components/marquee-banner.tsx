@@ -23,8 +23,9 @@ export const MarqueeBanner = (props: MarqueeBannerProps) => {
     offset: ["start end", "end start"],
   });
 
-  const xPartOne = useTransform(scrollYProgress, [0, 1], ["-10%", "0%"]);
-  const xPartTwo = useTransform(scrollYProgress, [0, 1], ["10%", "0%"]);
+  const xPartOne = useTransform(scrollYProgress, [0, 1], ["-12%", "0%"]);
+  // Make part two move a greater distance, so it appears to move faster
+  const xPartTwo = useTransform(scrollYProgress, [0, 1], ["18%", "0%"]);
 
   return (
     <section
