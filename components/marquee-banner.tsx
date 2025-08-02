@@ -54,7 +54,7 @@ export const MarqueeBanner = (props: MarqueeBannerProps) => {
 
 export const MarqueeBannerDefaults: Props = {
   headings: [
-    'I\'m more than a pretty menu&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-primary">&middot;</span>&nbsp;&nbsp;&nbsp;&nbsp;I\'m more than a pretty menu&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-primary">&middot;</span>&nbsp;&nbsp;&nbsp;&nbsp;I\'m more than a pretty menu',
-    'I\'m a tool for living&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-primary">&middot;</span>&nbsp;&nbsp;&nbsp;&nbsp;I\'m a tool for living&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-primary">&middot;</span>&nbsp;&nbsp;&nbsp;&nbsp;I\'m a tool for living&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-primary">&middot;</span>&nbsp;&nbsp;&nbsp;&nbsp;I\'m a tool for living',
+    'more than a pretty menu&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-primary">&middot;</span>&nbsp;&nbsp;&nbsp;&nbsp;more than a pretty menu&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-primary">&middot;</span>&nbsp;&nbsp;&nbsp;&nbsp;more than a pretty menu',
+    'a tool for living&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-primary">&middot;</span>&nbsp;&nbsp;&nbsp;&nbsp;a tool for living&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-primary">&middot;</span>&nbsp;&nbsp;&nbsp;&nbsp;a tool for living&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-primary">&middot;</span>&nbsp;&nbsp;&nbsp;&nbsp;a tool for living',
   ],
 };
