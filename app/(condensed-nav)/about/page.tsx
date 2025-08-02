@@ -3,6 +3,54 @@ import Heading from "@/components/typography/heading";
 import Paragraph from "@/components/typography/paragraph";
 import { Faqs } from "@/components/ui/faqs";
 import { CtaBlock } from "@/components/cta-block";
+import { Heart, Users, Shield, Sparkles, Utensils, Eye } from "lucide-react";
+
+const benefits = [
+  {
+    icon: Heart,
+    title: "Dine with Confidence",
+    description:
+      "Go out to eat without explaining your dietary needs to everyone at the table",
+  },
+  {
+    icon: Shield,
+    title: "Safe Dining for All",
+    description:
+      "Help your child with food allergies dine safely, without stress or embarrassment",
+  },
+  {
+    icon: Users,
+    title: "Private Choices",
+    description:
+      "Keep your food choices private during business or social meals",
+  },
+  {
+    icon: Sparkles,
+    title: "Your Preferences First",
+    description:
+      "Put your preferences and needs first, in a simple and discreet way",
+  },
+];
+
+const platformFeatures = [
+  {
+    icon: Eye,
+    title: "Visual Rich Experience",
+    description:
+      "High-quality photos transform basic menus into enticing visual experiences",
+  },
+  {
+    icon: Utensils,
+    title: "Detailed Ingredients",
+    description: "Comprehensive ingredient information for every menu item",
+  },
+  {
+    icon: Shield,
+    title: "Smart Filtering",
+    description:
+      "Filter by allergens, dietary restrictions, or lifestyle preferences",
+  },
+];
 
 const FAQ_SECTIONS = [
   {
@@ -15,7 +63,7 @@ const FAQ_SECTIONS = [
       },
       {
         question: "Onboarding Process",
-        answer: "You’ll have 2 weeks to complete the onboarding process.",
+        answer: "You'll have 2 weeks to complete the onboarding process.",
       },
       {
         question: "Free Platform Access",
@@ -55,33 +103,107 @@ const FAQ_SECTIONS = [
   },
 ];
 
-export default function PricingPage() {
+export default function AboutPage() {
   return (
     <>
       <PageHero heading="About Know My Menu" description="" />
-      <div className="flex-1 px-12 container">
-        <div className="">
-          {/* <Heading size="pageTitle" className="mb-12">
-        Frequently Asked Questions
-      </Heading> */}
 
-          <section className="grid grid-cols-[400px_1fr] gap-24 items-start pb-24">
-            <Heading className="text-5xl sticky top-24">
-              Why we need you
+      {/* Mission Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <Heading size="h2" className="text-4xl md:text-5xl font-bold mb-6">
+              Our Mission
             </Heading>
-            <div className="flex-1">
-              <Paragraph>
-                We need restaurants to make this happen. Diners can’t search if
-                there are no restaurants on the platform. As we continue to
-                develop the Know My Menu APP, with enhanced search features and
-                richer information for patrons, we're offering the following
-                incentives for our early adopters.
+            <Paragraph className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Driven by a passion for using technology as a tool to improve
+              everyday life, founder Susan Abbott created Know My Menu to solve
+              a common, frustrating problem: truly knowing what's in your food.
+            </Paragraph>
+          </div>
+        </div>
+      </section>
+
+      {/* Platform Overview */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <Heading
+                size="h3"
+                className="text-3xl md:text-4xl font-bold mb-6"
+              >
+                Transforming the Dining Experience
+              </Heading>
+              <Paragraph className="text-lg mb-6">
+                Our platform transforms a basic menu into a visually rich
+                experience with high-quality photos and detailed ingredient
+                information. Diners can easily filter by allergens, dietary
+                restrictions, or lifestyle preferences, making it easier than
+                ever to choose a meal with confidence.
+              </Paragraph>
+              <Paragraph className="text-lg">
+                Know My Menu empowers chefs, restaurateurs, and guests to focus
+                on what really matters: creating, serving, and enjoying great
+                food.
               </Paragraph>
             </div>
-          </section>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {platformFeatures.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    <feature.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="text-lg font-semibold mb-2">
+                    {feature.title}
+                  </h4>
+                  <p className="text-muted-foreground text-sm">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-          {/* Video Callout Section */}
-          <section className="w-full flex justify-center ">
+      {/* Benefits Section */}
+      <section className="py-20 bg-gradient-to-r from-primary/5 to-primary/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Heading size="h2" className="text-4xl md:text-5xl font-bold mb-6">
+              It's About
+            </Heading>
+            <Paragraph className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Whether you're drawn to the beautiful photos, clear ingredient
+              info, or personalized filters, Know My Menu is here to keep you in
+              the know.
+            </Paragraph>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="text-center group">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <benefit.icon className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Video Callout Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="w-full flex justify-center">
             <div className="flex flex-col md:flex-row items-stretch w-full max-w-5xl rounded-xl bg-primary/10 gap-0 shadow-md overflow-hidden">
               <div className="w-full md:w-[480px] flex-shrink-0 flex items-stretch">
                 <div className="relative w-full aspect-video flex-1">
@@ -106,9 +228,10 @@ export default function PricingPage() {
                 </Paragraph>
               </div>
             </div>
-          </section>
+          </div>
         </div>
-      </div>
+      </section>
+
       <CtaBlock
         className="-mb-12"
         heading="Your food, just the way you want it"
