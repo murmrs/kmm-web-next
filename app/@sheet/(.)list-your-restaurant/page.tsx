@@ -1,8 +1,6 @@
 import ListYourRestaurantForm from "@/components/list-your-restaurant-form";
 import PageSheet from "@/components/page-sheet";
-import { buttonVariants, DecorativeLink } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { DecorativeLink } from "@/components/ui/button";
 
 const ListYourRestaurant = () => {
   return (

@@ -8,6 +8,15 @@ interface RestaurantPageProps {
   }>;
 }
 
+export async function generateMetadata({ params }: RestaurantPageProps) {
+  const { id } = await params;
+  const data = await fetchRestaurant(id);
+  return {
+    title: data?.name,
+    description: data?.description,
+  };
+}
+
 export default async function RestaurantPage({ params }: RestaurantPageProps) {
   const { id } = await params;
   const data = await fetchRestaurant(id);

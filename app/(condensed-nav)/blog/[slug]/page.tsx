@@ -6,6 +6,7 @@ import { CtaBlock } from "@/components/cta-block";
 import { Calendar, User } from "lucide-react";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { Metadata, ResolvingMetadata } from "next";
 
 type Frontmatter = {
   title: string;
@@ -37,6 +38,23 @@ function extractTocFromMdx(
     }
   }
   return toc;
+}
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const { slug } = await params;
+
+  // fetch data
+  const imported = await import(`@/blog-content/${slug}.mdx`);
+  const frontmatter = imported.frontmatter as Frontmatter;
+
+  return {
+    title: frontmatter.title,
+    description: frontmatter.excerpt,
+  };
 }
 
 export default async function Page({

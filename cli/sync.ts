@@ -54,12 +54,13 @@ export const syncRestaurants = async () => {
             });
           }
         });
+
         menuDaps = Object.entries(dapTotals)
           .map(([name, total]) => ({
             name,
             total,
           }))
-          .filter((dap) => dap.total > 3)
+          .filter((dap) => dap.total > 5)
           .map((dap) => dap.name);
       }
 

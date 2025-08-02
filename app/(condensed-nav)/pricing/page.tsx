@@ -4,6 +4,7 @@ import Heading from "@/components/typography/heading";
 import { Button } from "@/components/ui/button";
 import { Faqs } from "@/components/ui/faqs";
 import { Check, MapPin, Menu, Shield, X, Zap } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 
 const features = [
@@ -186,6 +187,12 @@ const PricingNotes = [
     description: "Your price is fixed for 5 years",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Pricing",
+  description:
+    "Stop paying for features you don't use. Get the complete menu builder and discovery experience with Know My Menu.",
+};
 
 export default function PricingPage() {
   return (

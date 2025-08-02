@@ -14,6 +14,7 @@ import HeadingIntroText from "@/components/heading-intro-text";
 import Paragraph from "@/components/typography/paragraph";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
+import { Metadata } from "next";
 type Frontmatter = {
   title: string;
   published_by?: string;
@@ -66,6 +67,12 @@ async function getBlogPosts(): Promise<BlogPost[]> {
     return [];
   }
 }
+
+export const metadata: Metadata = {
+  title: "Restaurant Insights & Tips",
+  description:
+    "Discover the latest trends, strategies, and insights to help your restaurant thrive in today's competitive market.",
+};
 
 export default async function BlogPage() {
   const posts = await getBlogPosts();

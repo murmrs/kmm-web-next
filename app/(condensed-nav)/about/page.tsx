@@ -4,6 +4,7 @@ import Paragraph from "@/components/typography/paragraph";
 import { Faqs } from "@/components/ui/faqs";
 import { CtaBlock } from "@/components/cta-block";
 import { Heart, Users, Shield, Sparkles, Utensils, Eye } from "lucide-react";
+import { Metadata } from "next";
 
 const benefits = [
   {
@@ -102,6 +103,12 @@ const FAQ_SECTIONS = [
     ],
   },
 ];
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Driven by a passion for using technology as a tool to improve everyday life, founder Susan Abbott created Know My Menu to solve a common, frustrating problem: truly knowing what's in your food.",
+};
 
 export default function AboutPage() {
   return (
