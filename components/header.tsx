@@ -138,7 +138,7 @@ const Header = ({
           </SheetTrigger>
           <SheetContent side="right">
             <SheetTitle className="sr-only">Main menu</SheetTitle>
-            <nav className="flex flex-col gap-2 pb-4 px-4 w-full min-h-screen pt-10">
+            <nav className="flex flex-col gap-2 pb-4 px-4 w-full min-h-full pt-10">
               {[
                 { href: "/", label: "Home" },
                 { href: "/restaurants", label: "Discover Restaurants" },
