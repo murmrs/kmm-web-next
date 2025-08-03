@@ -223,6 +223,8 @@ export default function Details({
                         </div>
                         <Link
                           href={`${env.NEXT_PUBLIC_APP_URL}/menu/${restaurant.id}/${menu.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-blue-600 hover:text-blue-800 font-medium"
                         >
                           View Menu →
