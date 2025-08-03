@@ -18,6 +18,7 @@ export const env = createEnv({
     NEXT_PUBLIC_TYPESENSE_HOST: z.string().min(1),
     NEXT_PUBLIC_TYPESENSE_API_KEY: z.string().min(1),
     NEXT_PUBLIC_APP_URL: z.string().min(1),
+    NEXT_PUBLIC_VERCEL_URL: z.string().min(1),
   },
   /*
    * Due to how Next.js bundles environment variables on Edge and Client,
@@ -31,5 +32,6 @@ export const env = createEnv({
     NEXT_PUBLIC_TYPESENSE_HOST: process.env.NEXT_PUBLIC_TYPESENSE_HOST,
     NEXT_PUBLIC_TYPESENSE_API_KEY: process.env.NEXT_PUBLIC_TYPESENSE_API_KEY,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    NEXT_PUBLIC_VERCEL_URL: process.env.NEXT_PUBLIC_VERCEL_URL,
   },
 });
