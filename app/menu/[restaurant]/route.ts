@@ -7,5 +7,5 @@ import { NextRequest } from "next/server";
 export async function GET(request: NextRequest, { params }: { params: Promise<{ restaurant: string }> }): Promise<Response> {
     const { restaurant } = await params;
 
-    return Response.redirect(`${env.NEXT_PUBLIC_VERCEL_URL}/restaurants/${restaurant}`);
+    return Response.redirect(`https://knowmymenu.com/restaurants/${restaurant}`);
   }
