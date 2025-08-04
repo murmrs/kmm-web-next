@@ -12,7 +12,6 @@ import {
   SearchBoxProps,
   ToggleRefinementProps,
   useCurrentRefinements,
-  useInstantSearch,
   // SearchBox,
   useRefinementList,
   useSearchBox,
@@ -392,11 +391,7 @@ export function SearchBar({
   //   return "/restaurants?" + qs.stringify(indexUiState, { arrayFormat: "bracket" });
   // }
 
-  const { indexUiState } = useInstantSearch();
-
   const queryParams = useSearchParams();
-
-  console.log("instantSearch", indexUiState);
 
   // const searchUrl =
   // "/restaurants??" +
