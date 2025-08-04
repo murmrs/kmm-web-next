@@ -6,7 +6,7 @@ import { cache } from "react";
 export const fetchRestaurant = cache(async (id: string) => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/locations/${id}`
+      `${process.env.NEXT_PUBLIC_API_URL}/locations/${id}`,
     );
     const data = await res.json();
 

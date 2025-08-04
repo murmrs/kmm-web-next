@@ -50,7 +50,7 @@ const Header = ({
         backgroundImage &&
           "border-b-0 dark bg-transparent grid grid-cols-1 lg:grid-cols-[200px_1fr_200px]",
         !backgroundImage && "sticky top-0",
-        className
+        className,
         // "bg-transparent border-b-0"
         // "[&]:supports-[backdrop-filter]:backdrop-blur-md"
       )}
@@ -98,7 +98,7 @@ const Header = ({
               backgroundImage ? "/kmm-logo-tagline-orange.svg" : "/kmm-logo.svg"
             }
             className={cn(
-              backgroundImage && "absolute top-0 left-12 w-52 lg:w-84"
+              backgroundImage && "absolute top-0 left-12 w-52 lg:w-84",
             )}
             alt="Know My Menu"
             width={100}
@@ -112,14 +112,14 @@ const Header = ({
       <div
         className={cn(
           "absolute right-12 top-4 lg:flex gap-4",
-          !expanded && "flex relative top-0 right-0"
+          !expanded && "flex relative top-0 right-0",
         )}
       >
         <Link
           href="/list-your-restaurant"
           className={cn(
             buttonVariants({ variant: "ghost" }),
-            "hidden lg:block"
+            "hidden lg:block",
           )}
         >
           List your restaurant

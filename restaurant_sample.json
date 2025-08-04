@@ -39,10 +39,7 @@
   "price_range": 10,
   "price_range_max": 50,
   "price_range_min": 10,
-  "location": [
-    34.4129515,
-    -119.6886303
-  ],
+  "location": [34.4129515, -119.6886303],
   "city": "Santa Barbara",
   "state": "CA",
   "country": "US",

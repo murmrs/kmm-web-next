@@ -59,7 +59,7 @@ export const TagCloud = React.forwardRef<HTMLDivElement, TagCloudProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 export const TagCloudDefaults: TagCloudProps = {

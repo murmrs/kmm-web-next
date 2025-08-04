@@ -25,7 +25,7 @@ export const syncRestaurants = async () => {
       // console.log("Fetching summary for restaurant: ", restaurant.id);
       try {
         const summaryRes = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/locations/${restaurant.id}/summary`
+          `${process.env.NEXT_PUBLIC_API_URL}/locations/${restaurant.id}/summary`,
         );
         if (summaryRes.ok) {
           const data = (await summaryRes.json()) as {
@@ -94,7 +94,7 @@ export const syncRestaurants = async () => {
         email: "",
         dap_compliance: menuDaps,
       } as Restaurant;
-    })
+    }),
   );
 
   //   Create item in collection

@@ -42,7 +42,7 @@ export const MarqueeBanner = (props: MarqueeBannerProps) => {
               "text-4xl lg:text-7xl font-bold leading-12 lg:leading-22",
               {
                 "self-end": index % 2 !== 0,
-              }
+              },
             )}
             dangerouslySetInnerHTML={{ __html: heading }}
           />

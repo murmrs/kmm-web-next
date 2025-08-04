@@ -63,7 +63,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
       className,
       ...props
     },
-    ref
+    ref,
   ) => {
     const Component = as;
     return (
@@ -75,7 +75,7 @@ const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
         {children}
       </Component>
     );
-  }
+  },
 ) as HeadingComponent;
 
 Heading.h2 = React.forwardRef<HTMLHeadingElement, HeadingProps>(
@@ -83,7 +83,7 @@ Heading.h2 = React.forwardRef<HTMLHeadingElement, HeadingProps>(
     <Heading as="h2" size="h2" ref={ref} {...props}>
       {props.children}
     </Heading>
-  )
+  ),
 );
 
 Heading.h3 = React.forwardRef<HTMLHeadingElement, HeadingProps>(
@@ -91,7 +91,7 @@ Heading.h3 = React.forwardRef<HTMLHeadingElement, HeadingProps>(
     <Heading as="h3" size="h3" ref={ref} {...props}>
       {props.children}
     </Heading>
-  )
+  ),
 );
 
 Heading.h4 = React.forwardRef<HTMLHeadingElement, HeadingProps>(
@@ -99,7 +99,7 @@ Heading.h4 = React.forwardRef<HTMLHeadingElement, HeadingProps>(
     <Heading as="h4" size="h4" ref={ref} {...props}>
       {props.children}
     </Heading>
-  )
+  ),
 );
 
 Heading.tagline = React.forwardRef<HTMLHeadingElement, HeadingProps>(
@@ -107,7 +107,7 @@ Heading.tagline = React.forwardRef<HTMLHeadingElement, HeadingProps>(
     <Heading as="h2" size="h3" variant="tagline" ref={ref} {...props}>
       {props.children}
     </Heading>
-  )
+  ),
 );
 
 Heading.displayName = "Heading";

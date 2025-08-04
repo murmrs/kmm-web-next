@@ -35,7 +35,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 export type ButtonProps = React.ComponentProps<"button"> &
@@ -69,7 +69,7 @@ function DecorativeLink({
   return (
     <Link
       className={cn(
-        "group relative flex pr-16 py-4 pl-4 overflow-hidden rounded-md hover:text-white transition-all duration-300 text-white sm:text-foreground"
+        "group relative flex pr-16 py-4 pl-4 overflow-hidden rounded-md hover:text-white transition-all duration-300 text-white sm:text-foreground",
       )}
       {...props}
     >

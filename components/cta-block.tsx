@@ -20,7 +20,7 @@ export function CtaBlock(props?: CtaBlockProps) {
     <section
       className={cn(
         "w-full bg-primary text-white py-20 flex items-center justify-center",
-        className
+        className,
       )}
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-12">

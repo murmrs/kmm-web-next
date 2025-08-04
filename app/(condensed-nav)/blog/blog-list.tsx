@@ -51,7 +51,7 @@ export function BlogList({ posts }: BlogListProps) {
   const filteredPosts = useMemo(() => {
     if (selectedCategory === "all") return posts;
     return posts.filter(
-      (post) => post.frontmatter.category === selectedCategory
+      (post) => post.frontmatter.category === selectedCategory,
     );
   }, [posts, selectedCategory]);
 
@@ -136,7 +136,7 @@ export function BlogList({ posts }: BlogListProps) {
                         <span>
                           {format(
                             new Date(post.frontmatter.published_date),
-                            "MMM d, yyyy"
+                            "MMM d, yyyy",
                           )}
                         </span>
                       </div>

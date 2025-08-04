@@ -51,7 +51,7 @@ export default function HeadingIntroText({
   // useEffect(() => {
   //   // Cursor blink effect - only while animation is active
   //   const isAnimationComplete = currentWordIndex === words.length - 1 && !isTyping && !isBackspacing;
-    
+
   //   if (isAnimationComplete) {
   //     setShowCursor(false);
   //     // Set cookie when animation completes
@@ -130,7 +130,7 @@ export default function HeadingIntroText({
     <h1
       className={cn(
         "text-4xl sm:text-7xl font-semibold text-center leading-tight text-white whitespace-nowrap",
-        className
+        className,
       )}
     >
       What's for me?

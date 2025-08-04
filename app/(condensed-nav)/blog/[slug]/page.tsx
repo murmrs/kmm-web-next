@@ -19,7 +19,7 @@ type Frontmatter = {
 };
 
 function extractTocFromMdx(
-  content: string
+  content: string,
 ): { text: string; id: string; level: number }[] {
   // Extract headings (## and ###) for TOC
   const lines = content.split("\n");
@@ -42,7 +42,7 @@ function extractTocFromMdx(
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> },
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   // read route params
   const { slug } = await params;
@@ -191,7 +191,7 @@ export default async function Page({
           <div
             className={cn(
               "w-full",
-              toc.length > 0 ? "md:w-3/4 lg:w-4/5" : "md:w-full"
+              toc.length > 0 ? "md:w-3/4 lg:w-4/5" : "md:w-full",
             )}
           >
             <article className="prose prose-neutral max-w-none w-full mx-auto">
