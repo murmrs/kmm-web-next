@@ -11,7 +11,9 @@ function slugify(text: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-function getHeadingText(children: any): string {
+function getHeadingText(
+  children: string | string[] | { props: { children: string | string[] } }
+): string {
   if (typeof children === "string") return children;
   if (Array.isArray(children)) return children.map(getHeadingText).join(" ");
   if (children && typeof children === "object" && "props" in children) {
