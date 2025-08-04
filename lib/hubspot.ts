@@ -10,11 +10,13 @@ type HubspotFormSubmission = {
     pageName?: string;
     hutk?: string; // HubSpot usertoken
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   legalConsentOptions?: any;
 };
 
 type HubspotFormResponse = {
   inlineMessage?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   errors?: any[];
   status: string;
   message?: string;
@@ -28,6 +30,7 @@ export async function submitToHubspotForm({
 }: HubspotFormSubmission): Promise<HubspotFormResponse> {
   const url = `https://api.hsforms.com/submissions/v3/integration/submit/46321310/${formId}`;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const body: any = {
     fields,
   };

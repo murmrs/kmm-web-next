@@ -18,16 +18,18 @@ export default function Home() {
               <HeadingIntroText className="mb-4" />
               <SearchBar />
               <Paragraph className="text-foreground max-w-lg mx-auto mt-5 leading-6">
-                Whether you're searching for a quick bite, or your new favorite
-                spot, we're empowering you to find the best food for you.
+                Whether you&apos;re searching for a quick bite, or your new
+                favorite spot, we&apos;re empowering you to find the best food
+                for you.
               </Paragraph>
             </div>
             <div className="block lg:hidden mt-16 mb-16 w-full">
               <HeadingIntroText className="mb-4" />
               <SearchSheet />
               <Paragraph className="text-center text-foreground max-w-lg mx-auto mt-5 leading-6">
-                Whether you're searching for a quick bite, or your new favorite
-                spot, we're empowering you to find the best food for you.
+                Whether you&apos;re searching for a quick bite, or your new
+                favorite spot, we&apos;re empowering you to find the best food
+                for you.
               </Paragraph>
               {/* <SearchBar /> */}
             </div>

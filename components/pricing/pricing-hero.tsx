@@ -8,8 +8,8 @@ export default function PricingHero() {
             Everything You Need.
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-2xl mx-auto">
-            Stop paying for features you don't use. Get the complete restaurant
-            discovery experience with Know My Menu.
+            Stop paying for features you don&apos;t use. Get the complete
+            restaurant discovery experience with Know My Menu.
           </p>
         </div>
       </div>

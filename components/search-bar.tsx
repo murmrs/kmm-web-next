@@ -19,11 +19,9 @@ import {
   useToggleRefinement,
 } from "react-instantsearch";
 
-import { zodResolver } from "@hookform/resolvers/zod";
 import { RefinementListItem } from "instantsearch.js/es/connectors/refinement-list/connectRefinementList";
+import Image from "next/image";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { badgeVariants } from "./ui/badge";
 import { Checkbox } from "./ui/checkbox";
 import {
@@ -109,49 +107,8 @@ const sections: {
   },
 ];
 
-const SearchButton = ({
-  tab,
-  label,
-  onClick,
-  className,
-  children,
-  active,
-  text,
-}: {
-  tab: string;
-  label: string;
-  onClick: (e: React.MouseEvent) => void;
-  className?: string;
-  children?: React.ReactNode;
-  active?: boolean;
-  text?: string;
-}) => {
-  return (
-    <div className="relative w-full bg-muted dark:bg-white">
-      <button
-        className={cn(
-          "bg-muted dark:bg-accent-foreground border-none py-3 text-left  inline-flex items-center px-5 hover:rounded-md w-full hover:bg-muted-foreground/20 dark:hover:bg-muted/10  transition-colors text-muted-foreground",
-          active && "bg-primary/20 rounded-md group-hover:bg-primary",
-          text && "text-foreground dark:text-black",
-          className,
-        )}
-        data-search-button="true"
-        onClick={(e) => {
-          e.stopPropagation();
-          onClick(e);
-        }}
-      >
-        <Search className="mr-2 h-4 w-4" />
-        {text || label}
-      </button>
-      {children}
-    </div>
-  );
-};
-
 const SearchInput = ({
   search,
-  items,
   onClick,
   label,
   attribute,
@@ -171,24 +128,8 @@ const SearchInput = ({
   });
 
   const currentRefinementsItems = currentRefinements.items.flatMap(
-    (item) => item.refinements,
+    (item) => item.refinements
   );
-
-  console.log("currentRefinements", currentRefinementsItems);
-
-  // useEffect(() => {
-  //   props.setItems(items);
-  // }, [items]);
-
-  // const handleClick = (e: React.MouseEvent) => {
-  //   e.stopPropagation();
-  //   props.onClick(e, props.attribute);
-  // };
-
-  const handleRefinementClick = (refinement: any) => {
-    console.log("refinement", refinement);
-    currentRefinements.refine(refinement);
-  };
 
   const count = currentRefinementsItems.length;
 
@@ -203,7 +144,7 @@ const SearchInput = ({
       <div
         className={cn(
           "relative w-full bg-muted dark:bg-white rounded-md overflow-hidden flex items-center gap-2",
-          className,
+          className
         )}
       >
         {/* {currentRefinementsItems.length > 0 ? (
@@ -229,7 +170,7 @@ const SearchInput = ({
           <input
             className={cn(
               "bg-muted dark:bg-accent-foreground border-none py-3 text-left  inline-flex items-center px-5 hover:rounded-md w-full hover:bg-muted-foreground/20 dark:hover:bg-muted/10  transition-colors text-muted-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-0 focus:bg-muted-foreground/20 focus:text-foreground pl-7 dark:focus:text-background",
-              count > 0 && "placeholder:text-black",
+              count > 0 && "placeholder:text-black"
             )}
             data-search-button="true"
             onClick={onClick}
@@ -247,27 +188,13 @@ const SearchInput = ({
   );
 };
 
-const SearchRefinementList = ({
-  search,
-}: {
-  search: (query: string) => void;
-}) => {
-  return <div>SearchRefinementList</div>;
-};
-
 const SearchBox = (props: SearchBoxProps) => {
-  const {
-    query,
-    refine,
-    clear,
-    // Deprecated
-    // isSearchStalled,
-  } = useSearchBox(props);
+  const { query, refine } = useSearchBox(props);
   return (
     <div className="relative w-full bg-muted dark:bg-white rounded-md overflow-hidden">
       <input
         className={cn(
-          "bg-muted dark:bg-accent-foreground border-none py-3 text-left  inline-flex items-center px-5 hover:rounded-md w-full hover:bg-muted-foreground/20 dark:hover:bg-muted/10  transition-colors text-muted-foreground placeholder:text-muted-foreground pr-7 focus:outline-none focus:ring-0 focus:bg-muted-foreground/20 focus:text-foreground",
+          "bg-muted dark:bg-accent-foreground border-none py-3 text-left  inline-flex items-center px-5 hover:rounded-md w-full hover:bg-muted-foreground/20 dark:hover:bg-muted/10  transition-colors text-muted-foreground placeholder:text-muted-foreground pr-7 focus:outline-none focus:ring-0 focus:bg-muted-foreground/20 focus:text-foreground"
           // active && "bg-primary/20 rounded-md group-hover:bg-primary",
           // text && "text-foreground dark:text-black",
           // className
@@ -293,10 +220,9 @@ const SearchBox = (props: SearchBoxProps) => {
 };
 
 function CustomToggleRefinement(
-  props: ToggleRefinementProps & { description?: string },
+  props: ToggleRefinementProps & { description?: string }
 ) {
-  const { value, canRefine, refine, sendEvent, createURL } =
-    useToggleRefinement(props);
+  const { value, canRefine, refine } = useToggleRefinement(props);
 
   return (
     <div className="flex items-start gap-3">
@@ -307,7 +233,11 @@ function CustomToggleRefinement(
         onCheckedChange={(checked) => {
           console.log("checked", value.isRefined);
 
-          checked ? refine({ isRefined: false }) : refine({ isRefined: true });
+          if (checked) {
+            refine({ isRefined: false });
+          } else {
+            refine({ isRefined: true });
+          }
         }}
         disabled={!canRefine}
       />
@@ -330,12 +260,6 @@ const VirtualFilters = () => {
   return null;
 };
 
-const SearchFormSchema = z.object({
-  location: z.array(z.string()).optional(),
-  cuisine: z.array(z.string()).optional(),
-  dietary: z.array(z.string()).optional(),
-});
-
 export function SearchBar({
   introText,
   condensed,
@@ -345,22 +269,10 @@ export function SearchBar({
   condensed?: boolean;
   className?: string;
 }) {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  const searchForm = useForm<z.infer<typeof SearchFormSchema>>({
-    resolver: zodResolver(SearchFormSchema),
-    defaultValues: {
-      location: [],
-      cuisine: [],
-      dietary: [],
-    },
-  });
-
   const [isOpen, setIsOpen] = useState(false);
   const [tab, setTab] = useState<"location" | "cuisine" | "dietary" | null>(
-    null,
+    null
   );
-  const [popoverOffset, setPopoverOffset] = useState(0);
 
   const [width, setWidth] = useState<number | "full">("full");
   const [height, setHeight] = useState<number>(0);
@@ -372,17 +284,11 @@ export function SearchBar({
   const anchorRef = useRef<HTMLDivElement>(null);
 
   // Add state to track heights of each refinement list
-  const [heights, setHeights] = useState({
+  const [, setHeights] = useState({
     location: 200,
     cuisine: 200,
     dietary: 200,
   });
-
-  const handleSearch = () => {
-    // TODO: Implement search functionality
-    console.log("Searching with:", { location, cuisine, dietary });
-    setIsSearchOpen(false);
-  };
 
   const singleItemsSearchWrapRef = useRef<HTMLDivElement>(null);
 
@@ -392,43 +298,35 @@ export function SearchBar({
       if (section) {
         setWidth(section.width);
         setHeight(section.height);
-        console.log("Section", { section, width, height });
+        console.log("Section", section);
       }
 
       if (anchorRef.current) {
-        const offset =
-          (e.target as HTMLElement).getBoundingClientRect().left -
-          anchorRef.current.getBoundingClientRect().left;
-        setPopoverOffset(offset);
-        console.log("Offset", offset);
+        // const offset =
+        //   (e.target as HTMLElement).getBoundingClientRect().left -
+        //   anchorRef.current.getBoundingClientRect().left;
+        // console.log("Offset", offset);
       }
 
       if (newTab !== tab) {
         setTab(newTab);
-        !isOpen && setIsOpen(true);
+        if (!isOpen) setIsOpen(true);
         // updateHeight(newTab, 200);
       }
     },
-    [isOpen, tab],
+    [isOpen, tab]
   );
 
-  const handleClose = useCallback((open: boolean) => {
-    if (!open) {
-      setIsOpen(false);
-      setTab(null);
-    }
-  }, []);
-
   // Function to update height when refinement list content changes
-  const updateHeight = useCallback((tabName: string, height: number) => {
-    setHeights((prev) => ({
-      ...prev,
-      [tabName]: height,
-    }));
-  }, []);
-
-  // Get current height based on active tab
-  const currentHeight = tab ? heights[tab as keyof typeof heights] : 200;
+  const updateHeight = useCallback(
+    (tabName: string, height: number) => {
+      setHeights((prev) => ({
+        ...prev,
+        [tabName]: height,
+      }));
+    },
+    [setHeights]
+  );
 
   // Create refs for each refinement list
   const locationRef = useRef<HTMLDivElement>(null);
@@ -458,7 +356,7 @@ export function SearchBar({
   }, [updateHeight]);
 
   const handleClickOutside = useCallback(
-    (e: any) => {
+    (e: CustomEvent<{ originalEvent: PointerEvent }>) => {
       // Don't fire if the click intersects with any of the buttons
       const target = e.target as HTMLElement;
       // Check if the click is inside a SearchButton or its children
@@ -474,7 +372,7 @@ export function SearchBar({
         setTab(null);
       }
     },
-    [isOpen],
+    [isOpen]
   );
 
   const items = {
@@ -515,7 +413,7 @@ export function SearchBar({
         {introText && (
           <h1
             className={cn(
-              "text-center text-5xl font-bold text-foreground mb-8 max-w-2xl mx-auto mt-[15vh] dark",
+              "text-center text-5xl font-bold text-foreground mb-8 max-w-2xl mx-auto mt-[15vh] dark"
             )}
           >
             {introText}
@@ -525,7 +423,7 @@ export function SearchBar({
           <PopoverAnchor asChild ref={anchorRef}>
             <div
               className={cn(
-                "relative  mx-auto dark:bg-white bg-muted rounded-md flex overflow-hidden group min-w-96",
+                "relative  mx-auto dark:bg-white bg-muted rounded-md flex overflow-hidden group min-w-96"
               )}
             >
               <SearchInput
@@ -560,7 +458,7 @@ export function SearchBar({
                 }}
                 className={cn(
                   buttonVariants(),
-                  "ml-auto absolute right-4 top-1/2 -translate-y-1/2",
+                  "ml-auto absolute right-4 top-1/2 -translate-y-1/2"
                 )}
               >
                 Search
@@ -615,7 +513,7 @@ export function SearchBar({
                             items[tab]?.items?.some(
                               (refinementItem) =>
                                 refinementItem.value === item.key &&
-                                refinementItem.isRefined,
+                                refinementItem.isRefined
                             );
 
                           return (
@@ -624,7 +522,7 @@ export function SearchBar({
                               className={cn(
                                 "flex items-center gap-3 p-2 rounded-md hover:bg-primary/10 cursor-pointer transition",
                                 isRefined &&
-                                  "bg-primary/20 border border-primary",
+                                  "bg-primary/20 border border-primary"
                               )}
                               onClick={() => {
                                 // setIsOpen(false);
@@ -636,9 +534,11 @@ export function SearchBar({
                                 }
                               }}
                             >
-                              <img
+                              <Image
                                 src={item.image}
-                                alt={item.name}
+                                alt={item.name || ""}
+                                width={200}
+                                height={200}
                                 className="size-16 rounded-md object-cover"
                               />
                               <span className="font-medium">{item.name}</span>
@@ -674,7 +574,7 @@ export function SearchBar({
                               }}
                               className={cn(
                                 item.isRefined && badgeVariants({ size: "lg" }),
-                                "cursor-pointer py-0",
+                                "cursor-pointer py-0"
                               )}
                             >
                               {item.label}

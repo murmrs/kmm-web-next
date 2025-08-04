@@ -102,8 +102,8 @@ export default function FeatureComparison() {
             Why Choose Know My Menu?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're not just another restaurant app. We're the only platform that
-            puts your dining preferences first.
+            We&apos;re not just another restaurant app. We&apos;re the only
+            platform that puts your dining preferences first.
           </p>
         </div>
 

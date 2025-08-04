@@ -1,12 +1,12 @@
+import { CtaBlock } from "@/components/cta-block";
+import { cn } from "@/lib/utils";
 import fs from "fs";
-import path from "path";
+import { Calendar, User } from "lucide-react";
+import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CtaBlock } from "@/components/cta-block";
-import { Calendar, User } from "lucide-react";
-import React from "react";
-import { cn } from "@/lib/utils";
-import { Metadata, ResolvingMetadata } from "next";
+import path from "path";
 
 type Frontmatter = {
   title: string;
@@ -19,7 +19,7 @@ type Frontmatter = {
 };
 
 function extractTocFromMdx(
-  content: string,
+  content: string
 ): { text: string; id: string; level: number }[] {
   // Extract headings (## and ###) for TOC
   const lines = content.split("\n");
@@ -40,10 +40,11 @@ function extractTocFromMdx(
   return toc;
 }
 
-export async function generateMetadata(
-  { params }: { params: Promise<{ slug: string }> },
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   // read route params
   const { slug } = await params;
 
@@ -75,6 +76,7 @@ export default async function Page({
     const filePath = path.join(process.cwd(), "blog-content", `${slug}.mdx`);
     mdxContent = fs.readFileSync(filePath, "utf8");
   } catch (e) {
+    console.error(e);
     notFound();
   }
 
@@ -106,6 +108,7 @@ export default async function Page({
         }
       }
     } catch (e) {
+      console.error(e);
       // ignore
     }
   }
@@ -117,10 +120,11 @@ export default async function Page({
         <div className="rounded-2xl shadow-lg bg-gradient-to-br from-primary/10 to-white/80 border border-primary/10 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden p-0">
           {image && (
             <div className="flex-1 self-stretch aspect-video">
-              <img
+              <Image
                 src={image}
                 alt={title}
                 className="object-cover w-full h-full block"
+                fill
               />
             </div>
           )}
@@ -191,7 +195,7 @@ export default async function Page({
           <div
             className={cn(
               "w-full",
-              toc.length > 0 ? "md:w-3/4 lg:w-4/5" : "md:w-full",
+              toc.length > 0 ? "md:w-3/4 lg:w-4/5" : "md:w-full"
             )}
           >
             <article className="prose prose-neutral max-w-none w-full mx-auto">

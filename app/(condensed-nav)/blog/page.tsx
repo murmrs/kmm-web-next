@@ -1,20 +1,8 @@
+import { PageHero } from "@/components/page-hero";
 import fs from "fs";
+import { Metadata } from "next";
 import path from "path";
 import { BlogList } from "./blog-list";
-import { PageHero } from "@/components/page-hero";
-import { Hero } from "@/components/hero";
-import { MarqueeBanner } from "@/components/marquee-banner";
-import { RestaurantList } from "@/components/restaurant-list";
-import { TagCloud } from "@/components/tag-cloud";
-import { Footer } from "@/components/footer";
-import { SearchBar } from "@/components/search-bar";
-import Heading from "@/components/typography/heading";
-import Header from "@/components/header";
-import HeadingIntroText from "@/components/heading-intro-text";
-import Paragraph from "@/components/typography/paragraph";
-import { Button } from "@/components/ui/button";
-import { Search } from "lucide-react";
-import { Metadata } from "next";
 type Frontmatter = {
   title: string;
   published_by?: string;

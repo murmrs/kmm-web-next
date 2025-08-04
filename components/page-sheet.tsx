@@ -1,15 +1,8 @@
 "use client";
 
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-  SheetTitle,
-} from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
+import { useRouter } from "next/navigation";
+import { useCallback, useState } from "react";
 
 export default function PageSheet({
   children,
@@ -18,9 +11,8 @@ export default function PageSheet({
   children: React.ReactNode;
   hideCloseButton?: boolean;
 }) {
-  const [open, setOpen] = useState(true);
+  const [open] = useState(true);
   const router = useRouter();
-  const pathname = usePathname();
 
   const handleOnOpenChange = useCallback(
     (open: boolean) => {
@@ -28,7 +20,7 @@ export default function PageSheet({
         router.back();
       }
     },
-    [router],
+    [router]
   );
 
   return (

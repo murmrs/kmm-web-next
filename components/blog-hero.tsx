@@ -1,5 +1,5 @@
 import { Calendar, User } from "lucide-react";
-import { Button, ButtonProps } from "./ui/button";
+import Image from "next/image";
 
 type ImageProps = {
   src: string;
@@ -48,17 +48,11 @@ export const BlogHero = (props: BlogHeroProps) => {
             WebkitClipPath: "url(#page-hero-clip)",
           }}
         >
-          <img
+          <Image
             src={image.src}
             className="w-full h-full object-cover object-[center_80%]"
-            alt={image.alt}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center 80%",
-              display: "block",
-            }}
+            fill
+            alt={image.alt || ""}
           />
           <div
             className="absolute inset-0"

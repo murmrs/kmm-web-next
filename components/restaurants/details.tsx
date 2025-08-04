@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
+import { env } from "@/env";
 import { cn } from "@/lib/utils";
 import type { LocationResult } from "@/types/location-result";
 import {
@@ -22,12 +23,10 @@ import {
   Shirt,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { json } from "stream/consumers";
 import { Button } from "../ui/button";
-import Link from "next/link";
-import { env } from "@/env";
 
 const formatTime = (hour: number, minute: number) => {
   const ampm = hour >= 12 ? "PM" : "AM";
@@ -65,9 +64,7 @@ export default function Details({
   location?: LocationResult;
   displayBackButton?: boolean;
 }) {
-  const [restaurant, setRestaurant] = useState<LocationResult | null>(
-    location || null,
-  );
+  const [restaurant] = useState<LocationResult | null>(location || null);
   const [openAccordions, setOpenAccordions] = useState<string[]>([
     "menus",
     "hours",
@@ -230,7 +227,7 @@ export default function Details({
                           View Menu →
                         </Link>
                       </div>
-                    ),
+                    )
                   )}
                 </div>
               </AccordionContent>
@@ -262,7 +259,7 @@ export default function Details({
                         open: { hour: number; minute: number };
                         closed: { hour: number; minute: number };
                       },
-                      index: number,
+                      index: number
                     ) => (
                       <div
                         key={index}
@@ -276,7 +273,7 @@ export default function Details({
                           {formatTime(hours.closed.hour, hours.closed.minute)}
                         </span>
                       </div>
-                    ),
+                    )
                   )}
                 </div>
               </AccordionContent>
@@ -311,7 +308,7 @@ export default function Details({
                             >
                               {attr}
                             </Badge>
-                          ),
+                          )
                         )}
                       </div>
                     </div>
@@ -366,7 +363,7 @@ export default function Details({
                             >
                               {tip}
                             </Badge>
-                          ),
+                          )
                         )}
                       </div>
                     </div>
@@ -413,7 +410,7 @@ export default function Details({
                           {payment}
                         </span>
                       </div>
-                    ),
+                    )
                   )}
                 </div>
               </AccordionContent>
@@ -465,7 +462,7 @@ export default function Details({
                         <p key={index} className="text-gray-600 text-sm">
                           • {parking}
                         </p>
-                      ),
+                      )
                     )}
                   </div>
                 </div>
@@ -482,7 +479,7 @@ export default function Details({
                         <p key={index} className="text-gray-600 text-sm">
                           • {access}
                         </p>
-                      ),
+                      )
                     )}
                   </div>
                 </div>
@@ -510,7 +507,7 @@ export default function Details({
                         >
                           {service}
                         </Badge>
-                      ),
+                      )
                     )}
                   </div>
                 </div>

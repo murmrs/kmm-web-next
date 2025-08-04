@@ -1,6 +1,5 @@
 import Details from "@/components/restaurants/details";
 import { fetchRestaurant } from "@/lib/data";
-import type { LocationResult } from "@/types/location-result";
 
 interface RestaurantPageProps {
   params: Promise<{

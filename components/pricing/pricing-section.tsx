@@ -67,7 +67,7 @@ export default function PricingSection() {
               <div className="mt-12 text-center">
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-200">
                   <h4 className="text-2xl font-bold text-gray-900 mb-4">
-                    Ready to Transform Your Restaurant's Digital Presence?
+                    Ready to Transform Your Restaurant&apos;s Digital Presence?
                   </h4>
                   <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
                     Join the restaurants already using Know My Menu to increase

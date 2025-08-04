@@ -1,9 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
 
-const words = ["breakfast", "lunch", "dinner", "me"];
+// const words = ["breakfast", "lunch", "dinner", "me"];
 
 // Cookie utility functions
 // const getCookie = (name: string): string | null => {
@@ -130,10 +129,10 @@ export default function HeadingIntroText({
     <h1
       className={cn(
         "text-4xl sm:text-7xl font-semibold text-center leading-tight text-white whitespace-nowrap",
-        className,
+        className
       )}
     >
-      What's for me?
+      What&apos;s for me?
     </h1>
   );
 }

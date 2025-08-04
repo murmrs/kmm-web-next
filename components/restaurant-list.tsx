@@ -1,7 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import clsx from "clsx";
 import type { CarouselApi } from "@/components/carousel";
 import {
   Carousel,
@@ -10,14 +8,15 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/carousel";
-import { Button, ButtonProps, buttonVariants } from "./ui/button";
-import { Hits, InstantSearch, useHits } from "react-instantsearch";
-import Link from "next/link";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import { RestaurantCard } from "./restaurants/restaurant-card";
 import { Restaurant } from "@/config/typesense";
+import { cn } from "@/lib/utils";
+import clsx from "clsx";
 import { MoveRight } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useHits } from "react-instantsearch";
+import { RestaurantCard } from "./restaurants/restaurant-card";
+import { ButtonProps } from "./ui/button";
 
 type ImageProps = {
   src: string;
@@ -90,7 +89,7 @@ export const RestaurantList = (props: RestaurantListProps) => {
             href="/restaurants"
             className={
               cn(
-                "group relative flex pr-16 py-4 pl-4 overflow-hidden rounded-md hover:text-white transition-all duration-300 text-white sm:text-foreground",
+                "group relative flex pr-16 py-4 pl-4 overflow-hidden rounded-md hover:text-white transition-all duration-300 text-white sm:text-foreground"
               )
               // "hidden md:flex",
               // buttonVariants({ variant: "default" })
@@ -135,7 +134,7 @@ export const RestaurantList = (props: RestaurantListProps) => {
                     onClick={() => api?.scrollTo(index)}
                     className={clsx(
                       "mx-[3px] size-2 rounded-full",
-                      current === index + 1 ? "bg-primary" : "bg-primary/10",
+                      current === index + 1 ? "bg-primary" : "bg-primary/10"
                     )}
                   />
                 ))}

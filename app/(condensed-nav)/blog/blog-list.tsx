@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -11,11 +10,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Calendar, User, ArrowRight, Filter } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { format } from "date-fns";
+import { ArrowRight, Calendar, Filter, User } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useMemo, useState } from "react";
 
 type Frontmatter = {
   title: string;
@@ -51,7 +50,7 @@ export function BlogList({ posts }: BlogListProps) {
   const filteredPosts = useMemo(() => {
     if (selectedCategory === "all") return posts;
     return posts.filter(
-      (post) => post.frontmatter.category === selectedCategory,
+      (post) => post.frontmatter.category === selectedCategory
     );
   }, [posts, selectedCategory]);
 
@@ -136,7 +135,7 @@ export function BlogList({ posts }: BlogListProps) {
                         <span>
                           {format(
                             new Date(post.frontmatter.published_date),
-                            "MMM d, yyyy",
+                            "MMM d, yyyy"
                           )}
                         </span>
                       </div>

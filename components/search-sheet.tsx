@@ -3,22 +3,16 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Search, X } from "lucide-react";
-import { useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import {
-  SearchBoxProps,
   ToggleRefinementProps,
   useCurrentRefinements,
-  useInstantSearch,
   useRefinementList,
   useSearchBox,
   useToggleRefinement,
 } from "react-instantsearch";
 
-import { zodResolver } from "@hookform/resolvers/zod";
 import { RefinementListItem } from "instantsearch.js/es/connectors/refinement-list/connectRefinementList";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { Badge } from "./ui/badge";
 import { Checkbox } from "./ui/checkbox";
 import { Label } from "./ui/label";
@@ -26,7 +20,6 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "./ui/sheet";
 
 const SearchInput = ({
   search,
-  items,
   label,
   attribute,
   className,
@@ -44,16 +37,10 @@ const SearchInput = ({
   });
 
   const currentRefinementsItems = currentRefinements.items.flatMap(
-    (item) => item.refinements,
+    (item) => item.refinements
   );
 
   const count = currentRefinementsItems.length;
-
-  const labelText = useMemo(() => {
-    if (count === 0) return label;
-    if (count >= 1) return `${label} (${count})`;
-    return `${label} (${count})`;
-  }, [count, label]);
 
   return (
     <div className={cn("relative w-full", className)}>
@@ -61,7 +48,7 @@ const SearchInput = ({
         <input
           className={cn(
             "w-full px-3 py-2 border border-input bg-background rounded-md text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent",
-            count > 0 && "border-primary",
+            count > 0 && "border-primary"
           )}
           onChange={(e) => {
             search(e.target.value);
@@ -92,7 +79,7 @@ const RefinementList = ({
   });
 
   const currentRefinementsItems = currentRefinements.items.flatMap(
-    (item) => item.refinements,
+    (item) => item.refinements
   );
 
   const selectedValues = currentRefinementsItems.map((item) => item.value);
@@ -130,24 +117,8 @@ const RefinementList = ({
   );
 };
 
-const SearchBox = (props: SearchBoxProps) => {
-  const { query, refine } = useSearchBox(props);
-
-  return (
-    <div className="relative w-full">
-      <input
-        className="w-full px-3 py-2 border border-input bg-background rounded-md text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
-        value={query}
-        onChange={(e) => refine(e.target.value)}
-        placeholder="Search by name, cuisine, or location"
-      />
-      <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-    </div>
-  );
-};
-
 function CustomToggleRefinement(
-  props: ToggleRefinementProps & { description?: string },
+  props: ToggleRefinementProps & { description?: string }
 ) {
   const { value, canRefine, refine } = useToggleRefinement(props);
 
@@ -180,43 +151,15 @@ const VirtualFilters = () => {
   return null;
 };
 
-const SearchFormSchema = z.object({
-  location: z.array(z.string()).optional(),
-  cuisine: z.array(z.string()).optional(),
-  dietary: z.array(z.string()).optional(),
-});
-
-export function SearchSheet({
-  introText,
-  condensed,
-  className,
-  icon,
-}: {
-  introText?: string;
-  condensed?: boolean;
-  className?: string;
-  icon?: boolean;
-}) {
-  const searchForm = useForm<z.infer<typeof SearchFormSchema>>({
-    resolver: zodResolver(SearchFormSchema),
-    defaultValues: {
-      location: [],
-      cuisine: [],
-      dietary: [],
-    },
-  });
-
+export function SearchSheet({ icon }: { icon?: boolean }) {
   const cuisine = useRefinementList({ attribute: "cuisine.name", limit: 20 });
   const dietary = useRefinementList({ attribute: "dap_compliance", limit: 20 });
   const location = useRefinementList({ attribute: "state", limit: 20 });
 
-  const { indexUiState } = useInstantSearch();
-  const queryParams = useSearchParams();
-
   // Get current refinements for display
   const currentRefinements = useCurrentRefinements();
   const allRefinements = currentRefinements.items.flatMap(
-    (item) => item.refinements,
+    (item) => item.refinements
   );
 
   const clearAllRefinements = () => {

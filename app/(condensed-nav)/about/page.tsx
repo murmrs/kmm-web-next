@@ -1,9 +1,8 @@
+import { CtaBlock } from "@/components/cta-block";
 import { PageHero } from "@/components/page-hero";
 import Heading from "@/components/typography/heading";
 import Paragraph from "@/components/typography/paragraph";
-import { Faqs } from "@/components/ui/faqs";
-import { CtaBlock } from "@/components/cta-block";
-import { Heart, Users, Shield, Sparkles, Utensils, Eye } from "lucide-react";
+import { Eye, Heart, Shield, Sparkles, Users, Utensils } from "lucide-react";
 import { Metadata } from "next";
 
 const benefits = [
@@ -53,57 +52,6 @@ const platformFeatures = [
   },
 ];
 
-const FAQ_SECTIONS = [
-  {
-    title: "What you get",
-    faqs: [
-      {
-        question: "Personalized Support",
-        answer:
-          "Susan, our founder, will personally dedicate 6 hours to creating your menus and answering any questions you may have.",
-      },
-      {
-        question: "Onboarding Process",
-        answer: "You'll have 2 weeks to complete the onboarding process.",
-      },
-      {
-        question: "Free Platform Access",
-        answer: "Enjoy 1 month of free access to the platform.",
-      },
-      {
-        question: "Referral Bonus",
-        answer:
-          "Recommend another restaurant that signs up, and you'll get 1 month free.",
-      },
-    ],
-  },
-  {
-    title: "What we need from you",
-    faqs: [
-      {
-        question: "Enthusiasm and Insight",
-        answer:
-          "Your input is invaluable. Help us tailor this tool to better serve your diners and attract new ones.",
-      },
-      {
-        question: "Feedback",
-        answer:
-          "As an early adopter, you'll play a key role in shaping the future of Know My Menu.",
-      },
-      {
-        question: "Social Media Engagement",
-        answer:
-          "Post 3 times per quarter on social media, highlighting how Know My Menu is benefiting your business.",
-      },
-      {
-        question: "Link Integration",
-        answer:
-          "Connect your menu to your website, Yelp, Google, and more—anywhere your diners need to see it.",
-      },
-    ],
-  },
-];
-
 export const metadata: Metadata = {
   title: "About",
   description:
@@ -125,7 +73,8 @@ export default function AboutPage() {
             <Paragraph className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Driven by a passion for using technology as a tool to improve
               everyday life, founder Susan Abbott created Know My Menu to solve
-              a common, frustrating problem: truly knowing what's in your food.
+              a common, frustrating problem: truly knowing what&apos;s in your
+              food.
             </Paragraph>
           </div>
         </div>
@@ -182,12 +131,12 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Heading size="h2" className="text-4xl md:text-5xl font-bold mb-6">
-              It's About
+              It&apos;s About
             </Heading>
             <Paragraph className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Whether you're drawn to the beautiful photos, clear ingredient
-              info, or personalized filters, Know My Menu is here to keep you in
-              the know.
+              Whether you&apos;re drawn to the beautiful photos, clear
+              ingredient info, or personalized filters, Know My Menu is here to
+              keep you in the know.
             </Paragraph>
           </div>
 

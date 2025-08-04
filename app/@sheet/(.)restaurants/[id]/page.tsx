@@ -1,8 +1,6 @@
 import PageSheet from "@/components/page-sheet";
 import Details from "@/components/restaurants/details";
-import { Button } from "@/components/ui/button";
 import { fetchRestaurant } from "@/lib/data";
-import { MoveLeft } from "lucide-react";
 
 const RestaurantModal = async ({
   params,

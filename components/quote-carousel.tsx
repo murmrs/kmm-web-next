@@ -1,10 +1,10 @@
 "use client";
-import { MapPin, Quote, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useCallback } from "react";
+import { ChevronLeft, ChevronRight, MapPin, Quote } from "lucide-react";
+import Link from "next/link";
+import { useCallback, useState } from "react";
 import Heading from "./typography/heading";
 import Paragraph from "./typography/paragraph";
-import { Button, buttonVariants } from "./ui/button";
-import Link from "next/link";
+import { buttonVariants } from "./ui/button";
 
 const quotes = [
   {
@@ -82,7 +82,7 @@ export default function QuoteCarousel() {
               </span>
             </div>
             <Heading className="text-5xl lg:text-5xl font-bold leading-tight text-white">
-              Don't take our word for it
+              Don&apos;t take our word for it
             </Heading>
             <Paragraph className="text-lg text-white/90 max-w-md">
               See what our users have to say about their experience with our
@@ -172,7 +172,7 @@ export default function QuoteCarousel() {
 
                       {/* Quote text */}
                       <p className="text-gray-800 text-base mb-4 leading-relaxed font-medium mt-2">
-                        "{quote.review}"
+                        &quot;{quote.review}&quot;
                       </p>
 
                       {/* Author and location */}

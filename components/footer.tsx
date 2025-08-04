@@ -1,12 +1,11 @@
 "use client";
+import type { ButtonProps } from "@/components/ui/button";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import type { ButtonProps } from "@/components/ui/button";
 
-import { useState } from "react";
-import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
-import Image from "next/image";
 import { submitToHubspotForm } from "@/lib/hubspot";
+import Image from "next/image";
+import { useState } from "react";
 
 type ImageProps = {
   url?: string;
@@ -76,7 +75,7 @@ export const Footer = (props: FooterProps) => {
     setLoading(true);
     setSuccess(false);
     try {
-      const res = await submitToHubspotForm({
+      await submitToHubspotForm({
         formId: "c86bedba-5372-472f-b332-7f3a829084a5",
         context: {
           pageUri: window.location.href,
@@ -87,6 +86,7 @@ export const Footer = (props: FooterProps) => {
       setSuccess(true);
       setEmailInput("");
     } catch (error) {
+      console.error(error);
       setSuccess(false);
       // Optionally handle error state here
     } finally {
