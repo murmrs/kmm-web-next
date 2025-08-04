@@ -127,7 +127,7 @@ const SearchInput = ({
   });
 
   const currentRefinementsItems = currentRefinements.items.flatMap(
-    (item) => item.refinements
+    (item) => item.refinements,
   );
 
   const count = currentRefinementsItems.length;
@@ -143,7 +143,7 @@ const SearchInput = ({
       <div
         className={cn(
           "relative w-full bg-muted dark:bg-white rounded-md overflow-hidden flex items-center gap-2",
-          className
+          className,
         )}
       >
         {/* {currentRefinementsItems.length > 0 ? (
@@ -169,7 +169,7 @@ const SearchInput = ({
           <input
             className={cn(
               "bg-muted dark:bg-accent-foreground border-none py-3 text-left  inline-flex items-center px-5 hover:rounded-md w-full hover:bg-muted-foreground/20 dark:hover:bg-muted/10  transition-colors text-muted-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-0 focus:bg-muted-foreground/20 focus:text-foreground pl-7 dark:focus:text-background",
-              count > 0 && "placeholder:text-black"
+              count > 0 && "placeholder:text-black",
             )}
             data-search-button="true"
             onClick={onClick}
@@ -193,7 +193,7 @@ const SearchBox = (props: SearchBoxProps) => {
     <div className="relative w-full bg-muted dark:bg-white rounded-md overflow-hidden">
       <input
         className={cn(
-          "bg-muted dark:bg-accent-foreground border-none py-3 text-left  inline-flex items-center px-5 hover:rounded-md w-full hover:bg-muted-foreground/20 dark:hover:bg-muted/10  transition-colors text-muted-foreground placeholder:text-muted-foreground pr-7 focus:outline-none focus:ring-0 focus:bg-muted-foreground/20 focus:text-foreground"
+          "bg-muted dark:bg-accent-foreground border-none py-3 text-left  inline-flex items-center px-5 hover:rounded-md w-full hover:bg-muted-foreground/20 dark:hover:bg-muted/10  transition-colors text-muted-foreground placeholder:text-muted-foreground pr-7 focus:outline-none focus:ring-0 focus:bg-muted-foreground/20 focus:text-foreground",
           // active && "bg-primary/20 rounded-md group-hover:bg-primary",
           // text && "text-foreground dark:text-black",
           // className
@@ -219,7 +219,7 @@ const SearchBox = (props: SearchBoxProps) => {
 };
 
 function CustomToggleRefinement(
-  props: ToggleRefinementProps & { description?: string }
+  props: ToggleRefinementProps & { description?: string },
 ) {
   const { value, canRefine, refine } = useToggleRefinement(props);
 
@@ -270,7 +270,7 @@ export function SearchBar({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [tab, setTab] = useState<"location" | "cuisine" | "dietary" | null>(
-    null
+    null,
   );
 
   const [width, setWidth] = useState<number | "full">("full");
@@ -313,7 +313,7 @@ export function SearchBar({
         // updateHeight(newTab, 200);
       }
     },
-    [isOpen, tab]
+    [isOpen, tab],
   );
 
   // Function to update height when refinement list content changes
@@ -324,7 +324,7 @@ export function SearchBar({
         [tabName]: height,
       }));
     },
-    [setHeights]
+    [setHeights],
   );
 
   // Create refs for each refinement list
@@ -371,7 +371,7 @@ export function SearchBar({
         setTab(null);
       }
     },
-    [isOpen]
+    [isOpen],
   );
 
   const items = {
@@ -408,7 +408,7 @@ export function SearchBar({
         {introText && (
           <h1
             className={cn(
-              "text-center text-5xl font-bold text-foreground mb-8 max-w-2xl mx-auto mt-[15vh] dark"
+              "text-center text-5xl font-bold text-foreground mb-8 max-w-2xl mx-auto mt-[15vh] dark",
             )}
           >
             {introText}
@@ -418,7 +418,7 @@ export function SearchBar({
           <PopoverAnchor asChild ref={anchorRef}>
             <div
               className={cn(
-                "relative  mx-auto dark:bg-white bg-muted rounded-md flex overflow-hidden group min-w-96"
+                "relative  mx-auto dark:bg-white bg-muted rounded-md flex overflow-hidden group min-w-96",
               )}
             >
               <SearchInput
@@ -453,7 +453,7 @@ export function SearchBar({
                 }}
                 className={cn(
                   buttonVariants(),
-                  "ml-auto absolute right-4 top-1/2 -translate-y-1/2"
+                  "ml-auto absolute right-4 top-1/2 -translate-y-1/2",
                 )}
               >
                 Search
@@ -508,7 +508,7 @@ export function SearchBar({
                             items[tab]?.items?.some(
                               (refinementItem) =>
                                 refinementItem.value === item.key &&
-                                refinementItem.isRefined
+                                refinementItem.isRefined,
                             );
 
                           return (
@@ -517,7 +517,7 @@ export function SearchBar({
                               className={cn(
                                 "flex items-center gap-3 p-2 rounded-md hover:bg-primary/10 cursor-pointer transition",
                                 isRefined &&
-                                  "bg-primary/20 border border-primary"
+                                  "bg-primary/20 border border-primary",
                               )}
                               onClick={() => {
                                 // setIsOpen(false);
@@ -569,7 +569,7 @@ export function SearchBar({
                               }}
                               className={cn(
                                 item.isRefined && badgeVariants({ size: "lg" }),
-                                "cursor-pointer py-0"
+                                "cursor-pointer py-0",
                               )}
                             >
                               {item.label}

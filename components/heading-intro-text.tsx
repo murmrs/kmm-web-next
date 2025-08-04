@@ -129,7 +129,7 @@ export default function HeadingIntroText({
     <h1
       className={cn(
         "text-4xl sm:text-7xl font-semibold text-center leading-tight text-white whitespace-nowrap",
-        className
+        className,
       )}
     >
       What&apos;s for me?

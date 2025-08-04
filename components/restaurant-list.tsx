@@ -89,7 +89,7 @@ export const RestaurantList = (props: RestaurantListProps) => {
             href="/restaurants"
             className={
               cn(
-                "group relative flex pr-16 py-4 pl-4 overflow-hidden rounded-md hover:text-white transition-all duration-300 text-white sm:text-foreground"
+                "group relative flex pr-16 py-4 pl-4 overflow-hidden rounded-md hover:text-white transition-all duration-300 text-white sm:text-foreground",
               )
               // "hidden md:flex",
               // buttonVariants({ variant: "default" })
@@ -134,7 +134,7 @@ export const RestaurantList = (props: RestaurantListProps) => {
                     onClick={() => api?.scrollTo(index)}
                     className={clsx(
                       "mx-[3px] size-2 rounded-full",
-                      current === index + 1 ? "bg-primary" : "bg-primary/10"
+                      current === index + 1 ? "bg-primary" : "bg-primary/10",
                     )}
                   />
                 ))}

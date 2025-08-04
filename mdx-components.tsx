@@ -12,7 +12,7 @@ function slugify(text: string): string {
 }
 
 function getHeadingText(
-  children: string | string[] | { props: { children: string | string[] } }
+  children: string | string[] | { props: { children: string | string[] } },
 ): string {
   if (typeof children === "string") return children;
   if (Array.isArray(children)) return children.map(getHeadingText).join(" ");

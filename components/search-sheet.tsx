@@ -37,7 +37,7 @@ const SearchInput = ({
   });
 
   const currentRefinementsItems = currentRefinements.items.flatMap(
-    (item) => item.refinements
+    (item) => item.refinements,
   );
 
   const count = currentRefinementsItems.length;
@@ -48,7 +48,7 @@ const SearchInput = ({
         <input
           className={cn(
             "w-full px-3 py-2 border border-input bg-background rounded-md text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent",
-            count > 0 && "border-primary"
+            count > 0 && "border-primary",
           )}
           onChange={(e) => {
             search(e.target.value);
@@ -79,7 +79,7 @@ const RefinementList = ({
   });
 
   const currentRefinementsItems = currentRefinements.items.flatMap(
-    (item) => item.refinements
+    (item) => item.refinements,
   );
 
   const selectedValues = currentRefinementsItems.map((item) => item.value);
@@ -118,7 +118,7 @@ const RefinementList = ({
 };
 
 function CustomToggleRefinement(
-  props: ToggleRefinementProps & { description?: string }
+  props: ToggleRefinementProps & { description?: string },
 ) {
   const { value, canRefine, refine } = useToggleRefinement(props);
 
@@ -159,7 +159,7 @@ export function SearchSheet({ icon }: { icon?: boolean }) {
   // Get current refinements for display
   const currentRefinements = useCurrentRefinements();
   const allRefinements = currentRefinements.items.flatMap(
-    (item) => item.refinements
+    (item) => item.refinements,
   );
 
   const clearAllRefinements = () => {

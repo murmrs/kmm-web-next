@@ -20,7 +20,7 @@ export default function PageSheet({
         router.back();
       }
     },
-    [router]
+    [router],
   );
 
   return (

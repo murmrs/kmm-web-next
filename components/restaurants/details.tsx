@@ -227,7 +227,7 @@ export default function Details({
                           View Menu →
                         </Link>
                       </div>
-                    )
+                    ),
                   )}
                 </div>
               </AccordionContent>
@@ -259,7 +259,7 @@ export default function Details({
                         open: { hour: number; minute: number };
                         closed: { hour: number; minute: number };
                       },
-                      index: number
+                      index: number,
                     ) => (
                       <div
                         key={index}
@@ -273,7 +273,7 @@ export default function Details({
                           {formatTime(hours.closed.hour, hours.closed.minute)}
                         </span>
                       </div>
-                    )
+                    ),
                   )}
                 </div>
               </AccordionContent>
@@ -308,7 +308,7 @@ export default function Details({
                             >
                               {attr}
                             </Badge>
-                          )
+                          ),
                         )}
                       </div>
                     </div>
@@ -363,7 +363,7 @@ export default function Details({
                             >
                               {tip}
                             </Badge>
-                          )
+                          ),
                         )}
                       </div>
                     </div>
@@ -410,7 +410,7 @@ export default function Details({
                           {payment}
                         </span>
                       </div>
-                    )
+                    ),
                   )}
                 </div>
               </AccordionContent>
@@ -462,7 +462,7 @@ export default function Details({
                         <p key={index} className="text-gray-600 text-sm">
                           • {parking}
                         </p>
-                      )
+                      ),
                     )}
                   </div>
                 </div>
@@ -479,7 +479,7 @@ export default function Details({
                         <p key={index} className="text-gray-600 text-sm">
                           • {access}
                         </p>
-                      )
+                      ),
                     )}
                   </div>
                 </div>
@@ -507,7 +507,7 @@ export default function Details({
                         >
                           {service}
                         </Badge>
-                      )
+                      ),
                     )}
                   </div>
                 </div>
