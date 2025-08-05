@@ -132,11 +132,6 @@ const SearchInput = ({
 
   const count = currentRefinementsItems.length;
 
-  const test = "hello world";
-
-  // const two = "two";
-  const bool: boolean = "hello";
-
   const labelText = useMemo(() => {
     if (count === 0) return label;
     if (count >= 1) return `${label} (${count})`;
